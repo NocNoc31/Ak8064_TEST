@@ -1,0 +1,7 @@
+motor_control_node:
+  ros__parameters:
+    target_positions: [30.0, 60.0, 90.0]  # độ
+    speed: 10000                          # độ/s
+    accel: 1000
+
+# ros2 run motor_driver motor_control_node --ros-args --params-file ~/Desktop/AK_ws/src/motor_driver/config/params.yaml
