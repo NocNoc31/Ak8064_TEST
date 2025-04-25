@@ -54,17 +54,17 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/Desktop/AK_ws/src/motor_driver
+CMAKE_SOURCE_DIR = /home/ubuntu/Desktop/AK80_64/src/motor_driver
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/Desktop/AK_ws/build/motor_driver
+CMAKE_BINARY_DIR = /home/ubuntu/Desktop/AK80_64/build/motor_driver
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/motor_test_node.dir/all
-all: CMakeFiles/motor_control_node.dir/all
+all: CMakeFiles/SetOMotor.dir/all
+all: CMakeFiles/ControlMotor.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -74,8 +74,8 @@ preinstall:
 # The main recursive "clean" target.
 clean: CMakeFiles/uninstall.dir/clean
 clean: CMakeFiles/motor_driver_uninstall.dir/clean
-clean: CMakeFiles/motor_test_node.dir/clean
-clean: CMakeFiles/motor_control_node.dir/clean
+clean: CMakeFiles/SetOMotor.dir/clean
+clean: CMakeFiles/ControlMotor.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -85,14 +85,14 @@ clean: CMakeFiles/motor_control_node.dir/clean
 CMakeFiles/uninstall.dir/all: CMakeFiles/motor_driver_uninstall.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/Desktop/AK_ws/build/motor_driver/CMakeFiles --progress-num= "Built target uninstall"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/Desktop/AK80_64/build/motor_driver/CMakeFiles --progress-num= "Built target uninstall"
 .PHONY : CMakeFiles/uninstall.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/uninstall.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Desktop/AK_ws/build/motor_driver/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Desktop/AK80_64/build/motor_driver/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/uninstall.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Desktop/AK_ws/build/motor_driver/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Desktop/AK80_64/build/motor_driver/CMakeFiles 0
 .PHONY : CMakeFiles/uninstall.dir/rule
 
 # Convenience name for target.
@@ -111,14 +111,14 @@ CMakeFiles/uninstall.dir/clean:
 CMakeFiles/motor_driver_uninstall.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/motor_driver_uninstall.dir/build.make CMakeFiles/motor_driver_uninstall.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/motor_driver_uninstall.dir/build.make CMakeFiles/motor_driver_uninstall.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/Desktop/AK_ws/build/motor_driver/CMakeFiles --progress-num= "Built target motor_driver_uninstall"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/Desktop/AK80_64/build/motor_driver/CMakeFiles --progress-num= "Built target motor_driver_uninstall"
 .PHONY : CMakeFiles/motor_driver_uninstall.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/motor_driver_uninstall.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Desktop/AK_ws/build/motor_driver/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Desktop/AK80_64/build/motor_driver/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/motor_driver_uninstall.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Desktop/AK_ws/build/motor_driver/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Desktop/AK80_64/build/motor_driver/CMakeFiles 0
 .PHONY : CMakeFiles/motor_driver_uninstall.dir/rule
 
 # Convenience name for target.
@@ -131,56 +131,56 @@ CMakeFiles/motor_driver_uninstall.dir/clean:
 .PHONY : CMakeFiles/motor_driver_uninstall.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/motor_test_node.dir
+# Target rules for target CMakeFiles/SetOMotor.dir
 
 # All Build rule for target.
-CMakeFiles/motor_test_node.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/motor_test_node.dir/build.make CMakeFiles/motor_test_node.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/motor_test_node.dir/build.make CMakeFiles/motor_test_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/Desktop/AK_ws/build/motor_driver/CMakeFiles --progress-num=3,4 "Built target motor_test_node"
-.PHONY : CMakeFiles/motor_test_node.dir/all
+CMakeFiles/SetOMotor.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SetOMotor.dir/build.make CMakeFiles/SetOMotor.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SetOMotor.dir/build.make CMakeFiles/SetOMotor.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/Desktop/AK80_64/build/motor_driver/CMakeFiles --progress-num=3,4 "Built target SetOMotor"
+.PHONY : CMakeFiles/SetOMotor.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/motor_test_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Desktop/AK_ws/build/motor_driver/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/motor_test_node.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Desktop/AK_ws/build/motor_driver/CMakeFiles 0
-.PHONY : CMakeFiles/motor_test_node.dir/rule
+CMakeFiles/SetOMotor.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Desktop/AK80_64/build/motor_driver/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/SetOMotor.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Desktop/AK80_64/build/motor_driver/CMakeFiles 0
+.PHONY : CMakeFiles/SetOMotor.dir/rule
 
 # Convenience name for target.
-motor_test_node: CMakeFiles/motor_test_node.dir/rule
-.PHONY : motor_test_node
+SetOMotor: CMakeFiles/SetOMotor.dir/rule
+.PHONY : SetOMotor
 
 # clean rule for target.
-CMakeFiles/motor_test_node.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/motor_test_node.dir/build.make CMakeFiles/motor_test_node.dir/clean
-.PHONY : CMakeFiles/motor_test_node.dir/clean
+CMakeFiles/SetOMotor.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SetOMotor.dir/build.make CMakeFiles/SetOMotor.dir/clean
+.PHONY : CMakeFiles/SetOMotor.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/motor_control_node.dir
+# Target rules for target CMakeFiles/ControlMotor.dir
 
 # All Build rule for target.
-CMakeFiles/motor_control_node.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/motor_control_node.dir/build.make CMakeFiles/motor_control_node.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/motor_control_node.dir/build.make CMakeFiles/motor_control_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/Desktop/AK_ws/build/motor_driver/CMakeFiles --progress-num=1,2 "Built target motor_control_node"
-.PHONY : CMakeFiles/motor_control_node.dir/all
+CMakeFiles/ControlMotor.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ControlMotor.dir/build.make CMakeFiles/ControlMotor.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ControlMotor.dir/build.make CMakeFiles/ControlMotor.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/Desktop/AK80_64/build/motor_driver/CMakeFiles --progress-num=1,2 "Built target ControlMotor"
+.PHONY : CMakeFiles/ControlMotor.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/motor_control_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Desktop/AK_ws/build/motor_driver/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/motor_control_node.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Desktop/AK_ws/build/motor_driver/CMakeFiles 0
-.PHONY : CMakeFiles/motor_control_node.dir/rule
+CMakeFiles/ControlMotor.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Desktop/AK80_64/build/motor_driver/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ControlMotor.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Desktop/AK80_64/build/motor_driver/CMakeFiles 0
+.PHONY : CMakeFiles/ControlMotor.dir/rule
 
 # Convenience name for target.
-motor_control_node: CMakeFiles/motor_control_node.dir/rule
-.PHONY : motor_control_node
+ControlMotor: CMakeFiles/ControlMotor.dir/rule
+.PHONY : ControlMotor
 
 # clean rule for target.
-CMakeFiles/motor_control_node.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/motor_control_node.dir/build.make CMakeFiles/motor_control_node.dir/clean
-.PHONY : CMakeFiles/motor_control_node.dir/clean
+CMakeFiles/ControlMotor.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ControlMotor.dir/build.make CMakeFiles/ControlMotor.dir/clean
+.PHONY : CMakeFiles/ControlMotor.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

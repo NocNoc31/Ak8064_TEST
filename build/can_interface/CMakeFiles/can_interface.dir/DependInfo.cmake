@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/ubuntu/Desktop/AK_ws/src/can_interface/src/caninterface.cpp" "CMakeFiles/can_interface.dir/src/caninterface.cpp.o" "gcc" "CMakeFiles/can_interface.dir/src/caninterface.cpp.o.d"
+  "/home/ubuntu/Desktop/AK80_64/src/can_interface/src/caninterface.cpp" "CMakeFiles/can_interface.dir/src/caninterface.cpp.o" "gcc" "CMakeFiles/can_interface.dir/src/caninterface.cpp.o.d"
   )
 
 # Targets to which this target links.

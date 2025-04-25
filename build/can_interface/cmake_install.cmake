@@ -1,8 +1,8 @@
-# Install script for directory: /home/ubuntu/Desktop/AK_ws/src/can_interface
+# Install script for directory: /home/ubuntu/Desktop/AK80_64/src/can_interface
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ubuntu/Desktop/AK_ws/install/can_interface")
+  set(CMAKE_INSTALL_PREFIX "/home/ubuntu/Desktop/AK80_64/install/can_interface")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -49,7 +49,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libcan_interface.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/ubuntu/Desktop/AK_ws/build/can_interface/libcan_interface.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/ubuntu/Desktop/AK80_64/build/can_interface/libcan_interface.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libcan_interface.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libcan_interface.so")
     if(CMAKE_INSTALL_DO_STRIP)
@@ -62,7 +62,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/ubuntu/Desktop/AK_ws/src/can_interface/include/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/ubuntu/Desktop/AK80_64/src/can_interface/include/")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -70,15 +70,15 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/can_interface/environment" TYPE FILE FILES "/home/ubuntu/Desktop/AK_ws/build/can_interface/ament_cmake_environment_hooks/library_path.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/can_interface/environment" TYPE FILE FILES "/home/ubuntu/Desktop/AK80_64/build/can_interface/ament_cmake_environment_hooks/library_path.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/home/ubuntu/Desktop/AK_ws/build/can_interface/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/can_interface")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/home/ubuntu/Desktop/AK80_64/build/can_interface/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/can_interface")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/parent_prefix_path" TYPE FILE FILES "/home/ubuntu/Desktop/AK_ws/build/can_interface/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/can_interface")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/parent_prefix_path" TYPE FILE FILES "/home/ubuntu/Desktop/AK80_64/build/can_interface/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/can_interface")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -86,7 +86,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/can_interface/environment" TYPE FILE FILES "/home/ubuntu/Desktop/AK_ws/build/can_interface/ament_cmake_environment_hooks/ament_prefix_path.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/can_interface/environment" TYPE FILE FILES "/home/ubuntu/Desktop/AK80_64/build/can_interface/ament_cmake_environment_hooks/ament_prefix_path.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -94,38 +94,38 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/can_interface/environment" TYPE FILE FILES "/home/ubuntu/Desktop/AK_ws/build/can_interface/ament_cmake_environment_hooks/path.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/can_interface/environment" TYPE FILE FILES "/home/ubuntu/Desktop/AK80_64/build/can_interface/ament_cmake_environment_hooks/path.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/can_interface" TYPE FILE FILES "/home/ubuntu/Desktop/AK_ws/build/can_interface/ament_cmake_environment_hooks/local_setup.bash")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/can_interface" TYPE FILE FILES "/home/ubuntu/Desktop/AK80_64/build/can_interface/ament_cmake_environment_hooks/local_setup.bash")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/can_interface" TYPE FILE FILES "/home/ubuntu/Desktop/AK_ws/build/can_interface/ament_cmake_environment_hooks/local_setup.sh")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/can_interface" TYPE FILE FILES "/home/ubuntu/Desktop/AK80_64/build/can_interface/ament_cmake_environment_hooks/local_setup.sh")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/can_interface" TYPE FILE FILES "/home/ubuntu/Desktop/AK_ws/build/can_interface/ament_cmake_environment_hooks/local_setup.zsh")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/can_interface" TYPE FILE FILES "/home/ubuntu/Desktop/AK80_64/build/can_interface/ament_cmake_environment_hooks/local_setup.zsh")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/can_interface" TYPE FILE FILES "/home/ubuntu/Desktop/AK_ws/build/can_interface/ament_cmake_environment_hooks/local_setup.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/can_interface" TYPE FILE FILES "/home/ubuntu/Desktop/AK80_64/build/can_interface/ament_cmake_environment_hooks/local_setup.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/can_interface" TYPE FILE FILES "/home/ubuntu/Desktop/AK_ws/build/can_interface/ament_cmake_environment_hooks/package.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/can_interface" TYPE FILE FILES "/home/ubuntu/Desktop/AK80_64/build/can_interface/ament_cmake_environment_hooks/package.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/packages" TYPE FILE FILES "/home/ubuntu/Desktop/AK_ws/build/can_interface/ament_cmake_index/share/ament_index/resource_index/packages/can_interface")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/packages" TYPE FILE FILES "/home/ubuntu/Desktop/AK80_64/build/can_interface/ament_cmake_index/share/ament_index/resource_index/packages/can_interface")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/can_interface/cmake/export_can_interfaceExport.cmake")
     file(DIFFERENT EXPORT_FILE_CHANGED FILES
          "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/can_interface/cmake/export_can_interfaceExport.cmake"
-         "/home/ubuntu/Desktop/AK_ws/build/can_interface/CMakeFiles/Export/share/can_interface/cmake/export_can_interfaceExport.cmake")
+         "/home/ubuntu/Desktop/AK80_64/build/can_interface/CMakeFiles/Export/share/can_interface/cmake/export_can_interfaceExport.cmake")
     if(EXPORT_FILE_CHANGED)
       file(GLOB OLD_CONFIG_FILES "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/can_interface/cmake/export_can_interfaceExport-*.cmake")
       if(OLD_CONFIG_FILES)
@@ -134,33 +134,33 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
       endif()
     endif()
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/can_interface/cmake" TYPE FILE FILES "/home/ubuntu/Desktop/AK_ws/build/can_interface/CMakeFiles/Export/share/can_interface/cmake/export_can_interfaceExport.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/can_interface/cmake" TYPE FILE FILES "/home/ubuntu/Desktop/AK80_64/build/can_interface/CMakeFiles/Export/share/can_interface/cmake/export_can_interfaceExport.cmake")
   if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^()$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/can_interface/cmake" TYPE FILE FILES "/home/ubuntu/Desktop/AK_ws/build/can_interface/CMakeFiles/Export/share/can_interface/cmake/export_can_interfaceExport-noconfig.cmake")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/can_interface/cmake" TYPE FILE FILES "/home/ubuntu/Desktop/AK80_64/build/can_interface/CMakeFiles/Export/share/can_interface/cmake/export_can_interfaceExport-noconfig.cmake")
   endif()
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/can_interface/cmake" TYPE FILE FILES "/home/ubuntu/Desktop/AK_ws/build/can_interface/ament_cmake_export_targets/ament_cmake_export_targets-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/can_interface/cmake" TYPE FILE FILES "/home/ubuntu/Desktop/AK80_64/build/can_interface/ament_cmake_export_targets/ament_cmake_export_targets-extras.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/can_interface/cmake" TYPE FILE FILES "/home/ubuntu/Desktop/AK_ws/build/can_interface/ament_cmake_export_include_directories/ament_cmake_export_include_directories-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/can_interface/cmake" TYPE FILE FILES "/home/ubuntu/Desktop/AK80_64/build/can_interface/ament_cmake_export_include_directories/ament_cmake_export_include_directories-extras.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/can_interface/cmake" TYPE FILE FILES "/home/ubuntu/Desktop/AK_ws/build/can_interface/ament_cmake_export_libraries/ament_cmake_export_libraries-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/can_interface/cmake" TYPE FILE FILES "/home/ubuntu/Desktop/AK80_64/build/can_interface/ament_cmake_export_libraries/ament_cmake_export_libraries-extras.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/can_interface/cmake" TYPE FILE FILES
-    "/home/ubuntu/Desktop/AK_ws/build/can_interface/ament_cmake_core/can_interfaceConfig.cmake"
-    "/home/ubuntu/Desktop/AK_ws/build/can_interface/ament_cmake_core/can_interfaceConfig-version.cmake"
+    "/home/ubuntu/Desktop/AK80_64/build/can_interface/ament_cmake_core/can_interfaceConfig.cmake"
+    "/home/ubuntu/Desktop/AK80_64/build/can_interface/ament_cmake_core/can_interfaceConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/can_interface" TYPE FILE FILES "/home/ubuntu/Desktop/AK_ws/src/can_interface/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/can_interface" TYPE FILE FILES "/home/ubuntu/Desktop/AK80_64/src/can_interface/package.xml")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -171,5 +171,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/ubuntu/Desktop/AK_ws/build/can_interface/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/ubuntu/Desktop/AK80_64/build/can_interface/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

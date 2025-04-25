@@ -4,7 +4,7 @@
   <name>motor_driver</name>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
-  <maintainer email="nguyenkhacnam2k3@gmail.com">nam</maintainer>
+  <maintainer email="LocPD216179@sis.hust.edu.vn">Ncc</maintainer>
   <license>TODO: License declaration</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
@@ -12,6 +12,8 @@
   <depend>rclcpp</depend>
   <depend>std_msgs</depend>
   <depend>can_interface</depend>
+  <depend>rcl_interfaces</depend>
+  <depend>pyyaml</depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>

@@ -1,7 +1,7 @@
 CMakeFiles/can_interface.dir/src/caninterface.cpp.o: \
- /home/ubuntu/Desktop/AK_ws/src/can_interface/src/caninterface.cpp \
+ /home/ubuntu/Desktop/AK80_64/src/can_interface/src/caninterface.cpp \
  /usr/include/stdc-predef.h \
- /home/ubuntu/Desktop/AK_ws/src/can_interface/include/can_interface/caninterface.hpp \
+ /home/ubuntu/Desktop/AK80_64/src/can_interface/include/can_interface/caninterface.hpp \
  /usr/include/linux/can.h /usr/include/linux/types.h \
  /usr/include/x86_64-linux-gnu/asm/types.h \
  /usr/include/asm-generic/types.h /usr/include/asm-generic/int-ll64.h \

@@ -28,6 +28,7 @@ install(TARGETS SetOMotor
 
 install(DIRECTORY
   config
+  launch
   DESTINATION share/${PROJECT_NAME}/
 )
 
@@ -44,3 +45,7 @@ install(FILES
 )
 
 ament_package()
+
+
+
+

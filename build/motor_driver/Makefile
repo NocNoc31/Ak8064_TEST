@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/Desktop/AK_ws/src/motor_driver
+CMAKE_SOURCE_DIR = /home/ubuntu/Desktop/AK80_64/src/motor_driver
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/Desktop/AK_ws/build/motor_driver
+CMAKE_BINARY_DIR = /home/ubuntu/Desktop/AK80_64/build/motor_driver
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -142,9 +142,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Desktop/AK_ws/build/motor_driver/CMakeFiles /home/ubuntu/Desktop/AK_ws/build/motor_driver//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Desktop/AK80_64/build/motor_driver/CMakeFiles /home/ubuntu/Desktop/AK80_64/build/motor_driver//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Desktop/AK_ws/build/motor_driver/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Desktop/AK80_64/build/motor_driver/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -198,78 +198,78 @@ motor_driver_uninstall/fast:
 .PHONY : motor_driver_uninstall/fast
 
 #=============================================================================
-# Target rules for targets named motor_test_node
+# Target rules for targets named SetOMotor
 
 # Build rule for target.
-motor_test_node: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 motor_test_node
-.PHONY : motor_test_node
+SetOMotor: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 SetOMotor
+.PHONY : SetOMotor
 
 # fast build rule for target.
-motor_test_node/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/motor_test_node.dir/build.make CMakeFiles/motor_test_node.dir/build
-.PHONY : motor_test_node/fast
+SetOMotor/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SetOMotor.dir/build.make CMakeFiles/SetOMotor.dir/build
+.PHONY : SetOMotor/fast
 
 #=============================================================================
-# Target rules for targets named motor_control_node
+# Target rules for targets named ControlMotor
 
 # Build rule for target.
-motor_control_node: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 motor_control_node
-.PHONY : motor_control_node
+ControlMotor: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ControlMotor
+.PHONY : ControlMotor
 
 # fast build rule for target.
-motor_control_node/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/motor_control_node.dir/build.make CMakeFiles/motor_control_node.dir/build
-.PHONY : motor_control_node/fast
+ControlMotor/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ControlMotor.dir/build.make CMakeFiles/ControlMotor.dir/build
+.PHONY : ControlMotor/fast
 
-src/motor_control_node.o: src/motor_control_node.cpp.o
-.PHONY : src/motor_control_node.o
-
-# target to build an object file
-src/motor_control_node.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/motor_control_node.dir/build.make CMakeFiles/motor_control_node.dir/src/motor_control_node.cpp.o
-.PHONY : src/motor_control_node.cpp.o
-
-src/motor_control_node.i: src/motor_control_node.cpp.i
-.PHONY : src/motor_control_node.i
-
-# target to preprocess a source file
-src/motor_control_node.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/motor_control_node.dir/build.make CMakeFiles/motor_control_node.dir/src/motor_control_node.cpp.i
-.PHONY : src/motor_control_node.cpp.i
-
-src/motor_control_node.s: src/motor_control_node.cpp.s
-.PHONY : src/motor_control_node.s
-
-# target to generate assembly for a file
-src/motor_control_node.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/motor_control_node.dir/build.make CMakeFiles/motor_control_node.dir/src/motor_control_node.cpp.s
-.PHONY : src/motor_control_node.cpp.s
-
-src/motor_test_node.o: src/motor_test_node.cpp.o
-.PHONY : src/motor_test_node.o
+src/ControlMotor.o: src/ControlMotor.cpp.o
+.PHONY : src/ControlMotor.o
 
 # target to build an object file
-src/motor_test_node.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/motor_test_node.dir/build.make CMakeFiles/motor_test_node.dir/src/motor_test_node.cpp.o
-.PHONY : src/motor_test_node.cpp.o
+src/ControlMotor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ControlMotor.dir/build.make CMakeFiles/ControlMotor.dir/src/ControlMotor.cpp.o
+.PHONY : src/ControlMotor.cpp.o
 
-src/motor_test_node.i: src/motor_test_node.cpp.i
-.PHONY : src/motor_test_node.i
+src/ControlMotor.i: src/ControlMotor.cpp.i
+.PHONY : src/ControlMotor.i
 
 # target to preprocess a source file
-src/motor_test_node.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/motor_test_node.dir/build.make CMakeFiles/motor_test_node.dir/src/motor_test_node.cpp.i
-.PHONY : src/motor_test_node.cpp.i
+src/ControlMotor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ControlMotor.dir/build.make CMakeFiles/ControlMotor.dir/src/ControlMotor.cpp.i
+.PHONY : src/ControlMotor.cpp.i
 
-src/motor_test_node.s: src/motor_test_node.cpp.s
-.PHONY : src/motor_test_node.s
+src/ControlMotor.s: src/ControlMotor.cpp.s
+.PHONY : src/ControlMotor.s
 
 # target to generate assembly for a file
-src/motor_test_node.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/motor_test_node.dir/build.make CMakeFiles/motor_test_node.dir/src/motor_test_node.cpp.s
-.PHONY : src/motor_test_node.cpp.s
+src/ControlMotor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ControlMotor.dir/build.make CMakeFiles/ControlMotor.dir/src/ControlMotor.cpp.s
+.PHONY : src/ControlMotor.cpp.s
+
+src/SetOMotor.o: src/SetOMotor.cpp.o
+.PHONY : src/SetOMotor.o
+
+# target to build an object file
+src/SetOMotor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SetOMotor.dir/build.make CMakeFiles/SetOMotor.dir/src/SetOMotor.cpp.o
+.PHONY : src/SetOMotor.cpp.o
+
+src/SetOMotor.i: src/SetOMotor.cpp.i
+.PHONY : src/SetOMotor.i
+
+# target to preprocess a source file
+src/SetOMotor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SetOMotor.dir/build.make CMakeFiles/SetOMotor.dir/src/SetOMotor.cpp.i
+.PHONY : src/SetOMotor.cpp.i
+
+src/SetOMotor.s: src/SetOMotor.cpp.s
+.PHONY : src/SetOMotor.s
+
+# target to generate assembly for a file
+src/SetOMotor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SetOMotor.dir/build.make CMakeFiles/SetOMotor.dir/src/SetOMotor.cpp.s
+.PHONY : src/SetOMotor.cpp.s
 
 # Help Target
 help:
@@ -286,14 +286,14 @@ help:
 	@echo "... test"
 	@echo "... motor_driver_uninstall"
 	@echo "... uninstall"
-	@echo "... motor_control_node"
-	@echo "... motor_test_node"
-	@echo "... src/motor_control_node.o"
-	@echo "... src/motor_control_node.i"
-	@echo "... src/motor_control_node.s"
-	@echo "... src/motor_test_node.o"
-	@echo "... src/motor_test_node.i"
-	@echo "... src/motor_test_node.s"
+	@echo "... ControlMotor"
+	@echo "... SetOMotor"
+	@echo "... src/ControlMotor.o"
+	@echo "... src/ControlMotor.i"
+	@echo "... src/ControlMotor.s"
+	@echo "... src/SetOMotor.o"
+	@echo "... src/SetOMotor.i"
+	@echo "... src/SetOMotor.s"
 .PHONY : help
 
 

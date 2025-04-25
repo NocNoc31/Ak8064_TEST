@@ -64,6 +64,35 @@ void CANInterface::decodeMotorData(const std::vector<uint8_t>& data, float& moto
 }
 
 
+// bool CANInterface::receive(uint32_t &id, std::vector<uint8_t> &data) {
+//     struct can_frame frame;
+//     int nbytes = read(socket_fd, &frame, sizeof(struct can_frame));
+//     if (nbytes < 0) {
+//         perror("Error receiving CAN frame");
+//         return false;
+//     }
+
+//     id = frame.can_id & CAN_EFF_MASK;
+//     data.assign(frame.data, frame.data + frame.can_dlc);
+
+//     // Giải mã nếu là dữ liệu từ động cơ
+//     if ((id & 0xFF) == static_cast<uint32_t>(CANPacketID::SET_POS_SPD)) {
+//         float motor_pos, motor_spd, motor_cur;
+//         int8_t motor_temp, motor_error;
+//         decodeMotorData(data, motor_pos, motor_spd, motor_cur, motor_temp, motor_error);
+        
+//         // In dữ liệu để kiểm tra
+//         std::cout << "Motor Data Received: " << std::endl;
+//         std::cout << " Position: " << motor_pos << std::endl;
+//         std::cout << " Speed: " << motor_spd << std::endl;
+//         std::cout << " Current: " << motor_cur << std::endl;
+//         std::cout << " Temperature: " << static_cast<int>(motor_temp) << std::endl;
+//         std::cout << " Error Code: " << static_cast<int>(motor_error) << std::endl;
+//     }
+
+//     return true;
+// }
+
 bool CANInterface::receive(uint32_t &id, std::vector<uint8_t> &data) {
     struct can_frame frame;
     int nbytes = read(socket_fd, &frame, sizeof(struct can_frame));
@@ -72,17 +101,18 @@ bool CANInterface::receive(uint32_t &id, std::vector<uint8_t> &data) {
         return false;
     }
 
-    id = frame.can_id & CAN_EFF_MASK;
+    // Lấy đúng controller ID (ví dụ: 0x68, 0x69)
+    id = frame.can_id & 0xFF;
+
     data.assign(frame.data, frame.data + frame.can_dlc);
 
-    // Giải mã nếu là dữ liệu từ động cơ
-    if ((id & 0xFF) == static_cast<uint32_t>(CANPacketID::SET_RPM)) {
+    // Giải mã nếu là dữ liệu từ động cơ (nếu cần giữ phần này để debug)
+    if (((frame.can_id >> 8) & 0xFF) == static_cast<uint32_t>(CANPacketID::SET_POS_SPD)) {
         float motor_pos, motor_spd, motor_cur;
         int8_t motor_temp, motor_error;
         decodeMotorData(data, motor_pos, motor_spd, motor_cur, motor_temp, motor_error);
         
-        // In dữ liệu để kiểm tra
-        std::cout << "Motor Data Received: " << std::endl;
+        std::cout << "Motor Data Received (Raw ID: 0x" << std::hex << frame.can_id << "):" << std::endl;
         std::cout << " Position: " << motor_pos << std::endl;
         std::cout << " Speed: " << motor_spd << std::endl;
         std::cout << " Current: " << motor_cur << std::endl;

@@ -1,0 +1,6 @@
+motor_control_node:
+  ros__parameters:
+    target_positions: [90.0, 0.0, 30.0]  # độ
+    speed: 10000                          # độ/s
+    accel: 1000
+
