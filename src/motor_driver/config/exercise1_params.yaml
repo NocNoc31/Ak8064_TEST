@@ -1,6 +1,10 @@
-motor_control_node:
+/motor_control_node:
   ros__parameters:
-    target_positions: [90.0, 0.0, 30.0]  # độ
-    speed: 10000                          # độ/s
-    accel: 1000
+    /motor1_control_node:
+      target_positions: [0.0, 45.0, 90.0]
+      speed: 10000
+      accel: 1000
+      min_angle: 0.0
+      max_angle: 90.0
+      reach_count_max: 100
 

@@ -1,0 +1,36 @@
+[0.022s] Invoking command in '/home/ubuntu/Desktop/AK80_64/build/motor_driver': AMENT_PREFIX_PATH=/home/ubuntu/Desktop/AK80_64/install/can_interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ubuntu/Desktop/AK80_64/install/can_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/ubuntu/Desktop/AK80_64/install/can_interface/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins /usr/bin/cmake --build /home/ubuntu/Desktop/AK80_64/build/motor_driver -- -j8 -l8
+[0.104s] [35m[1mConsolidate compiler generated dependencies of target SetOMotor[0m
+[0.105s] [35m[1mConsolidate compiler generated dependencies of target ControlMotor[0m
+[0.143s] [ 50%] Built target ControlMotor
+[0.144s] [100%] Built target SetOMotor
+[0.167s] Invoked command in '/home/ubuntu/Desktop/AK80_64/build/motor_driver' returned '0': AMENT_PREFIX_PATH=/home/ubuntu/Desktop/AK80_64/install/can_interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ubuntu/Desktop/AK80_64/install/can_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/ubuntu/Desktop/AK80_64/install/can_interface/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins /usr/bin/cmake --build /home/ubuntu/Desktop/AK80_64/build/motor_driver -- -j8 -l8
+[0.225s] Invoking command in '/home/ubuntu/Desktop/AK80_64/build/motor_driver': AMENT_PREFIX_PATH=/home/ubuntu/Desktop/AK80_64/install/can_interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ubuntu/Desktop/AK80_64/install/can_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/ubuntu/Desktop/AK80_64/install/can_interface/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins /usr/bin/cmake --install /home/ubuntu/Desktop/AK80_64/build/motor_driver
+[0.239s] -- Install configuration: ""
+[0.239s] -- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/lib/motor_driver/SetOMotor
+[0.240s] -- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/lib/motor_driver/ControlMotor
+[0.240s] -- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver//config
+[0.240s] -- Installing: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver//config/exercise1_params.yaml
+[0.241s] -- Installing: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver//config/setup.yaml
+[0.241s] -- Installing: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver//config/exercise2_params.yaml
+[0.241s] -- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver//launch
+[0.241s] -- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver//launch/motor_control.launch.py
+[0.241s] -- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/lib/motor_driver/set_params_gui.py
+[0.241s] -- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/lib/motor_driver/TurnOn.sh
+[0.241s] -- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver/config/exercise1_params.yaml
+[0.242s] -- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver/config/exercise2_params.yaml
+[0.242s] -- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/ament_index/resource_index/package_run_dependencies/motor_driver
+[0.242s] -- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/ament_index/resource_index/parent_prefix_path/motor_driver
+[0.242s] -- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver/environment/ament_prefix_path.sh
+[0.242s] -- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver/environment/ament_prefix_path.dsv
+[0.242s] -- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver/environment/path.sh
+[0.242s] -- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver/environment/path.dsv
+[0.242s] -- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver/local_setup.bash
+[0.243s] -- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver/local_setup.sh
+[0.243s] -- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver/local_setup.zsh
+[0.243s] -- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver/local_setup.dsv
+[0.243s] -- Installing: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver/package.dsv
+[0.243s] -- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/ament_index/resource_index/packages/motor_driver
+[0.243s] -- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver/cmake/motor_driverConfig.cmake
+[0.243s] -- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver/cmake/motor_driverConfig-version.cmake
+[0.243s] -- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver/package.xml
+[0.246s] Invoked command in '/home/ubuntu/Desktop/AK80_64/build/motor_driver' returned '0': AMENT_PREFIX_PATH=/home/ubuntu/Desktop/AK80_64/install/can_interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ubuntu/Desktop/AK80_64/install/can_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/ubuntu/Desktop/AK80_64/install/can_interface/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins /usr/bin/cmake --install /home/ubuntu/Desktop/AK80_64/build/motor_driver

@@ -14,7 +14,8 @@
   <depend>can_interface</depend>
   <depend>rcl_interfaces</depend>
   <depend>pyyaml</depend>
-
+  <depend>ros2launch</depend>
+  
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
 

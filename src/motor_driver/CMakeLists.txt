@@ -5,6 +5,7 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(can_interface REQUIRED)  # Thêm thư viện can_interface
 find_package(std_msgs REQUIRED) 
+find_package(rcl_interfaces REQUIRED)
 
 # Tạo node điều khiển motor
 add_executable(SetOMotor src/SetOMotor.cpp)
@@ -17,7 +18,7 @@ add_executable(ControlMotor src/ControlMotor.cpp)
 target_link_libraries(SetOMotor can_interface::can_interface)
 
 ament_target_dependencies(SetOMotor rclcpp can_interface std_msgs)
-ament_target_dependencies(ControlMotor rclcpp can_interface std_msgs)
+ament_target_dependencies(ControlMotor rclcpp can_interface std_msgs rcl_interfaces)
 
 
 

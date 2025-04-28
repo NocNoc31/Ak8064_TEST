@@ -2,7 +2,7 @@
 
 # Định nghĩa biến
 USER_HOME="/home/$USER"
-WORKSPACE_DIR="$USER_HOME/Desktop/AK_ws"
+WORKSPACE_DIR="$USER_HOME/Desktop/AK80_64"
 LOG_FILE="$USER_HOME/turnon_script.log"
 ROS_DISTRO="humble"
 

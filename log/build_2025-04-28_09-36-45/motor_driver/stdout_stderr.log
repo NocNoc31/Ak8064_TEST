@@ -1,0 +1,12 @@
+[ 50%] Built target SetOMotor
+[ 75%] [32mBuilding CXX object CMakeFiles/ControlMotor.dir/src/ControlMotor.cpp.o[0m
+[01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:[m[K In member function ‘[01m[Kvoid MotorControlNode::returnToHome()[m[K’:
+[01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:1481:76:[m[K [01;31m[Kerror: [m[K‘[01m[Kconstexpr const float MotorController::POSITION_TOLERANCE[m[K’ is private within this context
+ 1481 |                             if (std::abs(data.position) > MotorController::[01;31m[KPOSITION_TOLERANCE[m[K) {
+      |                                                                            [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:1392:28:[m[K [01;36m[Knote: [m[Kdeclared private here
+ 1392 |     static constexpr float [01;36m[KPOSITION_TOLERANCE[m[K = 0.5; // degrees
+      |                            [01;36m[K^~~~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/ControlMotor.dir/build.make:76: CMakeFiles/ControlMotor.dir/src/ControlMotor.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/ControlMotor.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

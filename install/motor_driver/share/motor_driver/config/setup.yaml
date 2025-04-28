@@ -1,16 +1,18 @@
-motor_control_node:
+/motor_control_node:
   ros__parameters:
-    motor_ids: [104, 105]  # 0x68 = 104, 0x69 = 105
-    reach_count_max: 100
-    motor_104_target_positions: [0.0, 45.0, 90.0]
-    motor_104_speed: 10000
-    motor_104_accel: 1000
-    motor_104_min_angle: 0.0
-    motor_104_max_angle: 90.0
-    motor_105_target_positions: [0.0, 30.0, 60.0]
-    motor_105_speed: 8000
-    motor_105_accel: 800
-    motor_105_min_angle: 0.0
-    motor_105_max_angle: 90.0
+    /motor1_control_node:
+      target_positions: [0.0, 45.0, 90.0]
+      speed: 10000
+      accel: 1000
+      min_angle: 0.0
+      max_angle: 90.0
+      reach_count_max: 100
+    /motor2_control_node:
+      target_positions: [0.0, 30.0, 60.0]
+      speed: 12000
+      accel: 1500
+      min_angle: 0.0
+      max_angle: 90.0
+      reach_count_max: 100
 
 # ros2 run motor_driver motor_control_node --ros-args --params-file /home/ubuntu/AK80_64/src/motor_driver/config/setup.yaml

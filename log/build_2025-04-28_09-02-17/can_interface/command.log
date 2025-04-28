@@ -1,0 +1,4 @@
+Invoking command in '/home/ubuntu/Desktop/AK80_64/build/can_interface': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/ubuntu/Desktop/AK80_64/build/can_interface -- -j8 -l8
+Invoked command in '/home/ubuntu/Desktop/AK80_64/build/can_interface' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/ubuntu/Desktop/AK80_64/build/can_interface -- -j8 -l8
+Invoking command in '/home/ubuntu/Desktop/AK80_64/build/can_interface': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/ubuntu/Desktop/AK80_64/build/can_interface
+Invoked command in '/home/ubuntu/Desktop/AK80_64/build/can_interface' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/ubuntu/Desktop/AK80_64/build/can_interface

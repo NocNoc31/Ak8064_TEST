@@ -1,0 +1,32 @@
+[35m[1mConsolidate compiler generated dependencies of target SetOMotor[0m
+[35m[1mConsolidate compiler generated dependencies of target ControlMotor[0m
+[ 50%] Built target ControlMotor
+[100%] Built target SetOMotor
+-- Install configuration: ""
+-- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/lib/motor_driver/SetOMotor
+-- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/lib/motor_driver/ControlMotor
+-- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver//config
+-- Installing: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver//config/exercise1_params.yaml
+-- Installing: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver//config/setup.yaml
+-- Installing: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver//config/exercise2_params.yaml
+-- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver//launch
+-- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver//launch/motor_control.launch.py
+-- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/lib/motor_driver/set_params_gui.py
+-- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/lib/motor_driver/TurnOn.sh
+-- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver/config/exercise1_params.yaml
+-- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver/config/exercise2_params.yaml
+-- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/ament_index/resource_index/package_run_dependencies/motor_driver
+-- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/ament_index/resource_index/parent_prefix_path/motor_driver
+-- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver/environment/ament_prefix_path.sh
+-- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver/environment/path.sh
+-- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver/environment/path.dsv
+-- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver/local_setup.bash
+-- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver/local_setup.sh
+-- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver/local_setup.zsh
+-- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver/local_setup.dsv
+-- Installing: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver/package.dsv
+-- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/ament_index/resource_index/packages/motor_driver
+-- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver/cmake/motor_driverConfig.cmake
+-- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver/cmake/motor_driverConfig-version.cmake
+-- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver/package.xml

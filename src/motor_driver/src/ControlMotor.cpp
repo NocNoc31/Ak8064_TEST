@@ -1,263 +1,132 @@
+// // ĐANG CHAY ĐƯỢC 26/4
 
 // #include "rclcpp/rclcpp.hpp"
-// #include "can_interface/caninterface.hpp"
+// #include "rcl_interfaces/srv/set_parameters.hpp"
 // #include "std_msgs/msg/float32.hpp"
 // #include "std_msgs/msg/bool.hpp"
 // #include <vector>
 // #include <chrono>
 // #include <cmath>
-// #include <algorithm>
+// #include <memory>
+// #include <functional>
 // #include <stdexcept>
+// #include "can_interface/caninterface.hpp"
 
-// class MotorControlNode : public rclcpp::Node
-// {
+// // Giao diện trừu tượng cho CAN
+// class ICANInterface {
 // public:
-//     MotorControlNode() : Node("motor_control_node"), can("can0"), is_origin_set_(false), 
-//                         is_home_(false), current_target_index_(0), reach_counter_(0), 
-//                         target_reached_(true), last_error_log_time_(this->now())
-//     {
-//         // Khai báo tham số
-//         declare_parameter("target_positions", std::vector<double>{0.0});
-//         declare_parameter("speed", 10000);
-//         declare_parameter("accel", 1000);
-//         declare_parameter("min_angle", 0.0);
-//         declare_parameter("max_angle", 90.0);
-//         declare_parameter("reach_count_max", 100);
+//     virtual bool setOrigin(uint8_t id, uint8_t mode) = 0;
+//     virtual bool setPositionSpeed(uint8_t id, float pos, int speed, int accel) = 0;
+//     virtual bool setCurrent(uint8_t id, float current) = 0;
+//     virtual bool receive(uint32_t& id, std::vector<uint8_t>& data) = 0;
+//     virtual void decodeMotorData(const std::vector<uint8_t>& data, float& pos, float& vel, 
+//                                 float& cur, int8_t& temp, int8_t& err) = 0;
+//     virtual ~ICANInterface() = default;
+// };
 
-//         // Khởi tạo tham số
-//         initialize_parameters();
+// // Triển khai CANInterface kế thừa ICANInterface
+// class CANInterfaceWrapper : public ICANInterface {
+// public:
+//     CANInterfaceWrapper(const std::string& interface_name) : can_(interface_name) {}
 
-//         // Thực hiện SetOrigin ngay khi khởi tạo
-//         set_origin();
+//     bool setOrigin(uint8_t id, uint8_t mode) override {
+//         try {
+//             can_.setOrigin(id, mode);
+//             return true;
+//         } catch (const std::exception& e) {
+//             std::cerr << "SetOrigin failed: " << e.what() << std::endl;
+//             return false;
+//         }
+//     }
 
-//         // Thiết lập callback cho tham số
-//         param_callback_handle_ = add_on_set_parameters_callback(
-//             std::bind(&MotorControlNode::parameters_callback, this, std::placeholders::_1));
+//     bool setPositionSpeed(uint8_t id, float pos, int speed, int accel) override {
+//         try {
+//             can_.setPositionSpeed(id, pos, speed, accel);
+//             return true;
+//         } catch (const std::exception& e) {
+//             std::cerr << "SetPositionSpeed failed: " << e.what() << std::endl;
+//             return false;
+//         }
+//     }
 
-//         // Tạo publisher
-//         position_publisher_ = create_publisher<std_msgs::msg::Float32>("motor_position", 10);
-//         velocity_publisher_ = create_publisher<std_msgs::msg::Float32>("vel_actual", 10);
-//         reached_publisher_ = create_publisher<std_msgs::msg::Bool>("target_reached", 10);
+//     bool setCurrent(uint8_t id, float current) override {
+//         try {
+//             can_.setCurrent(id, current);
+//             return true;
+//         } catch (const std::exception& e) {
+//             std::cerr << "SetCurrent failed: " << e.what() << std::endl;
+//             return false;
+//         }
+//     }
 
-//         // Tạo timer (2ms để giảm tải CPU)
-//         timer_ = create_wall_timer(std::chrono::milliseconds(2), 
-//                                  std::bind(&MotorControlNode::control_loop, this));
+//     bool receive(uint32_t& id, std::vector<uint8_t>& data) override {
+//         return can_.receive(id, data);
+//     }
 
-//         // Đăng ký shutdown hook
-//         rclcpp::on_shutdown(std::bind(&MotorControlNode::safe_shutdown, this));
+//     void decodeMotorData(const std::vector<uint8_t>& data, float& pos, float& vel, 
+//                          float& cur, int8_t& temp, int8_t& err) override {
+//         can_.decodeMotorData(data, pos, vel, cur, temp, err);
 //     }
 
 // private:
-//     // Cấu trúc dữ liệu motor
-//     struct MotorData {
-//         float position = 0.0;
-//         float velocity = 0.0;
-//         float current = 0.0;
-//         int8_t temperature = 0;
-//         int8_t error = 0;
-//     };
+//     CANInterface can_;
+// };
 
-//     // Hằng số
-//     static constexpr float VELOCITY_CONVERSION_FACTOR = 2 * 180.0 / (64 * 21 * 60.0); // Chuyển đổi tốc độ sang rpm
-//     static constexpr float POSITION_TOLERANCE = 0.2; // Độ lệch vị trí cho phép (độ)
-//     static constexpr float VELOCITY_TOLERANCE = 0.1; // Độ lệch tốc độ cho phép (rpm)
-//     static constexpr int MAX_MOTOR_TEMPERATURE = 80; // Nhiệt độ tối đa (°C)
-//     static constexpr double ERROR_LOG_INTERVAL = 1.0; // Khoảng thời gian giữa các log lỗi (giây)
+// // Cấu trúc dữ liệu động cơ
+// struct MotorData {
+//     float position = 0.0;  // degrees
+//     float velocity = 0.0;  // rpm
+//     float current = 0.0;   // mA
+//     int8_t temperature = 0; // °C
+//     int8_t error = 0;      // error code
+// };
 
-//     // Khởi tạo và kiểm tra tham số
-//     void initialize_parameters()
-//     {
-//         std::vector<double> temp_positions;
-//         get_parameter("target_positions", temp_positions);
-//         get_parameter("speed", speed_);
-//         get_parameter("accel", accel_);
-//         get_parameter("min_angle", min_angle_);
-//         get_parameter("max_angle", max_angle_);
-//         get_parameter("reach_count_max", reach_count_max_);
+// // Giao diện điều khiển động cơ
+// class IMotorController {
+// public:
+//     virtual void control(const MotorData& data) = 0;
+//     virtual void setParameters(const std::vector<rcl_interfaces::msg::Parameter>& parameters) = 0;
+//     virtual bool isOriginSet() const = 0;
+//     virtual bool isTargetReached() const = 0;
+//     virtual void stop() = 0;
+//     virtual uint8_t motorId() const = 0;
+//     virtual ~IMotorController() = default;
+// };
 
-//         if (temp_positions.empty()) {
-//             RCLCPP_WARN(this->get_logger(), "No target positions provided. Using HOME (0).");
-//             temp_positions = {0.0};
-//         }
+// // Lớp kiểm tra an toàn
+// class SafetyChecker {
+// public:
+//     SafetyChecker(float min_angle, float max_angle, int max_temperature)
+//         : min_angle_(min_angle), max_angle_(max_angle), max_temperature_(max_temperature) {}
 
-//         validate_positions(temp_positions);
-//         target_positions_.resize(temp_positions.size());
-//         std::transform(temp_positions.begin(), temp_positions.end(), target_positions_.begin(),
-//                       [](double x) { return static_cast<float>(x); });
-//     }
-
-//     // Kiểm tra vị trí hợp lệ
-//     void validate_positions(const std::vector<double>& positions)
-//     {
-//         for (double pos : positions) {
-//             if (pos < min_angle_ || pos > max_angle_) {
-//                 RCLCPP_ERROR(this->get_logger(), 
-//                             "Target position %.2f out of bounds [%.2f, %.2f]", 
-//                             pos, min_angle_, max_angle_);
-//                 throw std::runtime_error("Target position out of bounds");
-//             }
-//         }
-//     }
-
-//     // Thực hiện SetOrigin
-//     void set_origin()
-//     {
-//         const uint8_t motor_id = 0x69;
-//         try {
-//             RCLCPP_INFO(this->get_logger(), "Setting motor origin...");
-//             can.setOrigin(motor_id, 0); // mode = 0 -> đặt vị trí hiện tại thành 0
-//             RCLCPP_INFO(this->get_logger(), "SetOrigin completed.");
-//         }
-//         catch (const std::exception& e) {
-//             log_error_throttled("SetOrigin failed: %s", e.what());
-//             can.setCurrent(motor_id, 0.0);
-//             throw std::runtime_error("Failed to set motor origin");
-//         }
-//     }
-
-//     // Callback thay đổi tham số
-//     rcl_interfaces::msg::SetParametersResult parameters_callback(
-//         const std::vector<rclcpp::Parameter>& parameters)
-//     {
-//         rcl_interfaces::msg::SetParametersResult result;
-//         result.successful = true;
-
-//         // Chỉ cho phép cập nhật tham số nếu đã set origin
-//         if (!is_origin_set_) {
-//             result.successful = false;
-//             result.reason = "Cannot update parameters until origin is set!";
-//             RCLCPP_WARN(this->get_logger(), "%s", result.reason.c_str());
-//             return result;
-//         }
-
-//         for (const auto& param : parameters) {
-//             if (param.get_name() == "target_positions" && !target_reached_) {
-//                 result.successful = false;
-//                 result.reason = "Cannot update target_positions until current target is reached!";
-//                 RCLCPP_WARN(this->get_logger(), "%s", result.reason.c_str());
-//                 return result;
-//             }
-//         }
-
-//         for (const auto& param : parameters) {
-//             if (param.get_name() == "target_positions") {
-//                 auto temp_positions = param.as_double_array();
-//                 validate_positions(temp_positions);
-//                 target_positions_.resize(temp_positions.size());
-//                 std::transform(temp_positions.begin(), temp_positions.end(), 
-//                               target_positions_.begin(),
-//                               [](double x) { return static_cast<float>(x); });
-//                 target_reached_ = false;
-//                 current_target_index_ = 0;
-//                 RCLCPP_INFO(this->get_logger(), 
-//                            "Updated target_positions: %ld targets", temp_positions.size());
-//             }
-//             else if (param.get_name() == "speed") {
-//                 speed_ = param.as_int();
-//             }
-//             else if (param.get_name() == "accel") {
-//                 accel_ = param.as_int();
-//             }
-//             else if (param.get_name() == "min_angle") {
-//                 min_angle_ = param.as_double();
-//             }
-//             else if (param.get_name() == "max_angle") {
-//                 max_angle_ = param.as_double();
-//             }
-//             else if (param.get_name() == "reach_count_max") {
-//                 reach_count_max_ = param.as_int();
-//             }
-//         }
-//         return result;
-//     }
-
-//     // Vòng lặp điều khiển chính
-//     void control_loop()
-//     {
-//         const uint8_t motor_id = 0x69;
-
-//         // Nhận và giải mã dữ liệu
-//         MotorData motor_data;
-//         if (!receive_and_decode_data(motor_id, motor_data)) {
-//             return;
-//         }
-
-//         // Kiểm tra an toàn
-//         if (!check_safety(motor_id, motor_data)) {
-//             return;
-//         }
-
-//         // Xuất bản trạng thái
-//         publish_motor_state(motor_data);
-
-//         // Đảm bảo set origin trước khi điều khiển
-//         if (!is_origin_set_) {
-//             if (std::abs(motor_data.position) < POSITION_TOLERANCE && 
-//                 std::abs(motor_data.velocity) < VELOCITY_TOLERANCE) {
-//                 is_origin_set_ = true;
-//                 RCLCPP_INFO(this->get_logger(), "Origin confirmed, enabling control.");
-//             }
-//             return;
-//         }
-
-//         // Điều khiển motor
-//         float target_position = is_home_ ? target_positions_[current_target_index_] : 0.0;
-//         control_motor(motor_id, target_position, motor_data);
-
-//         // Xuất bản trạng thái target_reached
-//         std_msgs::msg::Bool reached_msg;
-//         reached_msg.data = target_reached_;
-//         reached_publisher_->publish(reached_msg);
-//     }
-
-//     // Nhận và giải mã dữ liệu CAN
-//     bool receive_and_decode_data(uint8_t motor_id, MotorData& data)
-//     {
-//         uint32_t id;
-//         std::vector<uint8_t> raw_data;
-//         try {
-//             if (!can.receive(id, raw_data)) {
-//                 log_error_throttled("CAN receive failed! Stopping motor.");
-//                 can.setCurrent(motor_id, 0.0);
-//                 can.setPositionSpeed(motor_id, 0.0, 0, 0);
-//                 return false;
-//             }
-//             can.decodeMotorData(raw_data, data.position, data.velocity, 
-//                                data.current, data.temperature, data.error);
-//             data.velocity *= VELOCITY_CONVERSION_FACTOR;
-//             return true;
-//         }
-//         catch (const std::exception& e) {
-//             log_error_throttled("CAN error: %s", e.what());
-//             can.setCurrent(motor_id, 0.0);
-//             can.setPositionSpeed(motor_id, 0.0, 0, 0);
-//             return false;
-//         }
-//     }
-
-//     // Kiểm tra an toàn
-//     bool check_safety(uint8_t motor_id, const MotorData& data)
-//     {
-//         if (data.temperature > MAX_MOTOR_TEMPERATURE || data.error != 0) {
-//             log_error_throttled("Motor issue! Temp: %d°C, Error: %d", 
-//                                data.temperature, data.error);
-//             can.setCurrent(motor_id, 0.0);
-//             can.setPositionSpeed(motor_id, 0.0, 0, 0);
+//     bool check(const MotorData& data, const rclcpp::Logger& logger) const {
+//         if (data.temperature > max_temperature_ || data.error != 0) {
+//             RCLCPP_ERROR(logger, "Motor issue! Temp: %d°C, Error: %d", data.temperature, data.error);
 //             return false;
 //         }
 //         if (data.position < min_angle_ || data.position > max_angle_) {
-//             log_error_throttled("Position %.2f out of bounds [%.2f, %.2f]", 
-//                                data.position, min_angle_, max_angle_);
-//             can.setCurrent(motor_id, 0.0);
-//             can.setPositionSpeed(motor_id, 0.0, 0, 0);
+//             RCLCPP_ERROR(logger, "Position %.2f out of bounds [%.2f, %.2f]", 
+//                          data.position, min_angle_, max_angle_);
 //             return false;
 //         }
 //         return true;
 //     }
 
-//     // Xuất bản trạng thái motor
-//     void publish_motor_state(const MotorData& data)
-//     {
+// private:
+//     float min_angle_;
+//     float max_angle_;
+//     int max_temperature_;
+// };
+
+// // Lớp xuất bản trạng thái
+// class StatePublisher {
+// public:
+//     StatePublisher(rclcpp::Node* node, const std::string& name)
+//         : position_publisher_(node->create_publisher<std_msgs::msg::Float32>(name + "_position", 10)),
+//           velocity_publisher_(node->create_publisher<std_msgs::msg::Float32>(name + "_vel_actual", 10)),
+//           reached_publisher_(node->create_publisher<std_msgs::msg::Bool>(name + "_target_reached", 10)) {}
+
+//     void publish(const MotorData& data, bool target_reached) {
 //         std_msgs::msg::Float32 pos_msg;
 //         pos_msg.data = data.position;
 //         position_publisher_->publish(pos_msg);
@@ -265,120 +134,353 @@
 //         std_msgs::msg::Float32 vel_msg;
 //         vel_msg.data = data.velocity;
 //         velocity_publisher_->publish(vel_msg);
+
+//         std_msgs::msg::Bool reached_msg;
+//         reached_msg.data = target_reached;
+//         reached_publisher_->publish(reached_msg);
 //     }
 
-//     // Điều khiển motor
-//     void control_motor(uint8_t motor_id, float target_position, const MotorData& data)
-//     {
-//         try {
-//             if (!is_home_) {
-//                 can.setPositionSpeed(motor_id, 0.0, speed_, accel_);
+// private:
+//     rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr position_publisher_;
+//     rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr velocity_publisher_;
+//     rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr reached_publisher_;
+// };
+
+// // Lớp điều khiển động cơ
+// class MotorController : public IMotorController {
+// public:
+//     MotorController(uint8_t motor_id, std::shared_ptr<ICANInterface> can, 
+//                     rclcpp::Node* node, const std::string& name)
+//         : motor_id_(motor_id), can_(can), node_(node), logger_(node->get_logger()),
+//           state_(State::INITIALIZING), is_origin_set_(false), is_home_(false),
+//           current_target_index_(0), reach_counter_(0), target_reached_(true),
+//           speed_(10000), accel_(1000), min_angle_(0.0), max_angle_(90.0),
+//           reach_count_max_(100), safety_checker_(min_angle_, max_angle_, MAX_MOTOR_TEMPERATURE),
+//           state_publisher_(node, name), param_prefix_(name + ".") {
+//         initializeParameters();
+//         setOrigin();
+//     }
+
+//     void control(const MotorData& data) override {
+//         if (!safety_checker_.check(data, logger_)) {
+//             stop();
+//             return;
+//         }
+
+//         state_publisher_.publish(data, target_reached_);
+
+//         switch (state_) {
+//             case State::INITIALIZING:
+//                 if (std::abs(data.position) < POSITION_TOLERANCE && 
+//                     std::abs(data.velocity) < VELOCITY_TOLERANCE) {
+//                     is_origin_set_ = true;
+//                     transitionTo(State::HOMING);
+//                 }
+//                 break;
+//             case State::HOMING:
+//                 can_->setPositionSpeed(motor_id_, 0.0, speed_, accel_);
 //                 if (std::abs(data.position) < POSITION_TOLERANCE && 
 //                     std::abs(data.velocity) < VELOCITY_TOLERANCE) {
 //                     is_home_ = true;
 //                     target_reached_ = true;
-//                     RCLCPP_INFO(this->get_logger(), "Motor reached Home Position!");
+//                     RCLCPP_INFO(logger_, "Motor 0x%02X reached Home Position!", motor_id_);
+//                     transitionTo(State::MOVING);
 //                 }
-//                 return;
-//             }
-
-//             can.setPositionSpeed(motor_id, target_position, speed_, accel_);
-//             RCLCPP_INFO(this->get_logger(), 
-//                        "Moving to %.2f | Current: %.2f", target_position, data.position);
-
-//             bool is_reached = check_motor_status(data.position, data.velocity, target_position);
-//             if (is_reached) {
-//                 reach_counter_++;
-//                 if (reach_counter_ >= reach_count_max_) {
-//                     reach_counter_ = 0;
-//                     target_reached_ = true;
-//                     current_target_index_++;
-//                     if (current_target_index_ >= target_positions_.size()) {
-//                         current_target_index_ = target_positions_.size() - 1;
-//                         RCLCPP_INFO(this->get_logger(), "All targets reached.");
+//                 break;
+//             case State::MOVING: {
+//                 if (target_positions_.empty()) {
+//                     RCLCPP_ERROR(logger_, "Motor 0x%02X: target_positions is empty!", motor_id_);
+//                     stop();
+//                     transitionTo(State::STOPPED);
+//                     break;
+//                 }
+//                 float target = target_positions_[current_target_index_];
+//                 can_->setPositionSpeed(motor_id_, target, speed_, accel_);
+//                 bool is_reached = std::abs(data.position - target) < POSITION_TOLERANCE;
+//                 if (is_reached) {
+//                     reach_counter_++;
+//                     if (reach_counter_ >= reach_count_max_) {
+//                         reach_counter_ = 0;
+//                         target_reached_ = true;
+//                         current_target_index_++;
+//                         if (current_target_index_ >= target_positions_.size()) {
+//                             current_target_index_ = target_positions_.size() - 1;
+//                             RCLCPP_INFO(logger_, "Motor 0x%02X: All targets reached.", motor_id_);
+//                         }
 //                     }
+//                 } else {
+//                     reach_counter_ = 0;
+//                     target_reached_ = false;
 //                 }
+//                 break;
 //             }
-//             else {
-//                 reach_counter_ = 0;
-//                 target_reached_ = false;
-//             }
-//         }
-//         catch (const std::exception& e) {
-//             log_error_throttled("Control error: %s", e.what());
-//             can.setCurrent(motor_id, 0.0);
-//             can.setPositionSpeed(motor_id, 0.0, 0, 0);
+//             case State::STOPPED:
+//                 stop();
+//                 break;
+//             case State::ERROR:
+//                 break;
 //         }
 //     }
 
-//     // Kiểm tra trạng thái đạt mục tiêu
-//     bool check_motor_status(float current_position, float current_velocity, float target_position)
-//     {
-//         return (std::abs(current_position - target_position) < POSITION_TOLERANCE);
-//     }
-
-//     // Ghi log lỗi với giới hạn tần suất
-//     void log_error_throttled(const char* format, ...)
-//     {
-//         auto now = this->now();
-//         if ((now - last_error_log_time_).seconds() < ERROR_LOG_INTERVAL) {
+//     void setParameters(const std::vector<rcl_interfaces::msg::Parameter>& parameters) override {
+//         RCLCPP_INFO(logger_, "Motor 0x%02X: Received set_parameters request with %zu parameters", 
+//                     motor_id_, parameters.size());
+//         if (!is_origin_set_) {
+//             RCLCPP_WARN(logger_, "Motor 0x%02X: Cannot update parameters until origin is set!", motor_id_);
 //             return;
 //         }
-//         last_error_log_time_ = now;
+//         if (!target_reached_) {
+//             RCLCPP_WARN(logger_, "Motor 0x%02X: Cannot update target_positions until current target is reached!", 
+//                         motor_id_);
+//             return;
+//         }
 
-//         va_list args;
-//         va_start(args, format);
-//         char buffer[256];
-//         vsnprintf(buffer, sizeof(buffer), format, args);
-//         va_end(args);
-//         RCLCPP_ERROR(this->get_logger(), "%s", buffer);
+//         for (const auto& param : parameters) {
+//             RCLCPP_INFO(logger_, "Motor 0x%02X: Processing parameter: %s", motor_id_, param.name.c_str());
+//             if (param.name == "target_positions") {
+//                 auto temp_positions = param.value.double_array_value;
+//                 if (temp_positions.empty()) {
+//                     RCLCPP_ERROR(logger_, "Motor 0x%02X: Empty target_positions received!", motor_id_);
+//                     return;
+//                 }
+//                 validatePositions(temp_positions);
+//                 target_positions_.resize(temp_positions.size());
+//                 std::transform(temp_positions.begin(), temp_positions.end(), 
+//                                target_positions_.begin(),
+//                                [](double x) { return static_cast<float>(x); });
+//                 target_reached_ = false;
+//                 current_target_index_ = 0;
+//                 RCLCPP_INFO(logger_, "Motor 0x%02X: Updated target_positions: %ld targets", 
+//                             motor_id_, temp_positions.size());
+//             } else if (param.name == "speed") {
+//                 speed_ = param.value.integer_value;
+//                 validateSpeed();
+//                 RCLCPP_INFO(logger_, "Motor 0x%02X: Updated speed: %d", motor_id_, speed_);
+//             } else if (param.name == "accel") {
+//                 accel_ = param.value.integer_value;
+//                 validateAccel();
+//                 RCLCPP_INFO(logger_, "Motor 0x%02X: Updated accel: %d", motor_id_, accel_);
+//             } else {
+//                 RCLCPP_WARN(logger_, "Motor 0x%02X: Unknown parameter: %s", motor_id_, param.name.c_str());
+//             }
+//         }
 //     }
 
-//     // Tắt an toàn
-//     void safe_shutdown()
-//     {
-//         RCLCPP_WARN(this->get_logger(), 
-//                    "ROS shutdown detected! Sending zero current and stopping motor.");
+//     bool isOriginSet() const override { return is_origin_set_; }
+//     bool isTargetReached() const override { return target_reached_; }
+//     uint8_t motorId() const override { return motor_id_; }
+
+//     void stop() override {
 //         try {
-//             can.setCurrent(0x68, 0.0);
-//             can.setPositionSpeed(0x68, 0.0, 0, 0);
-//         }
-//         catch (const std::exception& e) {
-//             RCLCPP_ERROR(this->get_logger(), "Shutdown error: %s", e.what());
+//             can_->setCurrent(motor_id_, 0.0);
+//             can_->setPositionSpeed(motor_id_, 0.0, 0, 0);
+//             transitionTo(State::STOPPED);
+//         } catch (const std::exception& e) {
+//             RCLCPP_ERROR(logger_, "Motor 0x%02X: Stop failed: %s", motor_id_, e.what());
+//             transitionTo(State::ERROR);
 //         }
 //     }
 
-//     // Thành viên
-//     CANInterface can;
-//     rclcpp::TimerBase::SharedPtr timer_;
-//     rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr position_publisher_;
-//     rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr velocity_publisher_;
-//     rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr reached_publisher_;
-//     rclcpp::node_interfaces::OnSetParametersCallbackHandle::SharedPtr param_callback_handle_;
+// private:
+//     enum class State { INITIALIZING, HOMING, MOVING, STOPPED, ERROR };
 
-//     bool is_origin_set_; // Trạng thái đã set origin
+//     void initializeParameters() {
+//         // Thêm tiền tố để tránh trùng lặp
+//         node_->declare_parameter(param_prefix_ + "target_positions", std::vector<double>{0.0});
+//         node_->declare_parameter(param_prefix_ + "speed", 10000);
+//         node_->declare_parameter(param_prefix_ + "accel", 1000);
+//         node_->declare_parameter(param_prefix_ + "min_angle", 0.0);
+//         node_->declare_parameter(param_prefix_ + "max_angle", 90.0);
+//         node_->declare_parameter(param_prefix_ + "reach_count_max", 100);
+
+//         std::vector<double> temp_positions;
+//         node_->get_parameter(param_prefix_ + "target_positions", temp_positions);
+//         node_->get_parameter(param_prefix_ + "speed", speed_);
+//         node_->get_parameter(param_prefix_ + "accel", accel_);
+//         node_->get_parameter(param_prefix_ + "min_angle", min_angle_);
+//         node_->get_parameter(param_prefix_ + "max_angle", max_angle_);
+//         node_->get_parameter(param_prefix_ + "reach_count_max", reach_count_max_);
+
+//         if (temp_positions.empty()) {
+//             RCLCPP_WARN(logger_, "Motor 0x%02X: No target positions provided. Using HOME (0).", motor_id_);
+//             temp_positions = {0.0};
+//         }
+
+//         validatePositions(temp_positions);
+//         target_positions_.resize(temp_positions.size());
+//         std::transform(temp_positions.begin(), temp_positions.end(), target_positions_.begin(),
+//                        [](double x) { return static_cast<float>(x); });
+
+//         validateSpeed();
+//         validateAccel();
+//     }
+
+//     void validatePositions(const std::vector<double>& positions) {
+//         for (double pos : positions) {
+//             if (pos < min_angle_ || pos > max_angle_) {
+//                 RCLCPP_ERROR(logger_, "Motor 0x%02X: Target position %.2f out of bounds [%.2f, %.2f]", 
+//                              motor_id_, pos, min_angle_, max_angle_);
+//                 throw std::runtime_error("Target position out of bounds");
+//             }
+//         }
+//     }
+
+//     void validateSpeed() {
+//         if (speed_ <= 0 || speed_ > 50000) {
+//             RCLCPP_ERROR(logger_, "Motor 0x%02X: Speed %d out of bounds [1, 50000]", motor_id_, speed_);
+//             throw std::runtime_error("Speed out of bounds");
+//         }
+//     }
+
+//     void validateAccel() {
+//         if (accel_ <= 0 || accel_ > 10000) {
+//             RCLCPP_ERROR(logger_, "Motor 0x%02X: Accel %d out of bounds [1, 10000]", motor_id_, accel_);
+//             throw std::runtime_error("Accel out of bounds");
+//         }
+//     }
+
+//     void setOrigin() {
+//         try {
+//             RCLCPP_INFO(logger_, "Motor 0x%02X: Setting motor origin...", motor_id_);
+//             if (!can_->setOrigin(motor_id_, 0)) {
+//                 throw std::runtime_error("SetOrigin failed");
+//             }
+//             RCLCPP_INFO(logger_, "Motor 0x%02X: SetOrigin completed.", motor_id_);
+//         } catch (const std::exception& e) {
+//             RCLCPP_ERROR(logger_, "Motor 0x%02X: SetOrigin failed: %s", motor_id_, e.what());
+//             stop();
+//             throw std::runtime_error("Failed to set motor origin");
+//         }
+//     }
+
+//     void transitionTo(State new_state) {
+//         if (state_ != new_state) {
+//             RCLCPP_INFO(logger_, "Motor 0x%02X: Transitioning from %d to %d", 
+//                         motor_id_, static_cast<int>(state_), static_cast<int>(new_state));
+//             state_ = new_state;
+//         }
+//     }
+
+// public:
+//     static constexpr float VELOCITY_CONVERSION_FACTOR = 2 * 180.0 / (64 * 21 * 60.0); // rpm
+// private:
+//     static constexpr float POSITION_TOLERANCE = 0.2; // degrees
+//     static constexpr float VELOCITY_TOLERANCE = 0.1; // rpm
+//     static constexpr int MAX_MOTOR_TEMPERATURE = 80; // °C
+
+//     uint8_t motor_id_;
+//     std::shared_ptr<ICANInterface> can_;
+//     rclcpp::Node* node_;
+//     rclcpp::Logger logger_;
+//     State state_;
+//     bool is_origin_set_;
 //     bool is_home_;
 //     std::vector<float> target_positions_;
 //     int current_target_index_;
 //     int reach_counter_;
 //     int reach_count_max_;
-//     int speed_;
-//     int accel_;
+//     int speed_;  // pulses per second
+//     int accel_;  // pulses per second^2
 //     bool target_reached_;
 //     float min_angle_;
 //     float max_angle_;
-//     rclcpp::Time last_error_log_time_;
+//     SafetyChecker safety_checker_;
+//     StatePublisher state_publisher_;
+//     std::string param_prefix_; // Tiền tố cho tham số
 // };
 
-// int main(int argc, char **argv)
-// {
+// // Lớp chính điều phối
+// class MotorControlNode : public rclcpp::Node {
+// public:
+//     MotorControlNode() : Node("motor_control_node") {
+//         can_ = std::make_shared<CANInterfaceWrapper>("can0");
+//         timer_ = create_wall_timer(std::chrono::milliseconds(2), 
+//                                   std::bind(&MotorControlNode::controlLoop, this));
+
+//         // Khởi tạo hai động cơ
+//         controllers_.push_back(std::make_unique<MotorController>(
+//             0x68, can_, this, "/motor1_control_node"));
+//         controllers_.push_back(std::make_unique<MotorController>(
+//             0x69, can_, this, "/motor2_control_node"));
+
+//         // Tạo service cho mỗi động cơ
+//         services_.push_back(create_service<rcl_interfaces::srv::SetParameters>(
+//             "/motor1_control_node/set_parameters",
+//             std::bind(&MotorControlNode::setParametersCallback, this, std::placeholders::_1,
+//                       std::placeholders::_2, 0)));
+//         services_.push_back(create_service<rcl_interfaces::srv::SetParameters>(
+//             "/motor2_control_node/set_parameters",
+//             std::bind(&MotorControlNode::setParametersCallback, this, std::placeholders::_1,
+//                       std::placeholders::_2, 1)));
+
+//         rclcpp::on_shutdown(std::bind(&MotorControlNode::safeShutdown, this));
+//     }
+
+// private:
+//     void controlLoop() {
+//         uint32_t id;
+//         std::vector<uint8_t> raw_data;
+//         try {
+//             if (can_->receive(id, raw_data)) {
+//                 for (const auto& controller : controllers_) {
+//                     if (id == controller->motorId()) {
+//                         MotorData data;
+//                         can_->decodeMotorData(raw_data, data.position, data.velocity, data.current,
+//                                               data.temperature, data.error);
+//                         data.velocity *= MotorController::VELOCITY_CONVERSION_FACTOR;
+//                         controller->control(data);
+//                     }
+//                 }
+//             }
+//         } catch (const std::exception& e) {
+//             RCLCPP_ERROR(get_logger(), "CAN error: %s", e.what());
+//             for (const auto& controller : controllers_) {
+//                 controller->stop();
+//             }
+//         }
+//     }
+
+//     void setParametersCallback(
+//         const std::shared_ptr<rcl_interfaces::srv::SetParameters::Request> request,
+//         std::shared_ptr<rcl_interfaces::srv::SetParameters::Response> response,
+//         size_t controller_index) {
+//         RCLCPP_INFO(get_logger(), "Received set_parameters request for controller index: %zu", controller_index);
+//         if (controller_index >= controllers_.size()) {
+//             RCLCPP_ERROR(get_logger(), "Invalid controller index: %zu", controller_index);
+//             response->results.resize(request->parameters.size());
+//             for (size_t i = 0; i < request->parameters.size(); ++i) {
+//                 response->results[i].successful = false;
+//                 response->results[i].reason = "Invalid controller index";
+//             }
+//             return;
+//         }
+//         controllers_[controller_index]->setParameters(request->parameters);
+//         response->results.resize(request->parameters.size());
+//         for (size_t i = 0; i < request->parameters.size(); ++i) {
+//             response->results[i].successful = true;
+//             response->results[i].reason = "";
+//         }
+//     }
+
+//     void safeShutdown() {
+//         RCLCPP_WARN(get_logger(), "ROS shutdown detected! Stopping motors.");
+//         for (const auto& controller : controllers_) {
+//             controller->stop();
+//         }
+//     }
+
+//     std::shared_ptr<ICANInterface> can_;
+//     rclcpp::TimerBase::SharedPtr timer_;
+//     std::vector<std::unique_ptr<IMotorController>> controllers_;
+//     std::vector<rclcpp::Service<rcl_interfaces::srv::SetParameters>::SharedPtr> services_;
+// };
+
+// int main(int argc, char** argv) {
 //     rclcpp::init(argc, argv);
 //     try {
 //         rclcpp::spin(std::make_shared<MotorControlNode>());
-//     }
-//     catch (const std::exception& e) {
-//         RCLCPP_ERROR(rclcpp::get_logger("motor_control_node"), 
-//                     "Fatal error: %s", e.what());
+//     } catch (const std::exception& e) {
+//         RCLCPP_ERROR(rclcpp::get_logger("motor_control_node"), "Fatal error: %s", e.what());
 //     }
 //     rclcpp::shutdown();
 //     return 0;
@@ -392,478 +494,1094 @@
 
 
 
+
+
+
+
+
+
+
+// // // ĐANG CHAY ĐƯỢC 26/4
+// #include "rclcpp/rclcpp.hpp"
+// #include "rcl_interfaces/srv/set_parameters.hpp"
+// #include "std_msgs/msg/float32.hpp"
+// #include "std_msgs/msg/bool.hpp"
+// #include "std_msgs/msg/string.hpp" // Thêm cho trạng thái
+// #include <vector>
+// #include <chrono>
+// #include <cmath>
+// #include <memory>
+// #include <functional>
+// #include <stdexcept>
+// #include "can_interface/caninterface.hpp"
+
+// // Giao diện trừu tượng cho CAN
+// class ICANInterface {
+// public:
+//     virtual bool setOrigin(uint8_t id, uint8_t mode) = 0;
+//     virtual bool setPositionSpeed(uint8_t id, float pos, int speed, int accel) = 0;
+//     virtual bool setCurrent(uint8_t id, float current) = 0;
+//     virtual bool receive(uint32_t& id, std::vector<uint8_t>& data) = 0;
+//     virtual void decodeMotorData(const std::vector<uint8_t>& data, float& pos, float& vel, 
+//                                 float& cur, int8_t& temp, int8_t& err) = 0;
+//     virtual ~ICANInterface() = default;
+// };
+
+// // Triển khai CANInterface kế thừa ICANInterface
+// class CANInterfaceWrapper : public ICANInterface {
+// public:
+//     CANInterfaceWrapper(const std::string& interface_name) : can_(interface_name) {}
+
+//     bool setOrigin(uint8_t id, uint8_t mode) override {
+//         try {
+//             can_.setOrigin(id, mode);
+//             return true;
+//         } catch (const std::exception& e) {
+//             std::cerr << "SetOrigin failed: " << e.what() << std::endl;
+//             return false;
+//         }
+//     }
+
+//     bool setPositionSpeed(uint8_t id, float pos, int speed, int accel) override {
+//         try {
+//             can_.setPositionSpeed(id, pos, speed, accel);
+//             return true;
+//         } catch (const std::exception& e) {
+//             std::cerr << "SetPositionSpeed failed: " << e.what() << std::endl;
+//             return false;
+//         }
+//     }
+
+//     bool setCurrent(uint8_t id, float current) override {
+//         try {
+//             can_.setCurrent(id, current);
+//             return true;
+//         } catch (const std::exception& e) {
+//             std::cerr << "SetCurrent failed: " << e.what() << std::endl;
+//             return false;
+//         }
+//     }
+
+//     bool receive(uint32_t& id, std::vector<uint8_t>& data) override {
+//         return can_.receive(id, data);
+//     }
+
+//     void decodeMotorData(const std::vector<uint8_t>& data, float& pos, float& vel, 
+//                          float& cur, int8_t& temp, int8_t& err) override {
+//         can_.decodeMotorData(data, pos, vel, cur, temp, err);
+//     }
+
+// private:
+//     CANInterface can_;
+// };
+
+// // Cấu trúc dữ liệu động cơ
+// struct MotorData {
+//     float position = 0.0;  // degrees
+//     float velocity = 0.0;  // rpm
+//     float current = 0.0;   // mA
+//     int8_t temperature = 0; // °C
+//     int8_t error = 0;      // error code
+// };
+
+// // Giao diện điều khiển động cơ
+// class IMotorController {
+// public:
+//     virtual void control(const MotorData& data) = 0;
+//     virtual void setParameters(const std::vector<rcl_interfaces::msg::Parameter>& parameters) = 0;
+//     virtual bool isOriginSet() const = 0;
+//     virtual bool isTargetReached() const = 0;
+//     virtual void stop() = 0;
+//     virtual uint8_t motorId() const = 0;
+//     virtual ~IMotorController() = default;
+// };
+
+// // Lớp kiểm tra an toàn
+// class SafetyChecker {
+// public:
+//     SafetyChecker(float min_angle, float max_angle, int max_temperature)
+//         : min_angle_(min_angle), max_angle_(max_angle), max_temperature_(max_temperature) {}
+
+//     bool check(const MotorData& data, const rclcpp::Logger& logger) const {
+//         if (data.temperature > max_temperature_ || data.error != 0) {
+//             RCLCPP_ERROR(logger, "Motor issue! Temp: %d°C, Error: %d", data.temperature, data.error);
+//             return false;
+//         }
+//         if (data.position < min_angle_ || data.position > max_angle_) {
+//             RCLCPP_ERROR(logger, "Position %.2f out of bounds [%.2f, %.2f]", 
+//                          data.position, min_angle_, max_angle_);
+//             return false;
+//         }
+//         return true;
+//     }
+
+// private:
+//     float min_angle_;
+//     float max_angle_;
+//     int max_temperature_;
+// };
+
+// // Lớp xuất bản trạng thái
+// class StatePublisher {
+// public:
+//     StatePublisher(rclcpp::Node* node, const std::string& name)
+//         : position_publisher_(node->create_publisher<std_msgs::msg::Float32>(name + "/_position", 10)),
+//           velocity_publisher_(node->create_publisher<std_msgs::msg::Float32>(name + "/_vel_actual", 10)),
+//           reached_publisher_(node->create_publisher<std_msgs::msg::Bool>(name + "/_target_reached", 10)),
+//           state_publisher_(node->create_publisher<std_msgs::msg::String>(name + "/_state", 10)) {}
+
+//     void publish(const MotorData& data, bool target_reached, const std::string& state) {
+//         std_msgs::msg::Float32 pos_msg;
+//         pos_msg.data = data.position;
+//         position_publisher_->publish(pos_msg);
+
+//         std_msgs::msg::Float32 vel_msg;
+//         vel_msg.data = data.velocity;
+//         velocity_publisher_->publish(vel_msg);
+
+//         std_msgs::msg::Bool reached_msg;
+//         reached_msg.data = target_reached;
+//         reached_publisher_->publish(reached_msg);
+
+//         std_msgs::msg::String state_msg;
+//         state_msg.data = state;
+//         state_publisher_->publish(state_msg);
+//     }
+
+// private:
+//     rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr position_publisher_;
+//     rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr velocity_publisher_;
+//     rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr reached_publisher_;
+//     rclcpp::Publisher<std_msgs::msg::String>::SharedPtr state_publisher_; // Publisher cho trạng thái
+// };
+
+// // Lớp điều khiển động cơ
+// class MotorController : public IMotorController {
+// public:
+//     MotorController(uint8_t motor_id, std::shared_ptr<ICANInterface> can, 
+//                     rclcpp::Node* node, const std::string& name)
+//         : motor_id_(motor_id), can_(can), node_(node), logger_(node->get_logger()),
+//           state_(State::INITIALIZING), is_origin_set_(false), is_home_(false),
+//           current_target_index_(0), reach_counter_(0), target_reached_(true),
+//           speed_(10000), accel_(1000), min_angle_(0.0), max_angle_(90.0),
+//           reach_count_max_(100), safety_checker_(min_angle_, max_angle_, MAX_MOTOR_TEMPERATURE),
+//           state_publisher_(node, name), param_prefix_(name + ".") {
+//         initializeParameters();
+//         setOrigin();
+//     }
+
+//     void control(const MotorData& data) override {
+//         if (!safety_checker_.check(data, logger_)) {
+//             stop();
+//             return;
+//         }
+
+//         // Chuyển đổi trạng thái thành chuỗi
+//         std::string state_str;
+//         switch (state_) {
+//             case State::INITIALIZING: state_str = "INITIALIZING"; break;
+//             case State::HOMING: state_str = "HOMING"; break;
+//             case State::MOVING: state_str = "MOVING"; break;
+//             case State::STOPPED: state_str = "STOPPED"; break;
+//             case State::ERROR: state_str = "ERROR"; break;
+//         }
+
+//         state_publisher_.publish(data, target_reached_, state_str);
+
+//         switch (state_) {
+//             case State::INITIALIZING:
+//                 if (std::abs(data.position) < POSITION_TOLERANCE && 
+//                     std::abs(data.velocity) < VELOCITY_TOLERANCE) {
+//                     is_origin_set_ = true;
+//                     transitionTo(State::HOMING);
+//                 }
+//                 break;
+//             case State::HOMING:
+//                 can_->setPositionSpeed(motor_id_, 0.0, speed_, accel_);
+//                 if (std::abs(data.position) < POSITION_TOLERANCE && 
+//                     std::abs(data.velocity) < VELOCITY_TOLERANCE) {
+//                     is_home_ = true;
+//                     target_reached_ = true;
+//                     RCLCPP_INFO(logger_, "Motor 0x%02X reached Home Position!", motor_id_);
+//                     transitionTo(State::MOVING);
+//                 }
+//                 break;
+//             case State::MOVING: {
+//                 if (target_positions_.empty()) {
+//                     RCLCPP_ERROR(logger_, "Motor 0x%02X: target_positions is empty!", motor_id_);
+//                     stop();
+//                     transitionTo(State::STOPPED);
+//                     break;
+//                 }
+//                 float target = target_positions_[current_target_index_];
+//                 can_->setPositionSpeed(motor_id_, target, speed_, accel_);
+//                 bool is_reached = std::abs(data.position - target) < POSITION_TOLERANCE;
+//                 if (is_reached) {
+//                     reach_counter_++;
+//                     if (reach_counter_ >= reach_count_max_) {
+//                         reach_counter_ = 0;
+//                         target_reached_ = true;
+//                         current_target_index_++;
+//                         if (current_target_index_ >= target_positions_.size()) {
+//                             current_target_index_ = target_positions_.size() - 1;
+//                             RCLCPP_INFO(logger_, "Motor 0x%02X: All targets reached.", motor_id_);
+//                         }
+//                     }
+//                 } else {
+//                     reach_counter_ = 0;
+//                     target_reached_ = false;
+//                 }
+//                 break;
+//             }
+//             case State::STOPPED:
+//                 stop();
+//                 break;
+//             case State::ERROR:
+//                 break;
+//         }
+//     }
+
+//     void setParameters(const std::vector<rcl_interfaces::msg::Parameter>& parameters) override {
+//         RCLCPP_INFO(logger_, "Motor 0x%02X: Received set_parameters request with %zu parameters", 
+//                     motor_id_, parameters.size());
+//         if (!is_origin_set_) {
+//             RCLCPP_WARN(logger_, "Motor 0x%02X: Cannot update parameters until origin is set!", motor_id_);
+//             return;
+//         }
+//         if (!target_reached_) {
+//             RCLCPP_WARN(logger_, "Motor 0x%02X: Cannot update target_positions until current target is reached!", 
+//                         motor_id_);
+//             return;
+//         }
+
+//         for (const auto& param : parameters) {
+//             RCLCPP_INFO(logger_, "Motor 0x%02X: Processing parameter: %s", motor_id_, param.name.c_str());
+//             if (param.name == "target_positions") {
+//                 auto temp_positions = param.value.double_array_value;
+//                 if (temp_positions.empty()) {
+//                     RCLCPP_ERROR(logger_, "Motor 0x%02X: Empty target_positions received!", motor_id_);
+//                     return;
+//                 }
+//                 validatePositions(temp_positions);
+//                 target_positions_.resize(temp_positions.size());
+//                 std::transform(temp_positions.begin(), temp_positions.end(), 
+//                                target_positions_.begin(),
+//                                [](double x) { return static_cast<float>(x); });
+//                 target_reached_ = false;
+//                 current_target_index_ = 0;
+//                 RCLCPP_INFO(logger_, "Motor 0x%02X: Updated target_positions: %ld targets", 
+//                             motor_id_, temp_positions.size());
+//             } else if (param.name == "speed") {
+//                 speed_ = param.value.integer_value;
+//                 validateSpeed();
+//                 RCLCPP_INFO(logger_, "Motor 0x%02X: Updated speed: %d", motor_id_, speed_);
+//             } else if (param.name == "accel") {
+//                 accel_ = param.value.integer_value;
+//                 validateAccel();
+//                 RCLCPP_INFO(logger_, "Motor 0x%02X: Updated accel: %d", motor_id_, accel_);
+//             } else {
+//                 RCLCPP_WARN(logger_, "Motor 0x%02X: Unknown parameter: %s", motor_id_, param.name.c_str());
+//             }
+//         }
+//     }
+
+//     bool isOriginSet() const override { return is_origin_set_; }
+//     bool isTargetReached() const override { return target_reached_; }
+//     uint8_t motorId() const override { return motor_id_; }
+
+//     void stop() override {
+//         try {
+//             can_->setCurrent(motor_id_, 0.0);
+//             can_->setPositionSpeed(motor_id_, 0.0, 0, 0);
+//             transitionTo(State::STOPPED);
+//         } catch (const std::exception& e) {
+//             RCLCPP_ERROR(logger_, "Motor 0x%02X: Stop failed: %s", motor_id_, e.what());
+//             transitionTo(State::ERROR);
+//         }
+//     }
+
+// private:
+//     enum class State { INITIALIZING, HOMING, MOVING, STOPPED, ERROR };
+
+//     void initializeParameters() {
+//         node_->declare_parameter(param_prefix_ + "target_positions", std::vector<double>{0.0});
+//         node_->declare_parameter(param_prefix_ + "speed", 10000);
+//         node_->declare_parameter(param_prefix_ + "accel", 1000);
+//         node_->declare_parameter(param_prefix_ + "min_angle", 0.0);
+//         node_->declare_parameter(param_prefix_ + "max_angle", 90.0);
+//         node_->declare_parameter(param_prefix_ + "reach_count_max", 100);
+
+//         std::vector<double> temp_positions;
+//         node_->get_parameter(param_prefix_ + "target_positions", temp_positions);
+//         node_->get_parameter(param_prefix_ + "speed", speed_);
+//         node_->get_parameter(param_prefix_ + "accel", accel_);
+//         node_->get_parameter(param_prefix_ + "min_angle", min_angle_);
+//         node_->get_parameter(param_prefix_ + "max_angle", max_angle_);
+//         node_->get_parameter(param_prefix_ + "reach_count_max", reach_count_max_);
+
+//         if (temp_positions.empty()) {
+//             RCLCPP_WARN(logger_, "Motor 0x%02X: No target positions provided. Using HOME (0).", motor_id_);
+//             temp_positions = {0.0};
+//         }
+
+//         validatePositions(temp_positions);
+//         target_positions_.resize(temp_positions.size());
+//         std::transform(temp_positions.begin(), temp_positions.end(), target_positions_.begin(),
+//                        [](double x) { return static_cast<float>(x); });
+
+//         validateSpeed();
+//         validateAccel();
+//     }
+
+//     void validatePositions(const std::vector<double>& positions) {
+//         for (double pos : positions) {
+//             if (pos < min_angle_ || pos > max_angle_) {
+//                 RCLCPP_ERROR(logger_, "Motor 0x%02X: Target position %.2f out of bounds [%.2f, %.2f]", 
+//                              motor_id_, pos, min_angle_, max_angle_);
+//                 throw std::runtime_error("Target position out of bounds");
+//             }
+//         }
+//     }
+
+//     void validateSpeed() {
+//         if (speed_ <= 0 || speed_ > 50000) {
+//             RCLCPP_ERROR(logger_, "Motor 0x%02X: Speed %d out of bounds [1, 50000]", motor_id_, speed_);
+//             throw std::runtime_error("Speed out of bounds");
+//         }
+//     }
+
+//     void validateAccel() {
+//         if (accel_ <= 0 || accel_ > 10000) {
+//             RCLCPP_ERROR(logger_, "Motor 0x%02X: Accel %d out of bounds [1, 10000]", motor_id_, accel_);
+//             throw std::runtime_error("Accel out of bounds");
+//         }
+//     }
+
+//     void setOrigin() {
+//         try {
+//             RCLCPP_INFO(logger_, "Motor 0x%02X: Setting motor origin...", motor_id_);
+//             if (!can_->setOrigin(motor_id_, 0)) {
+//                 throw std::runtime_error("SetOrigin failed");
+//             }
+//             RCLCPP_INFO(logger_, "Motor 0x%02X: SetOrigin completed.", motor_id_);
+//         } catch (const std::exception& e) {
+//             RCLCPP_ERROR(logger_, "Motor 0x%02X: SetOrigin failed: %s", motor_id_, e.what());
+//             stop();
+//             throw std::runtime_error("Failed to set motor origin");
+//         }
+//     }
+
+//     void transitionTo(State new_state) {
+//         if (state_ != new_state) {
+//             RCLCPP_INFO(logger_, "Motor 0x%02X: Transitioning from %d to %d", 
+//                         motor_id_, static_cast<int>(state_), static_cast<int>(new_state));
+//             state_ = new_state;
+//         }
+//     }
+
+// public:
+//     static constexpr float VELOCITY_CONVERSION_FACTOR = 2 * 180.0 / (64 * 21 * 60.0); // rpm
+// private:
+//     static constexpr float POSITION_TOLERANCE = 0.2; // degrees
+//     static constexpr float VELOCITY_TOLERANCE = 0.1; // rpm
+//     static constexpr int MAX_MOTOR_TEMPERATURE = 80; // °C
+
+//     uint8_t motor_id_;
+//     std::shared_ptr<ICANInterface> can_;
+//     rclcpp::Node* node_;
+//     rclcpp::Logger logger_;
+//     State state_;
+//     bool is_origin_set_;
+//     bool is_home_;
+//     std::vector<float> target_positions_;
+//     int current_target_index_;
+//     int reach_counter_;
+//     int reach_count_max_;
+//     int speed_;  // pulses per second
+//     int accel_;  // pulses per second^2
+//     bool target_reached_;
+//     float min_angle_;
+//     float max_angle_;
+//     SafetyChecker safety_checker_;
+//     StatePublisher state_publisher_;
+//     std::string param_prefix_;
+// };
+
+// // Lớp chính điều phối
+// class MotorControlNode : public rclcpp::Node {
+// public:
+//     MotorControlNode() : Node("motor_control_node") {
+//         can_ = std::make_shared<CANInterfaceWrapper>("can0");
+//         timer_ = create_wall_timer(std::chrono::milliseconds(2), 
+//                                   std::bind(&MotorControlNode::controlLoop, this));
+
+//         controllers_.push_back(std::make_unique<MotorController>(
+//             0x68, can_, this, "/motor1_control_node"));
+//         controllers_.push_back(std::make_unique<MotorController>(
+//             0x69, can_, this, "/motor2_control_node"));
+
+//         services_.push_back(create_service<rcl_interfaces::srv::SetParameters>(
+//             "/motor1_control_node/set_parameters",
+//             std::bind(&MotorControlNode::setParametersCallback, this, std::placeholders::_1,
+//                       std::placeholders::_2, 0)));
+//         services_.push_back(create_service<rcl_interfaces::srv::SetParameters>(
+//             "/motor2_control_node/set_parameters",
+//             std::bind(&MotorControlNode::setParametersCallback, this, std::placeholders::_1,
+//                       std::placeholders::_2, 1)));
+
+//         rclcpp::on_shutdown(std::bind(&MotorControlNode::safeShutdown, this));
+//     }
+
+// private:
+//     void controlLoop() {
+//         uint32_t id;
+//         std::vector<uint8_t> raw_data;
+//         try {
+//             if (can_->receive(id, raw_data)) {
+//                 for (const auto& controller : controllers_) {
+//                     if (id == controller->motorId()) {
+//                         MotorData data;
+//                         can_->decodeMotorData(raw_data, data.position, data.velocity, data.current,
+//                                               data.temperature, data.error);
+//                         data.velocity *= MotorController::VELOCITY_CONVERSION_FACTOR;
+//                         controller->control(data);
+//                     }
+//                 }
+//             }
+//         } catch (const std::exception& e) {
+//             RCLCPP_ERROR(get_logger(), "CAN error: %s", e.what());
+//             for (const auto& controller : controllers_) {
+//                 controller->stop();
+//             }
+//         }
+//     }
+
+//     void setParametersCallback(
+//         const std::shared_ptr<rcl_interfaces::srv::SetParameters::Request> request,
+//         std::shared_ptr<rcl_interfaces::srv::SetParameters::Response> response,
+//         size_t controller_index) {
+//         RCLCPP_INFO(get_logger(), "Received set_parameters request for controller index: %zu", controller_index);
+//         if (controller_index >= controllers_.size()) {
+//             RCLCPP_ERROR(get_logger(), "Invalid controller index: %zu", controller_index);
+//             response->results.resize(request->parameters.size());
+//             for (size_t i = 0; i < request->parameters.size(); ++i) {
+//                 response->results[i].successful = false;
+//                 response->results[i].reason = "Invalid controller index";
+//             }
+//             return;
+//         }
+//         controllers_[controller_index]->setParameters(request->parameters);
+//         response->results.resize(request->parameters.size());
+//         for (size_t i = 0; i < request->parameters.size(); ++i) {
+//             response->results[i].successful = true;
+//             response->results[i].reason = "";
+//         }
+//     }
+
+//     void safeShutdown() {
+//         RCLCPP_WARN(get_logger(), "ROS shutdown detected! Stopping motors.");
+//         for (const auto& controller : controllers_) {
+//             controller->stop();
+//         }
+//     }
+
+//     std::shared_ptr<ICANInterface> can_;
+//     rclcpp::TimerBase::SharedPtr timer_;
+//     std::vector<std::unique_ptr<IMotorController>> controllers_;
+//     std::vector<rclcpp::Service<rcl_interfaces::srv::SetParameters>::SharedPtr> services_;
+// };
+
+// int main(int argc, char** argv) {
+//     rclcpp::init(argc, argv);
+//     try {
+//         rclcpp::spin(std::make_shared<MotorControlNode>());
+//     } catch (const std::exception& e) {
+//         RCLCPP_ERROR(rclcpp::get_logger("motor_control_node"), "Fatal error: %s", e.what());
+//     }
+//     rclcpp::shutdown();
+//     return 0;
+// }
+
+
+
+
+
+// CẬP NHÂT CHẾ ĐÔ VỀ HOME KHI CTRL C, KILL NODE VV
 #include "rclcpp/rclcpp.hpp"
-#include "can_interface/caninterface.hpp"
+#include "rcl_interfaces/srv/set_parameters.hpp"
 #include "std_msgs/msg/float32.hpp"
 #include "std_msgs/msg/bool.hpp"
+#include "std_msgs/msg/string.hpp"
 #include <vector>
 #include <chrono>
 #include <cmath>
-#include <algorithm>
+#include <memory>
+#include <functional>
 #include <stdexcept>
-#include <map>
-#include <sstream>
+#include <csignal>
+#include <thread>
+#include "can_interface/caninterface.hpp"
 
-class MotorControlNode : public rclcpp::Node
-{
+// Giao diện trừu tượng cho CAN
+class ICANInterface {
 public:
-    MotorControlNode() : Node("motor_control_node"), can("can0")
-    {
-        // Khai báo tham số chung
-        declare_parameter("motor_ids", std::vector<long int>{0x68, 0x69});
-        declare_parameter("reach_count_max", 100);
+    virtual bool setOrigin(uint8_t id, uint8_t mode) = 0;
+    virtual bool setPositionSpeed(uint8_t id, float pos, int speed, int accel) = 0;
+    virtual bool setCurrent(uint8_t id, float current) = 0;
+    virtual bool receive(uint32_t& id, std::vector<uint8_t>& data) = 0;
+    virtual void decodeMotorData(const std::vector<uint8_t>& data, float& pos, float& vel, 
+                                float& cur, int8_t& temp, int8_t& err) = 0;
+    virtual ~ICANInterface() = default;
+};
 
-        // Khởi tạo tham số và cấu hình động cơ
-        initialize_parameters();
+// Triển khai CANInterface kế thừa ICANInterface
+class CANInterfaceWrapper : public ICANInterface {
+public:
+    explicit CANInterfaceWrapper(const std::string& interface_name) : can_(interface_name) {}
 
-        // Thực hiện SetOrigin cho tất cả động cơ
-        set_origin_all();
+    bool setOrigin(uint8_t id, uint8_t mode) override {
+        try {
+            can_.setOrigin(id, mode);
+            return true;
+        } catch (const std::exception& e) {
+            std::cerr << "SetOrigin failed: " << e.what() << std::endl;
+            return false;
+        }
+    }
 
-        // Thiết lập callback cho tham số
-        param_callback_handle_ = add_on_set_parameters_callback(
-            std::bind(&MotorControlNode::parameters_callback, this, std::placeholders::_1));
+    bool setPositionSpeed(uint8_t id, float pos, int speed, int accel) override {
+        try {
+            can_.setPositionSpeed(id, pos, speed, accel);
+            return true;
+        } catch (const std::exception& e) {
+            std::cerr << "SetPositionSpeed failed: " << e.what() << std::endl;
+            return false;
+        }
+    }
 
-        // Tạo publisher riêng cho từng động cơ
-        initialize_publishers();
+    bool setCurrent(uint8_t id, float current) override {
+        try {
+            can_.setCurrent(id, current);
+            return true;
+        } catch (const std::exception& e) {
+            std::cerr << "SetCurrent failed: " << e.what() << std::endl;
+            return false;
+        }
+    }
 
-        // Tạo timer (2ms để giảm tải CPU)
-        timer_ = create_wall_timer(std::chrono::milliseconds(5),
-                                  std::bind(&MotorControlNode::control_loop, this));
+    bool receive(uint32_t& id, std::vector<uint8_t>& data) override {
+        return can_.receive(id, data);
+    }
 
-        // Đăng ký shutdown hook
-        rclcpp::on_shutdown(std::bind(&MotorControlNode::safe_shutdown, this));
+    void decodeMotorData(const std::vector<uint8_t>& data, float& pos, float& vel, 
+                         float& cur, int8_t& temp, int8_t& err) override {
+        can_.decodeMotorData(data, pos, vel, cur, temp, err);
     }
 
 private:
-    // Cấu trúc dữ liệu motor
-    struct MotorData {
-        float position = 0.0;
-        float velocity = 0.0;
-        float current = 0.0;
-        int8_t temperature = 0;
-        int8_t error = 0;
-    };
+    CANInterface can_;
+};
 
-    // Cấu trúc cấu hình động cơ
-    struct MotorConfig {
-        uint8_t id;
-        std::vector<float> target_positions;
-        int speed = 10000;
-        int accel = 1000;
-        float min_angle = 0.0;
-        float max_angle = 90.0;
-        bool is_origin_set = false;
-        bool is_home = false;
-        int current_target_index = 0;
-        int reach_counter = 0;
-        bool target_reached = true;
-        rclcpp::Time last_error_log_time;
-        rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr position_publisher;
-        rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr velocity_publisher;
-        rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr reached_publisher;
-    };
+// Cấu trúc dữ liệu động cơ
+struct MotorData {
+    float position = 0.0;  // degrees
+    float velocity = 0.0;  // rpm
+    float current = 0.0;   // mA
+    int8_t temperature = 0; // °C
+    int8_t error = 0;      // error code
+};
 
-    // Hằng số
-    static constexpr float VELOCITY_CONVERSION_FACTOR = 2 * 180.0 / (64 * 21 * 60.0);
-    static constexpr float POSITION_TOLERANCE = 0.5;
-    static constexpr float VELOCITY_TOLERANCE = 0.2;
-    static constexpr int MAX_MOTOR_TEMPERATURE = 80;
-    static constexpr double ERROR_LOG_INTERVAL = 1.0;
-    static constexpr float MAX_MOTOR_CURRENT = 16.0; // A, tùy thuộc vào động cơ
+// Giao diện điều khiển động cơ
+class IMotorController {
+public:
+    virtual void control(const MotorData& data) = 0;
+    virtual void setParameters(const std::vector<rcl_interfaces::msg::Parameter>& parameters) = 0;
+    virtual bool isOriginSet() const = 0;
+    virtual bool isTargetReached() const = 0;
+    virtual void stop() = 0;
+    virtual uint8_t motorId() const = 0;
+    virtual ~IMotorController() = default;
+};
 
-    // Khởi tạo và kiểm tra tham số
-    void initialize_parameters()
-    {
-        std::vector<long int> motor_ids_int;
-        get_parameter("motor_ids", motor_ids_int);
-        get_parameter("reach_count_max", reach_count_max_);
+// Lớp kiểm tra an toàn
+class SafetyChecker {
+public:
+    SafetyChecker(float min_angle, float max_angle, int max_temperature)
+        : min_angle_(min_angle), max_angle_(max_angle), max_temperature_(max_temperature) {}
 
-        if (motor_ids_int.empty()) {
-            RCLCPP_ERROR(this->get_logger(), "No motor IDs provided!");
-            throw std::runtime_error("No motor IDs provided");
-        }
-
-        // Chuyển đổi motor_ids sang uint8_t và kiểm tra
-        for (long int id : motor_ids_int) {
-            if (id < 0 || id > 255) {
-                RCLCPP_ERROR(this->get_logger(), "Invalid motor ID: %ld", id);
-                throw std::runtime_error("Invalid motor ID");
-            }
-            motor_ids_.push_back(static_cast<uint8_t>(id));
-        }
-
-        // Khởi tạo cấu hình cho từng động cơ
-        for (uint8_t id : motor_ids_) {
-            MotorConfig config;
-            config.id = id;
-            config.last_error_log_time = this->now();
-
-            // Khai báo và lấy tham số cho từng động cơ
-            std::string prefix = "motor_" + std::to_string(id) + "_";
-            declare_parameter(prefix + "target_positions", std::vector<double>{0.0});
-            declare_parameter(prefix + "speed", 10000);
-            declare_parameter(prefix + "accel", 1000);
-            declare_parameter(prefix + "min_angle", 0.0);
-            declare_parameter(prefix + "max_angle", 90.0);
-
-            std::vector<double> temp_positions;
-            get_parameter(prefix + "target_positions", temp_positions);
-            get_parameter(prefix + "speed", config.speed);
-            get_parameter(prefix + "accel", config.accel);
-            get_parameter(prefix + "min_angle", config.min_angle);
-            get_parameter(prefix + "max_angle", config.max_angle);
-
-            if (temp_positions.empty()) {
-                RCLCPP_WARN(this->get_logger(), "No target positions for motor %d. Using HOME (0).", id);
-                temp_positions = {0.0};
-            }
-
-            validate_positions(temp_positions, config.min_angle, config.max_angle);
-            config.target_positions.resize(temp_positions.size());
-            std::transform(temp_positions.begin(), temp_positions.end(),
-                           config.target_positions.begin(),
-                           [](double x) { return static_cast<float>(x); });
-
-            motors_.push_back(config);
-        }
-    }
-
-    // Khởi tạo publishers cho từng động cơ
-    void initialize_publishers()
-    {
-        for (auto& motor : motors_) {
-            std::string prefix = "motor_" + std::to_string(motor.id);
-            motor.position_publisher = create_publisher<std_msgs::msg::Float32>(prefix + "_position", 10);
-            motor.velocity_publisher = create_publisher<std_msgs::msg::Float32>(prefix + "_velocity", 10);
-            motor.reached_publisher = create_publisher<std_msgs::msg::Bool>(prefix + "_target_reached", 10);
-        }
-    }
-
-    // Kiểm tra vị trí hợp lệ
-    void validate_positions(const std::vector<double>& positions, float min_angle, float max_angle)
-    {
-        for (double pos : positions) {
-            if (pos < min_angle || pos > max_angle) {
-                RCLCPP_ERROR(this->get_logger(),
-                             "Target position %.2f out of bounds [%.2f, %.2f]",
-                             pos, min_angle, max_angle);
-                throw std::runtime_error("Target position out of bounds");
-            }
-        }
-    }
-
-    // Thực hiện SetOrigin cho tất cả động cơ
-    void set_origin_all()
-    {
-        for (auto& motor : motors_) {
-            try {
-                RCLCPP_INFO(this->get_logger(), "Setting origin for motor %d...", motor.id);
-                can.setOrigin(motor.id, 0);
-                RCLCPP_INFO(this->get_logger(), "SetOrigin completed for motor %d.", motor.id);
-            }
-            catch (const std::exception& e) {
-                log_error_throttled(motor, "SetOrigin failed for motor %d: %s", motor.id, e.what());
-                can.setCurrent(motor.id, 0.0);
-                throw std::runtime_error("Failed to set motor origin for motor " + std::to_string(motor.id));
-            }
-        }
-    }
-
-    // Callback thay đổi tham số
-    rcl_interfaces::msg::SetParametersResult parameters_callback(
-        const std::vector<rclcpp::Parameter>& parameters)
-    {
-        rcl_interfaces::msg::SetParametersResult result;
-        result.successful = true;
-
-        // Kiểm tra trạng thái origin của tất cả động cơ
-        for (const auto& motor : motors_) {
-            if (!motor.is_origin_set) {
-                result.successful = false;
-                result.reason = "Cannot update parameters until all motor origins are set!";
-                RCLCPP_WARN(this->get_logger(), "%s", result.reason.c_str());
-                return result;
-            }
-        }
-
-        // Kiểm tra trạng thái target_reached
-        for (const auto& param : parameters) {
-            for (auto& motor : motors_) {
-                std::string target_param = "motor_" + std::to_string(motor.id) + "_target_positions";
-                if (param.get_name() == target_param && !motor.target_reached) {
-                    result.successful = false;
-                    result.reason = "Cannot update target_positions for motor " +
-                                    std::to_string(motor.id) + " until current target is reached!";
-                    RCLCPP_WARN(this->get_logger(), "%s", result.reason.c_str());
-                    return result;
-                }
-            }
-        }
-
-        // Cập nhật tham số
-        for (const auto& param : parameters) {
-            for (auto& motor : motors_) {
-                std::string prefix = "motor_" + std::to_string(motor.id) + "_";
-                if (param.get_name() == prefix + "target_positions") {
-                    auto temp_positions = param.as_double_array();
-                    validate_positions(temp_positions, motor.min_angle, motor.max_angle);
-                    motor.target_positions.resize(temp_positions.size());
-                    std::transform(temp_positions.begin(), temp_positions.end(),
-                                   motor.target_positions.begin(),
-                                   [](double x) { return static_cast<float>(x); });
-                    motor.target_reached = false;
-                    motor.current_target_index = 0;
-                    RCLCPP_INFO(this->get_logger(),
-                                "Updated target_positions for motor %d: %ld targets",
-                                motor.id, temp_positions.size());
-                }
-                else if (param.get_name() == prefix + "speed") {
-                    motor.speed = param.as_int();
-                }
-                else if (param.get_name() == prefix + "accel") {
-                    motor.accel = param.as_int();
-                }
-                else if (param.get_name() == prefix + "min_angle") {
-                    motor.min_angle = param.as_double();
-                }
-                else if (param.get_name() == prefix + "max_angle") {
-                    motor.max_angle = param.as_double();
-                }
-            }
-            if (param.get_name() == "reach_count_max") {
-                reach_count_max_ = param.as_int();
-            }
-        }
-        return result;
-    }
-
-    // Vòng lặp điều khiển chính
-    void control_loop()
-    {
-        for (auto& motor : motors_) {
-            MotorData motor_data;
-            if (!receive_and_decode_data(motor.id, motor_data)) {
-                continue;
-            }
-
-            if (!check_safety(motor.id, motor_data, motor)) {
-                continue;
-            }
-
-            publish_motor_state(motor, motor_data);
-
-            if (!motor.is_origin_set) {
-                if (std::abs(motor_data.position) < POSITION_TOLERANCE &&
-                    std::abs(motor_data.velocity) < VELOCITY_TOLERANCE) {
-                    motor.is_origin_set = true;
-                    RCLCPP_INFO(this->get_logger(), "Origin confirmed for motor %d, enabling control.", motor.id);
-                }
-                continue;
-            }
-
-            float target_position = motor.is_home ? motor.target_positions[motor.current_target_index] : 0.0;
-            control_motor(motor, target_position, motor_data);
-
-            std_msgs::msg::Bool reached_msg;
-            reached_msg.data = motor.target_reached;
-            motor.reached_publisher->publish(reached_msg);
-        }
-    }
-
-    // // Nhận và giải mã dữ liệu CAN
-    // bool receive_and_decode_data(uint8_t motor_id, MotorData& data)
-    // {
-    //     uint32_t id;
-    //     std::vector<uint8_t> raw_data;
-    //     try {
-    //         if (!can.receive(id, raw_data)) {
-    //             // Sử dụng motor đầu tiên để log lỗi chung
-    //             log_error_throttled(motors_[0], "CAN receive failed for motor %d!", motor_id);
-    //             can.setCurrent(motor_id, 0.0);
-    //             can.setPositionSpeed(motor_id, 0.0, 0, 0);
-    //             return false;
-    //         }
-    //         can.decodeMotorData(raw_data, data.position, data.velocity,
-    //                             data.current, data.temperature, data.error);
-    //         data.velocity *= VELOCITY_CONVERSION_FACTOR;
-    //         return true;
-    //     }
-    //     catch (const std::exception& e) {
-    //         log_error_throttled(motors_[0], "CAN error for motor %d: %s", motor_id, e.what());
-    //         can.setCurrent(motor_id, 0.0);
-    //         can.setPositionSpeed(motor_id, 0.0, 0, 0);
-    //         return false;
-    //     }
-    // }
-
-    
-    bool receive_and_decode_data(uint8_t motor_id, MotorData& data)
-    {
-        uint32_t id;
-        std::vector<uint8_t> raw_data;
-        try {
-            if (can.receive(id, data)) {
-                if (id == 0x68 || id == 0x69) {
-                    float motor_pos, motor_spd, motor_cur;
-                    int8_t motor_temp, motor_error;
-        
-                    can.decodeMotorData(data, motor_pos, motor_spd, motor_cur, motor_temp, motor_error);
-        
-                    RCLCPP_INFO(this->get_logger(),
-                               "Motor 0x%X - Target: %.1f deg, Pos: %.1f deg, Spd: %.1f rpm, Cur: %.2f A, Temp: %d°C, Error: %d",
-                               id, target_position, motor_pos, motor_spd, motor_cur, motor_temp, motor_error);
-            return true;
-        }
-
-        catch (const std::exception& e) {
-            log_error_throttled(motors_[0], "CAN error for motor %d: %s", motor_id, e.what());
-            can.setCurrent(motor_id, 0.0);
-            can.setPositionSpeed(motor_id, 0.0, 0, 0);
+    bool check(const MotorData& data, const rclcpp::Logger& logger) const {
+        if (data.temperature > max_temperature_ || data.error != 0) {
+            RCLCPP_ERROR(logger, "Motor issue! Temp: %d°C, Error: %d", data.temperature, data.error);
             return false;
         }
-    }
-    }
-
-    // Kiểm tra an toàn
-    bool check_safety(uint8_t motor_id, const MotorData& data, MotorConfig& motor)
-    {
-        if (data.temperature > MAX_MOTOR_TEMPERATURE || data.error != 0) {
-            log_error_throttled(motor, "Motor %d issue! Temp: %d°C, Error: %d",
-                                motor_id, data.temperature, data.error);
-            can.setCurrent(motor_id, 0.0);
-            can.setPositionSpeed(motor_id, 0.0, 0, 0);
-            return false;
-        }
-        if (data.position < motor.min_angle || data.position > motor.max_angle) {
-            log_error_throttled(motor, "Position %.2f out of bounds [%.2f, %.2f] for motor %d",
-                                data.position, motor.min_angle, motor.max_angle, motor_id);
-            can.setCurrent(motor_id, 0.0);
-            can.setPositionSpeed(motor_id, 0.0, 0, 0);
-            return false;
-        }
-        if (std::abs(data.current) > MAX_MOTOR_CURRENT) {
-            log_error_throttled(motor, "Motor %d overcurrent: %.2f A", motor_id, data.current);
-            can.setCurrent(motor_id, 0.0);
-            can.setPositionSpeed(motor_id, 0.0, 0, 0);
+        if (data.position < min_angle_ || data.position > max_angle_) {
+            RCLCPP_ERROR(logger, "Position %.2f out of bounds [%.2f, %.2f]", 
+                         data.position, min_angle_, max_angle_);
             return false;
         }
         return true;
     }
 
-    // Xuất bản trạng thái motor
-    void publish_motor_state(MotorConfig& motor, const MotorData& data)
-    {
+private:
+    float min_angle_;
+    float max_angle_;
+    int max_temperature_;
+};
+
+// Lớp xuất bản trạng thái
+class StatePublisher {
+public:
+    StatePublisher(rclcpp::Node* node, const std::string& name)
+        : position_publisher_(node->create_publisher<std_msgs::msg::Float32>(name + "/_position", 10)),
+          velocity_publisher_(node->create_publisher<std_msgs::msg::Float32>(name + "/_vel_actual", 10)),
+          reached_publisher_(node->create_publisher<std_msgs::msg::Bool>(name + "/_target_reached", 10)),
+          state_publisher_(node->create_publisher<std_msgs::msg::String>(name + "/_state", 10)) {}
+
+    void publish(const MotorData& data, bool target_reached, const std::string& state) {
         std_msgs::msg::Float32 pos_msg;
         pos_msg.data = data.position;
-        motor.position_publisher->publish(pos_msg);
+        position_publisher_->publish(pos_msg);
 
         std_msgs::msg::Float32 vel_msg;
         vel_msg.data = data.velocity;
-        motor.velocity_publisher->publish(vel_msg);
+        velocity_publisher_->publish(vel_msg);
+
+        std_msgs::msg::Bool reached_msg;
+        reached_msg.data = target_reached;
+        reached_publisher_->publish(reached_msg);
+
+        std_msgs::msg::String state_msg;
+        state_msg.data = state;
+        state_publisher_->publish(state_msg);
     }
 
-    // Điều khiển motor
-    void control_motor(MotorConfig& motor, float target_position, const MotorData& data)
-    {
-        try {
-            if (!motor.is_home) {
-                can.setPositionSpeed(motor.id, 0.0, motor.speed, motor.accel);
-                if (std::abs(data.position) < POSITION_TOLERANCE &&
+private:
+    rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr position_publisher_;
+    rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr velocity_publisher_;
+    rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr reached_publisher_;
+    rclcpp::Publisher<std_msgs::msg::String>::SharedPtr state_publisher_;
+};
+
+// Lớp điều khiển động cơ
+class MotorController : public IMotorController {
+public:
+    MotorController(uint8_t motor_id, std::shared_ptr<ICANInterface> can, 
+                    rclcpp::Node* node, const std::string& name)
+        : motor_id_(motor_id), can_(can), node_(node), logger_(node->get_logger()),
+          state_(State::INITIALIZING), is_origin_set_(false), is_home_(false),
+          current_target_index_(0), reach_counter_(0), target_reached_(true),
+          speed_(10000), accel_(1000), min_angle_(0.0), max_angle_(90.0),
+          reach_count_max_(100), safety_checker_(min_angle_, max_angle_, MAX_MOTOR_TEMPERATURE),
+          state_publisher_(node, name), param_prefix_(name + ".") {
+        initializeParameters();
+        setOrigin();
+    }
+
+    void control(const MotorData& data) override {
+        if (!safety_checker_.check(data, logger_)) {
+            stop();
+            return;
+        }
+
+        std::string state_str;
+        switch (state_) {
+            case State::INITIALIZING: state_str = "INITIALIZING"; break;
+            case State::HOMING: state_str = "HOMING"; break;
+            case State::MOVING: state_str = "MOVING"; break;
+            case State::STOPPED: state_str = "STOPPED"; break;
+            case State::ERROR: state_str = "ERROR"; break;
+        }
+
+        state_publisher_.publish(data, target_reached_, state_str);
+
+        switch (state_) {
+            case State::INITIALIZING:
+                if (std::abs(data.position) < POSITION_TOLERANCE && 
                     std::abs(data.velocity) < VELOCITY_TOLERANCE) {
-                    motor.is_home = true;
-                    motor.target_reached = true;
-                    RCLCPP_INFO(this->get_logger(), "Motor %d reached Home Position!", motor.id);
+                    is_origin_set_ = true;
+                    transitionTo(State::HOMING);
                 }
-                return;
+                break;
+            case State::HOMING:
+                can_->setPositionSpeed(motor_id_, 0.0, speed_, accel_);
+                if (std::abs(data.position) < POSITION_TOLERANCE && 
+                    std::abs(data.velocity) < VELOCITY_TOLERANCE) {
+                    is_home_ = true;
+                    target_reached_ = true;
+                    RCLCPP_INFO(logger_, "Motor 0x%02X reached Home Position!", motor_id_);
+                    transitionTo(State::MOVING);
+                }
+                break;
+            case State::MOVING: {
+                if (target_positions_.empty()) {
+                    RCLCPP_ERROR(logger_, "Motor 0x%02X: target_positions is empty!", motor_id_);
+                    stop();
+                    transitionTo(State::STOPPED);
+                    break;
+                }
+                float target = target_positions_[current_target_index_];
+                can_->setPositionSpeed(motor_id_, target, speed_, accel_);
+                bool is_reached = std::abs(data.position - target) < POSITION_TOLERANCE;
+                if (is_reached) {
+                    reach_counter_++;
+                    if (reach_counter_ >= reach_count_max_) {
+                        reach_counter_ = 0;
+                        target_reached_ = true;
+                        current_target_index_++;
+                        if (current_target_index_ >= target_positions_.size()) {
+                            current_target_index_ = target_positions_.size() - 1;
+                            RCLCPP_INFO(logger_, "Motor 0x%02X: All targets reached.", motor_id_);
+                        }
+                    }
+                } else {
+                    reach_counter_ = 0;
+                    target_reached_ = false;
+                }
+                break;
+            }
+            case State::STOPPED:
+                stop();
+                break;
+            case State::ERROR:
+                break;
+        }
+    }
+
+    void setParameters(const std::vector<rcl_interfaces::msg::Parameter>& parameters) override {
+        RCLCPP_INFO(logger_, "Motor 0x%02X: Received set_parameters request with %zu parameters", 
+                    motor_id_, parameters.size());
+        if (!is_origin_set_) {
+            RCLCPP_WARN(logger_, "Motor 0x%02X: Cannot update parameters until origin is set!", motor_id_);
+            return;
+        }
+        if (!target_reached_) {
+            RCLCPP_WARN(logger_, "Motor 0x%02X: Cannot update target_positions until current target is reached!", 
+                        motor_id_);
+            return;
+        }
+
+        for (const auto& param : parameters) {
+            RCLCPP_INFO(logger_, "Motor 0x%02X: Processing parameter: %s", motor_id_, param.name.c_str());
+            if (param.name == "target_positions") {
+                auto temp_positions = param.value.double_array_value;
+                if (temp_positions.empty()) {
+                    RCLCPP_ERROR(logger_, "Motor 0x%02X: Empty target_positions received!", motor_id_);
+                    return;
+                }
+                validatePositions(temp_positions);
+                target_positions_.resize(temp_positions.size());
+                std::transform(temp_positions.begin(), temp_positions.end(), 
+                               target_positions_.begin(),
+                               [](double x) { return static_cast<float>(x); });
+                target_reached_ = false;
+                current_target_index_ = 0;
+                RCLCPP_INFO(logger_, "Motor 0x%02X: Updated target_positions: %ld targets", 
+                            motor_id_, temp_positions.size());
+            } else if (param.name == "speed") {
+                speed_ = param.value.integer_value;
+                validateSpeed();
+                RCLCPP_INFO(logger_, "Motor 0x%02X: Updated speed: %d", motor_id_, speed_);
+            } else if (param.name == "accel") {
+                accel_ = param.value.integer_value;
+                validateAccel();
+                RCLCPP_INFO(logger_, "Motor 0x%02X: Updated accel: %d", motor_id_, accel_);
+            } else {
+                RCLCPP_WARN(logger_, "Motor 0x%02X: Unknown parameter: %s", motor_id_, param.name.c_str());
+            }
+        }
+    }
+
+    bool isOriginSet() const override { return is_origin_set_; }
+    bool isTargetReached() const override { return target_reached_; }
+    uint8_t motorId() const override { return motor_id_; }
+
+    void stop() override {
+        try {
+            can_->setCurrent(motor_id_, 0.0);
+            can_->setPositionSpeed(motor_id_, 0.0, 0, 0);
+            transitionTo(State::STOPPED);
+        } catch (const std::exception& e) {
+            RCLCPP_ERROR(logger_, "Motor 0x%02X: Stop failed: %s", motor_id_, e.what());
+            transitionTo(State::ERROR);
+        }
+    }
+
+private:
+    enum class State { INITIALIZING, HOMING, MOVING, STOPPED, ERROR };
+
+    void initializeParameters() {
+        node_->declare_parameter(param_prefix_ + "target_positions", std::vector<double>{0.0});
+        node_->declare_parameter(param_prefix_ + "speed", 10000);
+        node_->declare_parameter(param_prefix_ + "accel", 1000);
+        node_->declare_parameter(param_prefix_ + "min_angle", 0.0);
+        node_->declare_parameter(param_prefix_ + "max_angle", 90.0);
+        node_->declare_parameter(param_prefix_ + "reach_count_max", 100);
+
+        std::vector<double> temp_positions;
+        node_->get_parameter(param_prefix_ + "target_positions", temp_positions);
+        node_->get_parameter(param_prefix_ + "speed", speed_);
+        node_->get_parameter(param_prefix_ + "accel", accel_);
+        node_->get_parameter(param_prefix_ + "min_angle", min_angle_);
+        node_->get_parameter(param_prefix_ + "max_angle", max_angle_);
+        node_->get_parameter(param_prefix_ + "reach_count_max", reach_count_max_);
+
+        if (temp_positions.empty()) {
+            RCLCPP_WARN(logger_, "Motor 0x%02X: No target positions provided. Using HOME (0).", motor_id_);
+            temp_positions = {0.0};
+        }
+
+        validatePositions(temp_positions);
+        target_positions_.resize(temp_positions.size());
+        std::transform(temp_positions.begin(), temp_positions.end(), target_positions_.begin(),
+                       [](double x) { return static_cast<float>(x); });
+
+        validateSpeed();
+        validateAccel();
+    }
+
+    void validatePositions(const std::vector<double>& positions) {
+        for (double pos : positions) {
+            if (pos < min_angle_ || pos > max_angle_) {
+                RCLCPP_ERROR(logger_, "Motor 0x%02X: Target position %.2f out of bounds [%.2f, %.2f]", 
+                             motor_id_, pos, min_angle_, max_angle_);
+                throw std::runtime_error("Target position out of bounds");
+            }
+        }
+    }
+
+    void validateSpeed() {
+        if (speed_ <= 0 || speed_ > 50000) {
+            RCLCPP_ERROR(logger_, "Motor 0x%02X: Speed %d out of bounds [1, 50000]", motor_id_, speed_);
+            throw std::runtime_error("Speed out of bounds");
+        }
+    }
+
+    void validateAccel() {
+        if (accel_ <= 0 || accel_ > 10000) {
+            RCLCPP_ERROR(logger_, "Motor 0x%02X: Accel %d out of bounds [1, 10000]", motor_id_, accel_);
+            throw std::runtime_error("Accel out of bounds");
+        }
+    }
+
+    void setOrigin() {
+        try {
+            RCLCPP_INFO(logger_, "Motor 0x%02X: Setting motor origin...", motor_id_);
+            if (!can_->setOrigin(motor_id_, 0)) {
+                throw std::runtime_error("SetOrigin failed");
+            }
+            RCLCPP_INFO(logger_, "Motor 0x%02X: SetOrigin completed.", motor_id_);
+        } catch (const std::exception& e) {
+            RCLCPP_ERROR(logger_, "Motor 0x%02X: SetOrigin failed: %s", motor_id_, e.what());
+            stop();
+            throw std::runtime_error("Failed to set motor origin");
+        }
+    }
+
+    void transitionTo(State new_state) {
+        if (state_ != new_state) {
+            RCLCPP_INFO(logger_, "Motor 0x%02X: Transitioning from %d to %d", 
+                        motor_id_, static_cast<int>(state_), static_cast<int>(new_state));
+            state_ = new_state;
+        }
+    }
+
+public:
+    static constexpr float VELOCITY_CONVERSION_FACTOR = 2 * 180.0 / (64 * 21 * 60.0); // rpm
+    static constexpr float POSITION_TOLERANCE = 0.5; // SỬA: Chuyển thành public
+    static constexpr float VELOCITY_TOLERANCE = 0.1; // rpm
+    static constexpr int MAX_MOTOR_TEMPERATURE = 80; // °C
+
+private:
+    uint8_t motor_id_;
+    std::shared_ptr<ICANInterface> can_;
+    rclcpp::Node* node_;
+    rclcpp::Logger logger_;
+    State state_;
+    bool is_origin_set_;
+    bool is_home_;
+    std::vector<float> target_positions_;
+    int current_target_index_;
+    int reach_counter_;
+    int reach_count_max_;
+    int speed_;
+    int accel_;
+    bool target_reached_;
+    float min_angle_;
+    float max_angle_;
+    SafetyChecker safety_checker_;
+    StatePublisher state_publisher_;
+    std::string param_prefix_;
+};
+
+// Lớp chính điều phối
+class MotorControlNode : public rclcpp::Node {
+public:
+    MotorControlNode() : Node("motor_control_node") {
+        can_ = std::make_shared<CANInterfaceWrapper>("can0");
+        timer_ = create_wall_timer(std::chrono::milliseconds(2), 
+                                  std::bind(&MotorControlNode::controlLoop, this));
+
+        controllers_.push_back(std::make_unique<MotorController>(
+            0x68, can_, this, "/motor1_control_node"));
+        controllers_.push_back(std::make_unique<MotorController>(
+            0x69, can_, this, "/motor2_control_node"));
+
+        services_.push_back(create_service<rcl_interfaces::srv::SetParameters>(
+            "/motor1_control_node/set_parameters",
+            std::bind(&MotorControlNode::setParametersCallback, this, std::placeholders::_1,
+                      std::placeholders::_2, 0)));
+        services_.push_back(create_service<rcl_interfaces::srv::SetParameters>(
+            "/motor2_control_node/set_parameters",
+            std::bind(&MotorControlNode::setParametersCallback, this, std::placeholders::_1,
+                      std::placeholders::_2, 1)));
+
+        rclcpp::on_shutdown(std::bind(&MotorControlNode::safeShutdown, this));
+    }
+
+    void handleSigint() {
+        RCLCPP_WARN(get_logger(), "SIGINT (Ctrl+C) detected! Moving motors to HOME before shutdown.");
+        returnToHome();
+        safeShutdown();
+        rclcpp::shutdown();
+    }
+
+private:
+    void returnToHome() {
+        RCLCPP_INFO(get_logger(), "Attempting to return motors to HOME position...");
+        try {
+            for (const auto& controller : controllers_) {
+                MotorData data = getMotorData(controller->motorId());
+                if (safety_checker_.check(data, get_logger())) {
+                    if (!can_->setPositionSpeed(controller->motorId(), 0.0, 10000, 1000)) {
+                        RCLCPP_ERROR(get_logger(), "Failed to set HOME position for motor 0x%02X", controller->motorId());
+                    }
+                } else {
+                    RCLCPP_ERROR(get_logger(), "Motor 0x%02X unsafe to move to HOME (Temp: %d°C, Error: %d)", 
+                                 controller->motorId(), data.temperature, data.error);
+                }
             }
 
-            can.setPositionSpeed(motor.id, target_position, motor.speed, motor.accel);
-            RCLCPP_INFO(this->get_logger(),
-                        "Motor %d moving to %.2f | Current: %.2f", motor.id, target_position, data.position);
+            auto start_time = std::chrono::steady_clock::now();
+            bool all_at_home = false;
+            while (!all_at_home && std::chrono::steady_clock::now() - start_time < std::chrono::seconds(15)) {
+                all_at_home = true;
+                uint32_t id;
+                std::vector<uint8_t> raw_data;
+                if (can_->receive(id, raw_data)) {
+                    for (const auto& controller : controllers_) {
+                        if (id == controller->motorId()) {
+                            MotorData data;
+                            can_->decodeMotorData(raw_data, data.position, data.velocity, data.current,
+                                                  data.temperature, data.error);
+                            if (std::abs(data.position) > MotorController::POSITION_TOLERANCE) {
+                                all_at_home = false;
+                            }
+                        }
+                    }
+                }
+                std::this_thread::sleep_for(std::chrono::milliseconds(10));
+            }
 
-            bool is_reached = check_motor_status(data.position, data.velocity, target_position);
-            if (is_reached) {
-                motor.reach_counter++;
-                if (motor.reach_counter >= reach_count_max_) {
-                    motor.reach_counter = 0;
-                    motor.target_reached = true;
-                    motor.current_target_index++;
-                    if (motor.current_target_index >= motor.target_positions.size()) {
-                        motor.current_target_index = motor.target_positions.size() - 1;
-                        RCLCPP_INFO(this->get_logger(), "All targets reached for motor %d.", motor.id);
+            if (all_at_home) {
+                RCLCPP_INFO(get_logger(), "All motors reached HOME position.");
+            } else {
+                RCLCPP_ERROR(get_logger(), "Timeout waiting for motors to reach HOME position.");
+            }
+        } catch (const std::exception& e) {
+            RCLCPP_ERROR(get_logger(), "Error while returning to HOME: %s", e.what());
+        }
+    }
+
+    MotorData getMotorData(uint8_t motor_id) {
+        MotorData data;
+        uint32_t id;
+        std::vector<uint8_t> raw_data;
+        if (can_->receive(id, raw_data) && id == motor_id) {
+            can_->decodeMotorData(raw_data, data.position, data.velocity, data.current,
+                                  data.temperature, data.error);
+        }
+        return data;
+    }
+
+    void controlLoop() {
+        uint32_t id;
+        std::vector<uint8_t> raw_data;
+        try {
+            if (can_->receive(id, raw_data)) {
+                for (const auto& controller : controllers_) {
+                    if (id == controller->motorId()) {
+                        MotorData data;
+                        can_->decodeMotorData(raw_data, data.position, data.velocity, data.current,
+                                              data.temperature, data.error);
+                        data.velocity *= MotorController::VELOCITY_CONVERSION_FACTOR;
+                        controller->control(data);
                     }
                 }
             }
-            else {
-                motor.reach_counter = 0;
-                motor.target_reached = false;
+        } catch (const std::exception& e) {
+            RCLCPP_ERROR(get_logger(), "CAN error: %s", e.what());
+            returnToHome();
+            for (const auto& controller : controllers_) {
+                controller->stop();
             }
         }
-        catch (const std::exception& e) {
-            log_error_throttled(motor, "Control error for motor %d: %s", motor.id, e.what());
-            can.setCurrent(motor.id, 0.0);
-            can.setPositionSpeed(motor.id, 0.0, 0, 0);
-        }
     }
 
-    // Kiểm tra trạng thái đạt mục tiêu
-    bool check_motor_status(float current_position, float current_velocity, float target_position)
-    {
-        return (std::abs(current_position - target_position) < POSITION_TOLERANCE);
-    }
-
-    // Ghi log lỗi với giới hạn tần suất
-    void log_error_throttled(MotorConfig& motor, const char* format, ...)
-    {
-        auto now = this->now();
-        if ((now - motor.last_error_log_time).seconds() < ERROR_LOG_INTERVAL) {
+    void setParametersCallback(
+        const std::shared_ptr<rcl_interfaces::srv::SetParameters::Request> request,
+        std::shared_ptr<rcl_interfaces::srv::SetParameters::Response> response,
+        size_t controller_index) {
+        RCLCPP_INFO(get_logger(), "Received set_parameters request for controller index: %zu", controller_index);
+        if (controller_index >= controllers_.size()) {
+            RCLCPP_ERROR(get_logger(), "Invalid controller index: %zu", controller_index);
+            response->results.resize(request->parameters.size());
+            for (size_t i = 0; i < request->parameters.size(); ++i) {
+                response->results[i].successful = false;
+                response->results[i].reason = "Invalid controller index";
+            }
             return;
         }
-        motor.last_error_log_time = now;
-
-        va_list args;
-        va_start(args, format);
-        char buffer[256];
-        vsnprintf(buffer, sizeof(buffer), format, args);
-        va_end(args);
-        RCLCPP_ERROR(this->get_logger(), "%s", buffer);
-    }
-
-    // Tắt an toàn
-    void safe_shutdown()
-    {
-        RCLCPP_WARN(this->get_logger(),
-                    "ROS shutdown detected! Sending zero current and stopping all motors.");
-        try {
-            for (const auto& motor : motors_) {
-                can.setCurrent(motor.id, 0.0);
-                can.setPositionSpeed(motor.id, 0.0, 0, 0);
-            }
-        }
-        catch (const std::exception& e) {
-            RCLCPP_ERROR(this->get_logger(), "Shutdown error: %s", e.what());
+        controllers_[controller_index]->setParameters(request->parameters);
+        response->results.resize(request->parameters.size());
+        for (size_t i = 0; i < request->parameters.size(); ++i) {
+            response->results[i].successful = true;
+            response->results[i].reason = "";
         }
     }
 
-    // Thành viên
-    CANInterface can;
+    void safeShutdown() {
+        RCLCPP_WARN(get_logger(), "ROS shutdown detected! Moving motors to HOME before stopping.");
+        returnToHome();
+        for (const auto& controller : controllers_) {
+            controller->stop();
+        }
+    }
+
+    std::shared_ptr<ICANInterface> can_;
     rclcpp::TimerBase::SharedPtr timer_;
-    rclcpp::node_interfaces::OnSetParametersCallbackHandle::SharedPtr param_callback_handle_;
-    std::vector<uint8_t> motor_ids_;
-    std::vector<MotorConfig> motors_;
-    int reach_count_max_;
+    std::vector<std::unique_ptr<IMotorController>> controllers_;
+    std::vector<rclcpp::Service<rcl_interfaces::srv::SetParameters>::SharedPtr> services_;
+    SafetyChecker safety_checker_ = SafetyChecker(0.0, 90.0, 80);
 };
 
-int main(int argc, char **argv)
-{
+static std::shared_ptr<MotorControlNode> global_node;
+
+void signalHandler(int signum) {
+    if (global_node) {
+        global_node->handleSigint();
+    }
+}
+
+int main(int argc, char** argv) {
     rclcpp::init(argc, argv);
     try {
-        rclcpp::spin(std::make_shared<MotorControlNode>());
+        global_node = std::make_shared<MotorControlNode>();
+        std::signal(SIGINT, signalHandler);
+        rclcpp::spin(global_node);
+    } catch (const std::exception& e) {
+        RCLCPP_ERROR(rclcpp::get_logger("motor_control_node"), "Fatal error: %s", e.what());
     }
-    catch (const std::exception& e) {
-        RCLCPP_ERROR(rclcpp::get_logger("motor_control_node"),
-                     "Fatal error: %s", e.what());
-    }
+    global_node.reset();
     rclcpp::shutdown();
     return 0;
 }
