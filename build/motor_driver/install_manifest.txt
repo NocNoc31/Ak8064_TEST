@@ -1,7 +1,7 @@
 /home/ubuntu/Desktop/AK80_64/install/motor_driver/lib/motor_driver/SetOMotor
 /home/ubuntu/Desktop/AK80_64/install/motor_driver/lib/motor_driver/ControlMotor
-/home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver//config/exercise1_params.yaml
 /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver//config/setup.yaml
+/home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver//config/exercise1_params.yaml
 /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver//config/exercise2_params.yaml
 /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver//launch/motor_control.launch.py
 /home/ubuntu/Desktop/AK80_64/install/motor_driver/lib/motor_driver/set_params_gui.py

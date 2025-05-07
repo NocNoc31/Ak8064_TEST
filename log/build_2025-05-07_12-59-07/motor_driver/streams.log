@@ -1,0 +1,74 @@
+[0.006s] Invoking command in '/home/ubuntu/Desktop/AK80_64/build/motor_driver': CMAKE_PREFIX_PATH=/home/ubuntu/Desktop/AK80_64/install/can_interface:/home/ubuntu/Desktop/AK80_64/install/motor_driver:/opt/ros/humble /usr/bin/cmake /home/ubuntu/Desktop/AK80_64/src/motor_driver -DCMAKE_INSTALL_PREFIX=/home/ubuntu/Desktop/AK80_64/install/motor_driver
+[0.045s] -- The C compiler identification is GNU 11.4.0
+[0.086s] -- The CXX compiler identification is GNU 11.4.0
+[0.091s] -- Detecting C compiler ABI info
+[0.143s] -- Detecting C compiler ABI info - done
+[0.148s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.148s] -- Detecting C compile features
+[0.148s] -- Detecting C compile features - done
+[0.151s] -- Detecting CXX compiler ABI info
+[0.210s] -- Detecting CXX compiler ABI info - done
+[0.215s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.215s] -- Detecting CXX compile features
+[0.215s] -- Detecting CXX compile features - done
+[0.217s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.608s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.689s] -- Found rclcpp: 16.0.12 (/opt/ros/humble/share/rclcpp/cmake)
+[0.728s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.731s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.737s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.746s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.758s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.791s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.793s] -- Found rmw_cyclonedds_cpp: 1.3.4 (/opt/ros/humble/share/rmw_cyclonedds_cpp/cmake)
+[0.809s] -- Using RMW implementation 'rmw_cyclonedds_cpp' as default
+[0.815s] -- Looking for pthread.h
+[0.868s] -- Looking for pthread.h - found
+[0.868s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.923s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.924s] -- Found Threads: TRUE  
+[0.979s] -- Found can_interface: 0.0.1 (/home/ubuntu/Desktop/AK80_64/install/can_interface/share/can_interface/cmake)
+[1.038s] -- Configuring done
+[1.048s] -- Generating done
+[1.051s] -- Build files have been written to: /home/ubuntu/Desktop/AK80_64/build/motor_driver
+[1.060s] Invoked command in '/home/ubuntu/Desktop/AK80_64/build/motor_driver' returned '0': CMAKE_PREFIX_PATH=/home/ubuntu/Desktop/AK80_64/install/can_interface:/home/ubuntu/Desktop/AK80_64/install/motor_driver:/opt/ros/humble /usr/bin/cmake /home/ubuntu/Desktop/AK80_64/src/motor_driver -DCMAKE_INSTALL_PREFIX=/home/ubuntu/Desktop/AK80_64/install/motor_driver
+[1.061s] Invoking command in '/home/ubuntu/Desktop/AK80_64/build/motor_driver': CMAKE_PREFIX_PATH=/home/ubuntu/Desktop/AK80_64/install/can_interface:/home/ubuntu/Desktop/AK80_64/install/motor_driver:/opt/ros/humble /usr/bin/cmake --build /home/ubuntu/Desktop/AK80_64/build/motor_driver -- -j8 -l8
+[1.098s] [ 50%] [32mBuilding CXX object CMakeFiles/ControlMotor.dir/src/ControlMotor.cpp.o[0m
+[1.098s] [ 50%] [32mBuilding CXX object CMakeFiles/SetOMotor.dir/src/SetOMotor.cpp.o[0m
+[3.617s] [ 75%] [32m[1mLinking CXX executable SetOMotor[0m
+[3.726s] [ 75%] Built target SetOMotor
+[6.363s] [100%] [32m[1mLinking CXX executable ControlMotor[0m
+[6.602s] [100%] Built target ControlMotor
+[6.614s] Invoked command in '/home/ubuntu/Desktop/AK80_64/build/motor_driver' returned '0': CMAKE_PREFIX_PATH=/home/ubuntu/Desktop/AK80_64/install/can_interface:/home/ubuntu/Desktop/AK80_64/install/motor_driver:/opt/ros/humble /usr/bin/cmake --build /home/ubuntu/Desktop/AK80_64/build/motor_driver -- -j8 -l8
+[6.615s] Invoking command in '/home/ubuntu/Desktop/AK80_64/build/motor_driver': CMAKE_PREFIX_PATH=/home/ubuntu/Desktop/AK80_64/install/can_interface:/home/ubuntu/Desktop/AK80_64/install/motor_driver:/opt/ros/humble /usr/bin/cmake --install /home/ubuntu/Desktop/AK80_64/build/motor_driver
+[6.622s] -- Install configuration: ""
+[6.622s] -- Installing: /home/ubuntu/Desktop/AK80_64/install/motor_driver/lib/motor_driver/SetOMotor
+[6.623s] -- Set runtime path of "/home/ubuntu/Desktop/AK80_64/install/motor_driver/lib/motor_driver/SetOMotor" to ""
+[6.623s] -- Installing: /home/ubuntu/Desktop/AK80_64/install/motor_driver/lib/motor_driver/ControlMotor
+[6.624s] -- Set runtime path of "/home/ubuntu/Desktop/AK80_64/install/motor_driver/lib/motor_driver/ControlMotor" to ""
+[6.624s] -- Installing: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver//config
+[6.624s] -- Installing: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver//config/setup.yaml
+[6.624s] -- Installing: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver//config/exercise1_params.yaml
+[6.624s] -- Installing: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver//config/exercise2_params.yaml
+[6.624s] -- Installing: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver//launch
+[6.624s] -- Installing: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver//launch/motor_control.launch.py
+[6.624s] -- Installing: /home/ubuntu/Desktop/AK80_64/install/motor_driver/lib/motor_driver/set_params_gui.py
+[6.624s] -- Installing: /home/ubuntu/Desktop/AK80_64/install/motor_driver/lib/motor_driver/TurnOn.sh
+[6.624s] -- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver/config/exercise1_params.yaml
+[6.624s] -- Up-to-date: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver/config/exercise2_params.yaml
+[6.624s] -- Installing: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/ament_index/resource_index/package_run_dependencies/motor_driver
+[6.625s] -- Installing: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/ament_index/resource_index/parent_prefix_path/motor_driver
+[6.625s] -- Installing: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver/environment/ament_prefix_path.sh
+[6.625s] -- Installing: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver/environment/ament_prefix_path.dsv
+[6.625s] -- Installing: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver/environment/path.sh
+[6.625s] -- Installing: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver/environment/path.dsv
+[6.625s] -- Installing: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver/local_setup.bash
+[6.625s] -- Installing: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver/local_setup.sh
+[6.625s] -- Installing: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver/local_setup.zsh
+[6.625s] -- Installing: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver/local_setup.dsv
+[6.625s] -- Installing: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver/package.dsv
+[6.625s] -- Installing: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/ament_index/resource_index/packages/motor_driver
+[6.625s] -- Installing: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver/cmake/motor_driverConfig.cmake
+[6.625s] -- Installing: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver/cmake/motor_driverConfig-version.cmake
+[6.625s] -- Installing: /home/ubuntu/Desktop/AK80_64/install/motor_driver/share/motor_driver/package.xml
+[6.627s] Invoked command in '/home/ubuntu/Desktop/AK80_64/build/motor_driver' returned '0': CMAKE_PREFIX_PATH=/home/ubuntu/Desktop/AK80_64/install/can_interface:/home/ubuntu/Desktop/AK80_64/install/motor_driver:/opt/ros/humble /usr/bin/cmake --install /home/ubuntu/Desktop/AK80_64/build/motor_driver

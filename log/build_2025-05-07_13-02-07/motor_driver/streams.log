@@ -1,0 +1,721 @@
+[0.006s] Invoking command in '/home/ubuntu/Desktop/AK80_64/build/motor_driver': CMAKE_PREFIX_PATH=/home/ubuntu/Desktop/AK80_64/install/can_interface:/home/ubuntu/Desktop/AK80_64/install/motor_driver:/opt/ros/humble /usr/bin/cmake --build /home/ubuntu/Desktop/AK80_64/build/motor_driver -- -j8 -l8
+[0.037s] [35m[1mConsolidate compiler generated dependencies of target ControlMotor[0m
+[0.049s] [ 50%] Built target SetOMotor
+[0.053s] [ 75%] [32mBuilding CXX object CMakeFiles/ControlMotor.dir/src/ControlMotor.cpp.o[0m
+[1.752s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:412:5:[m[K [01;31m[Kerror: [m[KISO C++ forbids declaration of ‘[01m[KMotorControlNode[m[K’ with no type [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive-fpermissive]8;;[m[K]
+[1.752s]   412 |     [01;31m[KMotorControlNode[m[K() : Node("motor_control_node"), can("can0")
+[1.752s]       |     [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[1.759s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:871:2:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K}[m[K’ at end of input
+[1.759s]   871 | }
+[1.759s]       |  [01;31m[K^[m[K
+[1.759s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:410:21:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K{[m[K’
+[1.759s]   410 | class ICANInterface [01;36m[K{[m[K
+[1.760s]       |                     [01;36m[K^[m[K
+[1.760s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:[m[K In member function ‘[01m[Kint ICANInterface::MotorControlNode()[m[K’:
+[1.760s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:412:26:[m[K [01;31m[Kerror: [m[Konly constructors take member initializers
+[1.760s]   412 |     MotorControlNode() : [01;31m[KNode[m[K("motor_control_node"), can("can0")
+[1.760s]       |                          [01;31m[K^~~~[m[K
+[1.760s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:412:26:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KICANInterface[m[K’ does not have any field named ‘[01m[KNode[m[K’
+[1.760s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:412:54:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KICANInterface[m[K’ does not have any field named ‘[01m[Kcan[m[K’
+[1.760s]   412 |     MotorControlNode() : Node("motor_control_node"), [01;31m[Kcan[m[K("can0")
+[1.760s]       |                                                      [01;31m[K^~~[m[K
+[1.767s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:415:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kdeclare_parameter[m[K’ was not declared in this scope
+[1.767s]   415 |         [01;31m[Kdeclare_parameter[m[K("motor_ids", std::vector<long int>{0x68, 0x69});
+[1.767s]       |         [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[1.776s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:425:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kparam_callback_handle_[m[K’ was not declared in this scope
+[1.776s]   425 |         [01;31m[Kparam_callback_handle_[m[K = add_on_set_parameters_callback(
+[1.776s]       |         [01;31m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+[1.776s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:426:24:[m[K [01;31m[Kerror: [m[K‘[01m[KMotorControlNode[m[K’ is not a class, namespace, or enumeration
+[1.776s]   426 |             std::bind(&[01;31m[KMotorControlNode[m[K::parameters_callback, this, std::placeholders::_1));
+[1.776s]       |                        [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[1.785s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:425:34:[m[K [01;31m[Kerror: [m[K‘[01m[Kadd_on_set_parameters_callback[m[K’ was not declared in this scope
+[1.785s]   425 |         param_callback_handle_ = [01;31m[Kadd_on_set_parameters_callback[m[K(
+[1.785s]       |                                  [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[1.789s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:432:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ktimer_[m[K’ was not declared in this scope; did you mean ‘[01m[Ktimer_t[m[K’?
+[1.789s]   432 |         [01;31m[Ktimer_[m[K = create_wall_timer(std::chrono::milliseconds(5),
+[1.789s]       |         [01;31m[K^~~~~~[m[K
+[1.789s]       |         [32m[Ktimer_t[m[K
+[1.789s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:433:46:[m[K [01;31m[Kerror: [m[K‘[01m[KMotorControlNode[m[K’ is not a class, namespace, or enumeration
+[1.789s]   433 |                                   std::bind(&[01;31m[KMotorControlNode[m[K::control_loop, this));
+[1.789s]       |                                              [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[1.790s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:432:18:[m[K [01;31m[Kerror: [m[K‘[01m[Kcreate_wall_timer[m[K’ was not declared in this scope; did you mean ‘[01m[Krclcpp::create_wall_timer[m[K’?
+[1.790s]   432 |         timer_ = [01;31m[Kcreate_wall_timer[m[K(std::chrono::milliseconds(5),
+[1.790s]       |                  [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[1.790s]       |                  [32m[Krclcpp::create_wall_timer[m[K
+[1.790s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/create_subscription.hpp:33[m[K,
+[1.790s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/node_impl.hpp:43[m[K,
+[1.790s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:1321[m[K,
+[1.790s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+[1.790s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+[1.790s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[1.790s]                  from [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:395[m[K:
+[1.790s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/create_timer.hpp:90:1:[m[K [01;36m[Knote: [m[K‘[01m[Krclcpp::create_wall_timer[m[K’ declared here
+[1.790s]    90 | [01;36m[Kcreate_wall_timer[m[K(
+[1.790s]       | [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[1.790s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:436:40:[m[K [01;31m[Kerror: [m[K‘[01m[KMotorControlNode[m[K’ is not a class, namespace, or enumeration
+[1.790s]   436 |         rclcpp::on_shutdown(std::bind(&[01;31m[KMotorControlNode[m[K::safe_shutdown, this));
+[1.791s]       |                                        [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[1.791s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:437:5:[m[K [01;35m[Kwarning: [m[Kno return statement in function returning non-void [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+[1.791s]   437 |     [01;35m[K}[m[K
+[1.791s]       |     [01;35m[K^[m[K
+[1.796s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:[m[K In member function ‘[01m[Kvoid ICANInterface::initialize_parameters()[m[K’:
+[1.796s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:480:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kget_parameter[m[K’ was not declared in this scope
+[1.796s]   480 |         [01;31m[Kget_parameter[m[K("motor_ids", motor_ids_int);
+[1.796s]       |         [01;31m[K^~~~~~~~~~~~~[m[K
+[1.802s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:481:42:[m[K [01;31m[Kerror: [m[K‘[01m[Kreach_count_max_[m[K’ was not declared in this scope
+[1.802s]   481 |         get_parameter("reach_count_max", [01;31m[Kreach_count_max_[m[K);
+[1.802s]       |                                          [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[1.802s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[1.802s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[1.802s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[1.802s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[1.802s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[1.803s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[1.803s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[1.803s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[1.803s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[1.803s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[1.803s]                  from [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:395[m[K:
+[1.803s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:484:32:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.803s]   484 |             RCLCPP_ERROR(this->[01;31m[Kget_logger[m[K(), "No motor IDs provided!");
+[1.803s]       |                                [01;31m[K^~~~~~~~~~[m[K
+[1.803s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:484:32:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.803s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:484:13:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.803s]   484 |             [01;31m[KRCLCPP_ERROR[m[K(this->get_logger(), "No motor IDs provided!");
+[1.803s]       |             [01;31m[K^~~~~~~~~~~~[m[K
+[1.803s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:484:13:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.803s]   484 |             [01;31m[KRCLCPP_ERROR[m[K(this->get_logger(), "No motor IDs provided!");
+[1.803s]       |             [01;31m[K^~~~~~~~~~~~[m[K
+[1.803s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:484:13:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.803s]   484 |             [01;31m[KRCLCPP_ERROR[m[K(this->get_logger(), "No motor IDs provided!");
+[1.803s]       |             [01;31m[K^~~~~~~~~~~~[m[K
+[1.803s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[1.803s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[1.803s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[1.803s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[1.803s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[1.804s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[1.804s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[1.804s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[1.804s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[1.804s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[1.804s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[1.804s]                  from [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:395[m[K:
+[1.804s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:484:32:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.804s]   484 |             RCLCPP_ERROR(this->[01;31m[Kget_logger[m[K(), "No motor IDs provided!");
+[1.804s]       |                                [01;31m[K^~~~~~~~~~[m[K
+[1.804s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:484:32:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.804s]   484 |             RCLCPP_ERROR(this->[01;31m[Kget_logger[m[K(), "No motor IDs provided!");
+[1.804s]       |                                [01;31m[K^~~~~~~~~~[m[K
+[1.804s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[1.804s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[1.804s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[1.804s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[1.804s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[1.804s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[1.804s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[1.804s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[1.805s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[1.805s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[1.805s]                  from [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:395[m[K:
+[1.805s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:491:36:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.805s]   491 |                 RCLCPP_ERROR(this->[01;31m[Kget_logger[m[K(), "Invalid motor ID: %ld", id);
+[1.805s]       |                                    [01;31m[K^~~~~~~~~~[m[K
+[1.805s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:491:36:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.805s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:491:17:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.805s]   491 |                 [01;31m[KRCLCPP_ERROR[m[K(this->get_logger(), "Invalid motor ID: %ld", id);
+[1.805s]       |                 [01;31m[K^~~~~~~~~~~~[m[K
+[1.805s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:491:17:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.805s]   491 |                 [01;31m[KRCLCPP_ERROR[m[K(this->get_logger(), "Invalid motor ID: %ld", id);
+[1.805s]       |                 [01;31m[K^~~~~~~~~~~~[m[K
+[1.805s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:491:17:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.805s]   491 |                 [01;31m[KRCLCPP_ERROR[m[K(this->get_logger(), "Invalid motor ID: %ld", id);
+[1.805s]       |                 [01;31m[K^~~~~~~~~~~~[m[K
+[1.805s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[1.805s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[1.805s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[1.805s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[1.805s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[1.806s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[1.806s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[1.806s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[1.806s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[1.806s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[1.806s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[1.806s]                  from [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:395[m[K:
+[1.806s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:491:36:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.806s]   491 |                 RCLCPP_ERROR(this->[01;31m[Kget_logger[m[K(), "Invalid motor ID: %ld", id);
+[1.806s]       |                                    [01;31m[K^~~~~~~~~~[m[K
+[1.806s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:491:36:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.806s]   491 |                 RCLCPP_ERROR(this->[01;31m[Kget_logger[m[K(), "Invalid motor ID: %ld", id);
+[1.806s]       |                                    [01;31m[K^~~~~~~~~~[m[K
+[1.809s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:494:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kmotor_ids_[m[K’ was not declared in this scope; did you mean ‘[01m[Kmotor_ids_int[m[K’?
+[1.809s]   494 |             [01;31m[Kmotor_ids_[m[K.push_back(static_cast<uint8_t>(id));
+[1.809s]       |             [01;31m[K^~~~~~~~~~[m[K
+[1.809s]       |             [32m[Kmotor_ids_int[m[K
+[1.813s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:498:27:[m[K [01;31m[Kerror: [m[K‘[01m[Kmotor_ids_[m[K’ was not declared in this scope; did you mean ‘[01m[Kmotor_ids_int[m[K’?
+[1.813s]   498 |         for (uint8_t id : [01;31m[Kmotor_ids_[m[K) {
+[1.813s]       |                           [01;31m[K^~~~~~~~~~[m[K
+[1.813s]       |                           [32m[Kmotor_ids_int[m[K
+[1.814s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:501:48:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Know[m[K’
+[1.814s]   501 |             config.last_error_log_time = this->[01;31m[Know[m[K();
+[1.814s]       |                                                [01;31m[K^~~[m[K
+[1.821s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:505:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kdeclare_parameter[m[K’ was not declared in this scope
+[1.821s]   505 |             [01;31m[Kdeclare_parameter[m[K(prefix + "target_positions", std::vector<double>{0.0});
+[1.822s]       |             [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[1.823s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[1.823s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[1.823s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[1.823s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[1.823s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[1.823s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[1.823s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[1.823s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[1.823s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[1.823s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[1.823s]                  from [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:395[m[K:
+[1.823s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:519:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.823s]   519 |                 RCLCPP_WARN(this->[01;31m[Kget_logger[m[K(), "No target positions for motor %d. Using HOME (0).", id);
+[1.823s]       |                                   [01;31m[K^~~~~~~~~~[m[K
+[1.823s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:519:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.823s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:519:17:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.823s]   519 |                 [01;31m[KRCLCPP_WARN[m[K(this->get_logger(), "No target positions for motor %d. Using HOME (0).", id);
+[1.823s]       |                 [01;31m[K^~~~~~~~~~~[m[K
+[1.823s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:519:17:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.823s]   519 |                 [01;31m[KRCLCPP_WARN[m[K(this->get_logger(), "No target positions for motor %d. Using HOME (0).", id);
+[1.824s]       |                 [01;31m[K^~~~~~~~~~~[m[K
+[1.824s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:519:17:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.824s]   519 |                 [01;31m[KRCLCPP_WARN[m[K(this->get_logger(), "No target positions for motor %d. Using HOME (0).", id);
+[1.824s]       |                 [01;31m[K^~~~~~~~~~~[m[K
+[1.824s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[1.824s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[1.824s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[1.824s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[1.824s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[1.824s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[1.824s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[1.824s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[1.824s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[1.824s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[1.824s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[1.824s]                  from [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:395[m[K:
+[1.824s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:519:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.824s]   519 |                 RCLCPP_WARN(this->[01;31m[Kget_logger[m[K(), "No target positions for motor %d. Using HOME (0).", id);
+[1.824s]       |                                   [01;31m[K^~~~~~~~~~[m[K
+[1.824s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:519:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.824s]   519 |                 RCLCPP_WARN(this->[01;31m[Kget_logger[m[K(), "No target positions for motor %d. Using HOME (0).", id);
+[1.824s]       |                                   [01;31m[K^~~~~~~~~~[m[K
+[1.828s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:529:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kmotors_[m[K’ was not declared in this scope
+[1.829s]   529 |             [01;31m[Kmotors_[m[K.push_back(config);
+[1.829s]       |             [01;31m[K^~~~~~~[m[K
+[1.833s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:[m[K In member function ‘[01m[Kvoid ICANInterface::initialize_publishers()[m[K’:
+[1.833s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:536:28:[m[K [01;31m[Kerror: [m[K‘[01m[Kmotors_[m[K’ was not declared in this scope; did you mean ‘[01m[Kmotor[m[K’?
+[1.833s]   536 |         for (auto& motor : [01;31m[Kmotors_[m[K) {
+[1.833s]       |                            [01;31m[K^~~~~~~[m[K
+[1.833s]       |                            [32m[Kmotor[m[K
+[1.833s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:538:40:[m[K [01;31m[Kerror: [m[K‘[01m[Kcreate_publisher[m[K’ was not declared in this scope
+[1.833s]   538 |             motor.position_publisher = [01;31m[Kcreate_publisher[m[K<std_msgs::msg::Float32>(prefix + "_position", 10);
+[1.833s]       |                                        [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[1.833s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:538:40:[m[K [01;36m[Knote: [m[Ksuggested alternatives:
+[1.833s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/node_impl.hpp:41[m[K,
+[1.833s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:1321[m[K,
+[1.833s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+[1.833s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+[1.833s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[1.833s]                  from [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:395[m[K:
+[1.833s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/create_publisher.hpp:113:1:[m[K [01;36m[Knote: [m[K  ‘[01m[Krclcpp::create_publisher[m[K’
+[1.833s]   113 | [01;36m[Kcreate_publisher[m[K(
+[1.833s]       | [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[1.833s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/create_publisher.hpp:46:1:[m[K [01;36m[Knote: [m[K  ‘[01m[Krclcpp::detail::create_publisher[m[K’
+[1.833s]    46 | [01;36m[Kcreate_publisher[m[K(
+[1.833s]       | [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[1.834s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:538:79:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+[1.834s]   538 |             motor.position_publisher = create_publisher<std_msgs::msg::Float32[01;31m[K>[m[K(prefix + "_position", 10);
+[1.834s]       |                                                                               [01;31m[K^[m[K
+[1.834s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:539:79:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+[1.834s]   539 |             motor.velocity_publisher = create_publisher<std_msgs::msg::Float32[01;31m[K>[m[K(prefix + "_velocity", 10);
+[1.834s]       |                                                                               [01;31m[K^[m[K
+[1.834s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:540:75:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+[1.834s]   540 |             motor.reached_publisher = create_publisher<std_msgs::msg::Bool[01;31m[K>[m[K(prefix + "_target_reached", 10);
+[1.834s]       |                                                                           [01;31m[K^[m[K
+[1.834s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[1.834s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[1.834s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[1.834s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[1.834s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[1.834s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[1.834s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[1.834s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[1.834s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[1.834s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[1.834s]                  from [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:395[m[K:
+[1.835s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:[m[K In member function ‘[01m[Kvoid ICANInterface::validate_positions(const std::vector<double, std::allocator<double> >&, float, float)[m[K’:
+[1.835s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:549:36:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.835s]   549 |                 RCLCPP_ERROR(this->[01;31m[Kget_logger[m[K(),
+[1.835s]       |                                    [01;31m[K^~~~~~~~~~[m[K
+[1.835s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:549:36:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.835s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:549:17:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.835s]   549 |                 [01;31m[KRCLCPP_ERROR[m[K(this->get_logger(),
+[1.835s]       |                 [01;31m[K^~~~~~~~~~~~[m[K
+[1.835s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:549:17:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.835s]   549 |                 [01;31m[KRCLCPP_ERROR[m[K(this->get_logger(),
+[1.835s]       |                 [01;31m[K^~~~~~~~~~~~[m[K
+[1.835s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:549:17:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.835s]   549 |                 [01;31m[KRCLCPP_ERROR[m[K(this->get_logger(),
+[1.835s]       |                 [01;31m[K^~~~~~~~~~~~[m[K
+[1.835s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[1.835s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[1.835s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[1.835s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[1.835s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[1.835s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[1.835s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[1.835s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[1.835s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[1.835s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[1.835s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[1.835s]                  from [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:395[m[K:
+[1.835s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:549:36:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.836s]   549 |                 RCLCPP_ERROR(this->[01;31m[Kget_logger[m[K(),
+[1.836s]       |                                    [01;31m[K^~~~~~~~~~[m[K
+[1.836s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:549:36:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.836s]   549 |                 RCLCPP_ERROR(this->[01;31m[Kget_logger[m[K(),
+[1.836s]       |                                    [01;31m[K^~~~~~~~~~[m[K
+[1.838s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:[m[K In member function ‘[01m[Kvoid ICANInterface::set_origin_all()[m[K’:
+[1.839s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:560:28:[m[K [01;31m[Kerror: [m[K‘[01m[Kmotors_[m[K’ was not declared in this scope; did you mean ‘[01m[Kmotor[m[K’?
+[1.839s]   560 |         for (auto& motor : [01;31m[Kmotors_[m[K) {
+[1.839s]       |                            [01;31m[K^~~~~~~[m[K
+[1.839s]       |                            [32m[Kmotor[m[K
+[1.839s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[1.839s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[1.839s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[1.839s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[1.839s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[1.839s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[1.839s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[1.839s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[1.839s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[1.839s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[1.839s]                  from [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:395[m[K:
+[1.839s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:562:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.839s]   562 |                 RCLCPP_INFO(this->[01;31m[Kget_logger[m[K(), "Setting origin for motor %d...", motor.id);
+[1.839s]       |                                   [01;31m[K^~~~~~~~~~[m[K
+[1.839s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:562:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.839s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:562:17:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.840s]   562 |                 [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), "Setting origin for motor %d...", motor.id);
+[1.840s]       |                 [01;31m[K^~~~~~~~~~~[m[K
+[1.840s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:562:17:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.840s]   562 |                 [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), "Setting origin for motor %d...", motor.id);
+[1.840s]       |                 [01;31m[K^~~~~~~~~~~[m[K
+[1.840s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:562:17:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.840s]   562 |                 [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), "Setting origin for motor %d...", motor.id);
+[1.840s]       |                 [01;31m[K^~~~~~~~~~~[m[K
+[1.840s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[1.840s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[1.840s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[1.840s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[1.840s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[1.840s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[1.840s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[1.840s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[1.840s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[1.840s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[1.840s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[1.840s]                  from [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:395[m[K:
+[1.840s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:562:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.840s]   562 |                 RCLCPP_INFO(this->[01;31m[Kget_logger[m[K(), "Setting origin for motor %d...", motor.id);
+[1.840s]       |                                   [01;31m[K^~~~~~~~~~[m[K
+[1.840s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:562:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.840s]   562 |                 RCLCPP_INFO(this->[01;31m[Kget_logger[m[K(), "Setting origin for motor %d...", motor.id);
+[1.840s]       |                                   [01;31m[K^~~~~~~~~~[m[K
+[1.843s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:563:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kcan[m[K’ was not declared in this scope; did you mean ‘[01m[Ktan[m[K’?
+[1.844s]   563 |                 [01;31m[Kcan[m[K.setOrigin(motor.id, 0);
+[1.844s]       |                 [01;31m[K^~~[m[K
+[1.844s]       |                 [32m[Ktan[m[K
+[1.844s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[1.844s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[1.844s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[1.844s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[1.844s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[1.844s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[1.844s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[1.844s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[1.844s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[1.844s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[1.844s]                  from [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:395[m[K:
+[1.844s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:564:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.844s]   564 |                 RCLCPP_INFO(this->[01;31m[Kget_logger[m[K(), "SetOrigin completed for motor %d.", motor.id);
+[1.844s]       |                                   [01;31m[K^~~~~~~~~~[m[K
+[1.844s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:564:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.844s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:564:17:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.844s]   564 |                 [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), "SetOrigin completed for motor %d.", motor.id);
+[1.844s]       |                 [01;31m[K^~~~~~~~~~~[m[K
+[1.844s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:564:17:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.845s]   564 |                 [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), "SetOrigin completed for motor %d.", motor.id);
+[1.845s]       |                 [01;31m[K^~~~~~~~~~~[m[K
+[1.845s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:564:17:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.845s]   564 |                 [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), "SetOrigin completed for motor %d.", motor.id);
+[1.845s]       |                 [01;31m[K^~~~~~~~~~~[m[K
+[1.845s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[1.845s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[1.845s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[1.845s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[1.845s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[1.845s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[1.845s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[1.845s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[1.845s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[1.845s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[1.845s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[1.845s]                  from [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:395[m[K:
+[1.845s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:564:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.845s]   564 |                 RCLCPP_INFO(this->[01;31m[Kget_logger[m[K(), "SetOrigin completed for motor %d.", motor.id);
+[1.845s]       |                                   [01;31m[K^~~~~~~~~~[m[K
+[1.845s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:564:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.845s]   564 |                 RCLCPP_INFO(this->[01;31m[Kget_logger[m[K(), "SetOrigin completed for motor %d.", motor.id);
+[1.845s]       |                                   [01;31m[K^~~~~~~~~~[m[K
+[1.851s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:567:17:[m[K [01;31m[Kerror: [m[K‘[01m[Klog_error_throttled[m[K’ was not declared in this scope
+[1.851s]   567 |                 [01;31m[Klog_error_throttled[m[K(motor, "SetOrigin failed for motor %d: %s", motor.id, e.what());
+[1.851s]       |                 [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[1.855s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:568:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kcan[m[K’ was not declared in this scope; did you mean ‘[01m[Ktan[m[K’?
+[1.855s]   568 |                 [01;31m[Kcan[m[K.setCurrent(motor.id, 0.0);
+[1.855s]       |                 [01;31m[K^~~[m[K
+[1.855s]       |                 [32m[Ktan[m[K
+[1.860s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:[m[K In member function ‘[01m[Krcl_interfaces::msg::SetParametersResult ICANInterface::parameters_callback(const std::vector<rclcpp::Parameter>&)[m[K’:
+[1.860s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:582:34:[m[K [01;31m[Kerror: [m[K‘[01m[Kmotors_[m[K’ was not declared in this scope; did you mean ‘[01m[Kmotor[m[K’?
+[1.860s]   582 |         for (const auto& motor : [01;31m[Kmotors_[m[K) {
+[1.860s]       |                                  [01;31m[K^~~~~~~[m[K
+[1.860s]       |                                  [32m[Kmotor[m[K
+[1.861s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[1.861s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[1.861s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[1.861s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[1.861s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[1.861s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[1.861s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[1.861s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[1.861s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[1.861s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[1.861s]                  from [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:395[m[K:
+[1.861s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:586:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.861s]   586 |                 RCLCPP_WARN(this->[01;31m[Kget_logger[m[K(), "%s", result.reason.c_str());
+[1.861s]       |                                   [01;31m[K^~~~~~~~~~[m[K
+[1.861s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:586:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.861s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:586:17:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.861s]   586 |                 [01;31m[KRCLCPP_WARN[m[K(this->get_logger(), "%s", result.reason.c_str());
+[1.861s]       |                 [01;31m[K^~~~~~~~~~~[m[K
+[1.861s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:586:17:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.861s]   586 |                 [01;31m[KRCLCPP_WARN[m[K(this->get_logger(), "%s", result.reason.c_str());
+[1.861s]       |                 [01;31m[K^~~~~~~~~~~[m[K
+[1.861s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:586:17:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.861s]   586 |                 [01;31m[KRCLCPP_WARN[m[K(this->get_logger(), "%s", result.reason.c_str());
+[1.862s]       |                 [01;31m[K^~~~~~~~~~~[m[K
+[1.862s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[1.862s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[1.862s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[1.862s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[1.862s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[1.862s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[1.862s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[1.862s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[1.862s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[1.862s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[1.862s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[1.862s]                  from [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:395[m[K:
+[1.862s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:586:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.862s]   586 |                 RCLCPP_WARN(this->[01;31m[Kget_logger[m[K(), "%s", result.reason.c_str());
+[1.862s]       |                                   [01;31m[K^~~~~~~~~~[m[K
+[1.862s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:586:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.862s]   586 |                 RCLCPP_WARN(this->[01;31m[Kget_logger[m[K(), "%s", result.reason.c_str());
+[1.862s]       |                                   [01;31m[K^~~~~~~~~~[m[K
+[1.865s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:593:32:[m[K [01;31m[Kerror: [m[K‘[01m[Kmotors_[m[K’ was not declared in this scope; did you mean ‘[01m[Kmotor[m[K’?
+[1.866s]   593 |             for (auto& motor : [01;31m[Kmotors_[m[K) {
+[1.866s]       |                                [01;31m[K^~~~~~~[m[K
+[1.866s]       |                                [32m[Kmotor[m[K
+[1.866s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[1.866s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[1.866s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[1.866s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[1.866s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[1.866s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[1.866s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[1.866s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[1.866s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[1.866s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[1.866s]                  from [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:395[m[K:
+[1.866s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:599:39:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.866s]   599 |                     RCLCPP_WARN(this->[01;31m[Kget_logger[m[K(), "%s", result.reason.c_str());
+[1.866s]       |                                       [01;31m[K^~~~~~~~~~[m[K
+[1.866s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:599:39:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.866s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:599:21:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.866s]   599 |                     [01;31m[KRCLCPP_WARN[m[K(this->get_logger(), "%s", result.reason.c_str());
+[1.866s]       |                     [01;31m[K^~~~~~~~~~~[m[K
+[1.866s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:599:21:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.867s]   599 |                     [01;31m[KRCLCPP_WARN[m[K(this->get_logger(), "%s", result.reason.c_str());
+[1.867s]       |                     [01;31m[K^~~~~~~~~~~[m[K
+[1.867s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:599:21:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.867s]   599 |                     [01;31m[KRCLCPP_WARN[m[K(this->get_logger(), "%s", result.reason.c_str());
+[1.867s]       |                     [01;31m[K^~~~~~~~~~~[m[K
+[1.867s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[1.867s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[1.867s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[1.867s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[1.867s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[1.867s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[1.867s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[1.867s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[1.867s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[1.867s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[1.867s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[1.867s]                  from [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:395[m[K:
+[1.867s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:599:39:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.867s]   599 |                     RCLCPP_WARN(this->[01;31m[Kget_logger[m[K(), "%s", result.reason.c_str());
+[1.867s]       |                                       [01;31m[K^~~~~~~~~~[m[K
+[1.867s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:599:39:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.867s]   599 |                     RCLCPP_WARN(this->[01;31m[Kget_logger[m[K(), "%s", result.reason.c_str());
+[1.867s]       |                                       [01;31m[K^~~~~~~~~~[m[K
+[1.871s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:607:32:[m[K [01;31m[Kerror: [m[K‘[01m[Kmotors_[m[K’ was not declared in this scope; did you mean ‘[01m[Kmotor[m[K’?
+[1.871s]   607 |             for (auto& motor : [01;31m[Kmotors_[m[K) {
+[1.871s]       |                                [01;31m[K^~~~~~~[m[K
+[1.871s]       |                                [32m[Kmotor[m[K
+[1.872s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[1.872s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[1.872s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[1.872s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[1.872s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[1.872s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[1.872s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[1.872s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[1.872s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[1.872s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[1.872s]                  from [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:395[m[K:
+[1.872s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:618:39:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.872s]   618 |                     RCLCPP_INFO(this->[01;31m[Kget_logger[m[K(),
+[1.872s]       |                                       [01;31m[K^~~~~~~~~~[m[K
+[1.872s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:618:39:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.872s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:618:21:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.872s]   618 |                     [01;31m[KRCLCPP_INFO[m[K(this->get_logger(),
+[1.872s]       |                     [01;31m[K^~~~~~~~~~~[m[K
+[1.872s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:618:21:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.873s]   618 |                     [01;31m[KRCLCPP_INFO[m[K(this->get_logger(),
+[1.873s]       |                     [01;31m[K^~~~~~~~~~~[m[K
+[1.873s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:618:21:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.873s]   618 |                     [01;31m[KRCLCPP_INFO[m[K(this->get_logger(),
+[1.873s]       |                     [01;31m[K^~~~~~~~~~~[m[K
+[1.873s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[1.873s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[1.873s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[1.873s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[1.873s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[1.873s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[1.873s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[1.873s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[1.873s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[1.873s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[1.873s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[1.873s]                  from [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:395[m[K:
+[1.873s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:618:39:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.873s]   618 |                     RCLCPP_INFO(this->[01;31m[Kget_logger[m[K(),
+[1.873s]       |                                       [01;31m[K^~~~~~~~~~[m[K
+[1.873s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:618:39:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.873s]   618 |                     RCLCPP_INFO(this->[01;31m[Kget_logger[m[K(),
+[1.873s]       |                                       [01;31m[K^~~~~~~~~~[m[K
+[1.881s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:636:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kreach_count_max_[m[K’ was not declared in this scope
+[1.881s]   636 |                 [01;31m[Kreach_count_max_[m[K = param.as_int();
+[1.881s]       |                 [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[1.886s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:[m[K In member function ‘[01m[Kvoid ICANInterface::control_loop()[m[K’:
+[1.886s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:645:28:[m[K [01;31m[Kerror: [m[K‘[01m[Kmotors_[m[K’ was not declared in this scope; did you mean ‘[01m[Kmotor[m[K’?
+[1.886s]   645 |         for (auto& motor : [01;31m[Kmotors_[m[K) {
+[1.886s]       |                            [01;31m[K^~~~~~~[m[K
+[1.886s]       |                            [32m[Kmotor[m[K
+[1.894s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:651:18:[m[K [01;31m[Kerror: [m[K‘[01m[Kcheck_safety[m[K’ was not declared in this scope
+[1.894s]   651 |             if (![01;31m[Kcheck_safety[m[K(motor.id, motor_data, motor)) {
+[1.894s]       |                  [01;31m[K^~~~~~~~~~~~[m[K
+[1.901s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:655:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kpublish_motor_state[m[K’ was not declared in this scope
+[1.902s]   655 |             [01;31m[Kpublish_motor_state[m[K(motor, motor_data);
+[1.902s]       |             [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[1.902s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[1.902s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[1.902s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[1.902s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[1.902s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[1.902s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[1.902s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[1.902s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[1.902s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[1.902s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[1.902s]                  from [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:395[m[K:
+[1.902s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:661:39:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.902s]   661 |                     RCLCPP_INFO(this->[01;31m[Kget_logger[m[K(), "Origin confirmed for motor %d, enabling control.", motor.id);
+[1.902s]       |                                       [01;31m[K^~~~~~~~~~[m[K
+[1.902s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:661:39:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.902s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:661:21:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.902s]   661 |                     [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), "Origin confirmed for motor %d, enabling control.", motor.id);
+[1.902s]       |                     [01;31m[K^~~~~~~~~~~[m[K
+[1.902s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:661:21:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.902s]   661 |                     [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), "Origin confirmed for motor %d, enabling control.", motor.id);
+[1.902s]       |                     [01;31m[K^~~~~~~~~~~[m[K
+[1.902s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:661:21:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.902s]   661 |                     [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), "Origin confirmed for motor %d, enabling control.", motor.id);
+[1.903s]       |                     [01;31m[K^~~~~~~~~~~[m[K
+[1.903s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[1.903s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[1.903s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[1.903s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[1.903s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[1.903s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[1.903s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[1.903s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[1.903s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[1.903s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[1.903s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[1.903s]                  from [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:395[m[K:
+[1.903s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:661:39:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.903s]   661 |                     RCLCPP_INFO(this->[01;31m[Kget_logger[m[K(), "Origin confirmed for motor %d, enabling control.", motor.id);
+[1.903s]       |                                       [01;31m[K^~~~~~~~~~[m[K
+[1.903s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:661:39:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.903s]   661 |                     RCLCPP_INFO(this->[01;31m[Kget_logger[m[K(), "Origin confirmed for motor %d, enabling control.", motor.id);
+[1.903s]       |                                       [01;31m[K^~~~~~~~~~[m[K
+[1.909s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:667:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kcontrol_motor[m[K’ was not declared in this scope; did you mean ‘[01m[Kcontrol_loop[m[K’?
+[1.909s]   667 |             [01;31m[Kcontrol_motor[m[K(motor, target_position, motor_data);
+[1.909s]       |             [01;31m[K^~~~~~~~~~~~~[m[K
+[1.909s]       |             [32m[Kcontrol_loop[m[K
+[1.914s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:[m[K In member function ‘[01m[Kbool ICANInterface::receive_and_decode_data(uint8_t, ICANInterface::MotorData&)[m[K’:
+[1.914s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:707:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kcan[m[K’ was not declared in this scope; did you mean ‘[01m[Ktan[m[K’?
+[1.914s]   707 |             if ([01;31m[Kcan[m[K.receive(id, data)) {
+[1.914s]       |                 [01;31m[K^~~[m[K
+[1.914s]       |                 [32m[Ktan[m[K
+[1.914s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[1.914s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[1.914s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[1.914s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[1.914s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[1.914s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[1.914s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[1.914s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[1.914s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[1.914s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[1.914s]                  from [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:395[m[K:
+[1.914s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:714:39:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.914s]   714 |                     RCLCPP_INFO(this->[01;31m[Kget_logger[m[K(),
+[1.914s]       |                                       [01;31m[K^~~~~~~~~~[m[K
+[1.915s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:714:39:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.915s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:714:21:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.915s]   714 |                     [01;31m[KRCLCPP_INFO[m[K(this->get_logger(),
+[1.915s]       |                     [01;31m[K^~~~~~~~~~~[m[K
+[1.915s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:714:21:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.915s]   714 |                     [01;31m[KRCLCPP_INFO[m[K(this->get_logger(),
+[1.915s]       |                     [01;31m[K^~~~~~~~~~~[m[K
+[1.915s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:714:21:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.915s]   714 |                     [01;31m[KRCLCPP_INFO[m[K(this->get_logger(),
+[1.915s]       |                     [01;31m[K^~~~~~~~~~~[m[K
+[1.915s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[1.915s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[1.915s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[1.915s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[1.915s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[1.915s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[1.915s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[1.915s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[1.915s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[1.915s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[1.915s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[1.915s]                  from [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:395[m[K:
+[1.915s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:714:39:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.915s]   714 |                     RCLCPP_INFO(this->[01;31m[Kget_logger[m[K(),
+[1.915s]       |                                       [01;31m[K^~~~~~~~~~[m[K
+[1.915s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:714:39:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ICANInterface[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[1.916s]   714 |                     RCLCPP_INFO(this->[01;31m[Kget_logger[m[K(),
+[1.916s]       |                                       [01;31m[K^~~~~~~~~~[m[K
+[1.920s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:716:36:[m[K [01;31m[Kerror: [m[K‘[01m[Ktarget_position[m[K’ was not declared in this scope
+[1.920s]   716 |                                id, [01;31m[Ktarget_position[m[K, motor_pos, motor_spd, motor_cur, motor_temp, motor_error);
+[1.920s]       |                                    [01;31m[K^~~~~~~~~~~~~~~[m[K
+[1.921s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:720:9:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kcatch[m[K’
+[1.921s]   720 |         [01;31m[Kcatch[m[K (const std::exception& e) {
+[1.921s]       |         [01;31m[K^~~~~[m[K
+[1.921s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:730:10:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[Kcatch[m[K’ before ‘[01m[Kcheck_safety[m[K’
+[1.921s]   730 |     bool [01;31m[Kcheck_safety[m[K(uint8_t motor_id, const MotorData& data, MotorConfig& motor)
+[1.921s]       |          [01;31m[K^~~~~~~~~~~~[m[K
+[1.921s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:730:10:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K([m[K’ before ‘[01m[Kcheck_safety[m[K’
+[1.921s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:730:10:[m[K [01;31m[Kerror: [m[Kexpected type-specifier before ‘[01m[Kcheck_safety[m[K’
+[1.921s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:731:5:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K{[m[K’ token
+[1.921s]   731 |     [01;31m[K{[m[K
+[1.921s]       |     [01;31m[K^[m[K
+[1.921s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:730:10:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K([m[K’
+[1.921s]   730 |     bool [01;36m[Kcheck_safety[m[K(uint8_t motor_id, const MotorData& data, MotorConfig& motor)
+[1.921s]       |          [01;36m[K^~~~~~~~~~~~[m[K
+[1.926s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:733:33:[m[K [01;31m[Kerror: [m[K‘[01m[Kmotor[m[K’ was not declared in this scope
+[1.926s]   733 |             log_error_throttled([01;31m[Kmotor[m[K, "Motor %d issue! Temp: %d°C, Error: %d",
+[1.926s]       |                                 [01;31m[K^~~~~[m[K
+[1.933s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:733:13:[m[K [01;31m[Kerror: [m[K‘[01m[Klog_error_throttled[m[K’ was not declared in this scope
+[1.933s]   733 |             [01;31m[Klog_error_throttled[m[K(motor, "Motor %d issue! Temp: %d°C, Error: %d",
+[1.933s]       |             [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[1.937s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:735:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kcan[m[K’ was not declared in this scope; did you mean ‘[01m[Ktan[m[K’?
+[1.937s]   735 |             [01;31m[Kcan[m[K.setCurrent(motor_id, 0.0);
+[1.937s]       |             [01;31m[K^~~[m[K
+[1.937s]       |             [32m[Ktan[m[K
+[1.941s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:739:29:[m[K [01;31m[Kerror: [m[K‘[01m[Kmotor[m[K’ was not declared in this scope
+[1.941s]   739 |         if (data.position < [01;31m[Kmotor[m[K.min_angle || data.position > motor.max_angle) {
+[1.941s]       |                             [01;31m[K^~~~~[m[K
+[1.949s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:740:13:[m[K [01;31m[Kerror: [m[K‘[01m[Klog_error_throttled[m[K’ was not declared in this scope
+[1.949s]   740 |             [01;31m[Klog_error_throttled[m[K(motor, "Position %.2f out of bounds [%.2f, %.2f] for motor %d",
+[1.949s]       |             [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[1.953s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:742:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kcan[m[K’ was not declared in this scope; did you mean ‘[01m[Ktan[m[K’?
+[1.953s]   742 |             [01;31m[Kcan[m[K.setCurrent(motor_id, 0.0);
+[1.953s]       |             [01;31m[K^~~[m[K
+[1.953s]       |             [32m[Ktan[m[K
+[1.957s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:747:33:[m[K [01;31m[Kerror: [m[K‘[01m[Kmotor[m[K’ was not declared in this scope
+[1.957s]   747 |             log_error_throttled([01;31m[Kmotor[m[K, "Motor %d overcurrent: %.2f A", motor_id, data.current);
+[1.957s]       |                                 [01;31m[K^~~~~[m[K
+[1.964s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:747:13:[m[K [01;31m[Kerror: [m[K‘[01m[Klog_error_throttled[m[K’ was not declared in this scope
+[1.964s]   747 |             [01;31m[Klog_error_throttled[m[K(motor, "Motor %d overcurrent: %.2f A", motor_id, data.current);
+[1.964s]       |             [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[1.967s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:748:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kcan[m[K’ was not declared in this scope; did you mean ‘[01m[Ktan[m[K’?
+[1.967s]   748 |             [01;31m[Kcan[m[K.setCurrent(motor_id, 0.0);
+[1.967s]       |             [01;31m[K^~~[m[K
+[1.967s]       |             [32m[Ktan[m[K
+[1.967s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:757:5:[m[K [01;31m[Kerror: [m[Ka function-definition is not allowed here before ‘[01m[K{[m[K’ token
+[1.967s]   757 |     [01;31m[K{[m[K
+[1.967s]       |     [01;31m[K^[m[K
+[1.968s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:769:5:[m[K [01;31m[Kerror: [m[Ka function-definition is not allowed here before ‘[01m[K{[m[K’ token
+[1.968s]   769 |     [01;31m[K{[m[K
+[1.968s]       |     [01;31m[K^[m[K
+[1.968s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:813:5:[m[K [01;31m[Kerror: [m[Ka function-definition is not allowed here before ‘[01m[K{[m[K’ token
+[1.968s]   813 |     [01;31m[K{[m[K
+[1.968s]       |     [01;31m[K^[m[K
+[1.968s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:819:5:[m[K [01;31m[Kerror: [m[Ka function-definition is not allowed here before ‘[01m[K{[m[K’ token
+[1.968s]   819 |     [01;31m[K{[m[K
+[1.968s]       |     [01;31m[K^[m[K
+[1.968s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:836:5:[m[K [01;31m[Kerror: [m[Ka function-definition is not allowed here before ‘[01m[K{[m[K’ token
+[1.968s]   836 |     [01;31m[K{[m[K
+[1.968s]       |     [01;31m[K^[m[K
+[1.971s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:851:5:[m[K [01;31m[Kerror: [m[K‘[01m[KCANInterface[m[K’ was not declared in this scope; did you mean ‘[01m[KICANInterface[m[K’?
+[1.971s]   851 |     [01;31m[KCANInterface[m[K can;
+[1.971s]       |     [01;31m[K^~~~~~~~~~~~[m[K
+[1.971s]       |     [32m[KICANInterface[m[K
+[1.974s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:[m[K In member function ‘[01m[Kint ICANInterface::main(int, char**)[m[K’:
+[1.974s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:862:56:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kmake_shared<((ICANInterface*)this)->ICANInterface::MotorControlNode>()[m[K’
+[1.974s]   862 |         rclcpp::spin([01;31m[Kstd::make_shared<MotorControlNode>()[m[K);
+[1.974s]       |                      [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~[m[K
+[1.974s] In file included from [01m[K/usr/include/c++/11/memory:77[m[K,
+[1.974s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153[m[K,
+[1.974s]                  from [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:395[m[K:
+[1.974s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:875:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, class ... _Args> std::shared_ptr<_Tp> std::make_shared(_Args&& ...)[m[K’
+[1.974s]   875 |     [01;36m[Kmake_shared[m[K(_Args&&... __args)
+[1.974s]       |     [01;36m[K^~~~~~~~~~~[m[K
+[1.974s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:875:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[1.974s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:862:56:[m[K [01;31m[Kerror: [m[Ktype/value mismatch at argument 1 in template parameter list for ‘[01m[Ktemplate<class _Tp, class ... _Args> std::shared_ptr<_Tp> std::make_shared(_Args&& ...)[m[K’
+[1.974s]   862 |         rclcpp::spin([01;31m[Kstd::make_shared<MotorControlNode>()[m[K);
+[1.974s]       |                      [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~[m[K
+[1.975s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:862:56:[m[K [01;36m[Knote: [m[K  expected a type, got ‘[01m[K((ICANInterface*)this)->ICANInterface::MotorControlNode[m[K’
+[1.980s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:868:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kglobal_node[m[K’ was not declared in this scope
+[1.980s]   868 |     [01;31m[Kglobal_node[m[K.reset();
+[1.980s]       |     [01;31m[K^~~~~~~~~~~[m[K
+[1.980s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:[m[K At global scope:
+[1.980s] [01m[K/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp:871:2:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id at end of input
+[1.980s]   871 | }
+[1.980s]       |  [01;31m[K^[m[K
+[2.295s] gmake[2]: *** [CMakeFiles/ControlMotor.dir/build.make:76: CMakeFiles/ControlMotor.dir/src/ControlMotor.cpp.o] Error 1
+[2.295s] gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/ControlMotor.dir/all] Error 2
+[2.296s] gmake: *** [Makefile:146: all] Error 2
+[2.297s] Invoked command in '/home/ubuntu/Desktop/AK80_64/build/motor_driver' returned '2': CMAKE_PREFIX_PATH=/home/ubuntu/Desktop/AK80_64/install/can_interface:/home/ubuntu/Desktop/AK80_64/install/motor_driver:/opt/ros/humble /usr/bin/cmake --build /home/ubuntu/Desktop/AK80_64/build/motor_driver -- -j8 -l8
