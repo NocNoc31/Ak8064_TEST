@@ -5,6 +5,7 @@ Hướng dẫn thiết lập và chạy node điều khiển động cơ (motor_
 
 Ubuntu với ROS 2 đã cài đặt.
 Workspace: /home/ubuntu/Desktop/AK80_64.
+cd Desktop/AK80_64/
 Giao diện CAN: can0.
 Python 3, tkinter (sudo apt-get install python3-tk).
 
