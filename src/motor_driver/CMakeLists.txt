@@ -10,20 +10,26 @@ find_package(rcl_interfaces REQUIRED)
 # Tạo node điều khiển motor
 add_executable(SetOMotor src/SetOMotor.cpp)
 
-# Thêm executable cho node MIT control
 add_executable(ControlMotor src/ControlMotor.cpp)
 
+add_executable(Test src/22_5_Test.cpp)
+
+add_executable(TestMes src/TestMes.cpp)
 
 # Liên kết với thư viện can_interface
 target_link_libraries(SetOMotor can_interface::can_interface)
 
 ament_target_dependencies(SetOMotor rclcpp can_interface std_msgs)
 ament_target_dependencies(ControlMotor rclcpp can_interface std_msgs rcl_interfaces)
+ament_target_dependencies(Test rclcpp can_interface std_msgs rcl_interfaces)
+ament_target_dependencies(TestMes rclcpp can_interface std_msgs rcl_interfaces)
 
 
 
 install(TARGETS SetOMotor
   ControlMotor
+  Test
+  TestMes
   DESTINATION lib/${PROJECT_NAME}
 )
 
@@ -35,6 +41,7 @@ install(DIRECTORY
 
 install(PROGRAMS
   GUI/set_params_gui.py
+  GUI/GUI_TEST.py
   scripts/TurnOn.sh
   DESTINATION lib/${PROJECT_NAME}
 )

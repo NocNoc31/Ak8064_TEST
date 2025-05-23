@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/Desktop/AK80_64/src/can_interface
+CMAKE_SOURCE_DIR = /home/ubuntu/Desktop/Ak8064_TEST/src/can_interface
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/Desktop/AK80_64/build/can_interface
+CMAKE_BINARY_DIR = /home/ubuntu/Desktop/Ak8064_TEST/build/can_interface
 
 # Utility rule file for can_interface_uninstall.
 
@@ -67,7 +67,7 @@ include CMakeFiles/can_interface_uninstall.dir/compiler_depend.make
 include CMakeFiles/can_interface_uninstall.dir/progress.make
 
 CMakeFiles/can_interface_uninstall:
-	/usr/bin/cmake -P /home/ubuntu/Desktop/AK80_64/build/can_interface/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
+	/usr/bin/cmake -P /home/ubuntu/Desktop/Ak8064_TEST/build/can_interface/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
 
 can_interface_uninstall: CMakeFiles/can_interface_uninstall
 can_interface_uninstall: CMakeFiles/can_interface_uninstall.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/can_interface_uninstall.dir/clean:
 .PHONY : CMakeFiles/can_interface_uninstall.dir/clean
 
 CMakeFiles/can_interface_uninstall.dir/depend:
-	cd /home/ubuntu/Desktop/AK80_64/build/can_interface && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/Desktop/AK80_64/src/can_interface /home/ubuntu/Desktop/AK80_64/src/can_interface /home/ubuntu/Desktop/AK80_64/build/can_interface /home/ubuntu/Desktop/AK80_64/build/can_interface /home/ubuntu/Desktop/AK80_64/build/can_interface/CMakeFiles/can_interface_uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntu/Desktop/Ak8064_TEST/build/can_interface && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/Desktop/Ak8064_TEST/src/can_interface /home/ubuntu/Desktop/Ak8064_TEST/src/can_interface /home/ubuntu/Desktop/Ak8064_TEST/build/can_interface /home/ubuntu/Desktop/Ak8064_TEST/build/can_interface /home/ubuntu/Desktop/Ak8064_TEST/build/can_interface/CMakeFiles/can_interface_uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/can_interface_uninstall.dir/depend
 

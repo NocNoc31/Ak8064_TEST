@@ -1,5 +1,5 @@
 CMakeFiles/SetOMotor.dir/src/SetOMotor.cpp.o: \
- /home/ubuntu/Desktop/AK80_64/src/motor_driver/src/SetOMotor.cpp \
+ /home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/SetOMotor.cpp \
  /usr/include/stdc-predef.h \
  /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp \
  /usr/include/c++/11/csignal \
@@ -618,7 +618,7 @@ CMakeFiles/SetOMotor.dir/src/SetOMotor.cpp.o: \
  /opt/ros/humble/include/rclcpp/rclcpp/wait_set_policies/thread_safe_synchronization.hpp \
  /opt/ros/humble/include/rclcpp/rclcpp/wait_set_policies/detail/write_preferring_read_write_lock.hpp \
  /opt/ros/humble/include/rclcpp/rclcpp/wait_set_template.hpp \
- /home/ubuntu/Desktop/AK80_64/install/can_interface/include/can_interface/caninterface.hpp \
+ /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/include/can_interface/caninterface.hpp \
  /usr/include/linux/can.h /usr/include/linux/types.h \
  /usr/include/x86_64-linux-gnu/asm/types.h \
  /usr/include/asm-generic/types.h /usr/include/asm-generic/int-ll64.h \

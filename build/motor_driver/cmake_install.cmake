@@ -1,8 +1,8 @@
-# Install script for directory: /home/ubuntu/Desktop/AK80_64/src/motor_driver
+# Install script for directory: /home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ubuntu/Desktop/AK80_64/install/motor_driver")
+  set(CMAKE_INSTALL_PREFIX "/home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -49,12 +49,12 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/motor_driver/SetOMotor"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/motor_driver" TYPE EXECUTABLE FILES "/home/ubuntu/Desktop/AK80_64/build/motor_driver/SetOMotor")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/motor_driver" TYPE EXECUTABLE FILES "/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver/SetOMotor")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/motor_driver/SetOMotor" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/motor_driver/SetOMotor")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/motor_driver/SetOMotor"
-         OLD_RPATH "/opt/ros/humble/lib:/home/ubuntu/Desktop/AK80_64/install/can_interface/lib:"
+         OLD_RPATH "/opt/ros/humble/lib:/home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/motor_driver/SetOMotor")
@@ -69,12 +69,12 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/motor_driver/ControlMotor"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/motor_driver" TYPE EXECUTABLE FILES "/home/ubuntu/Desktop/AK80_64/build/motor_driver/ControlMotor")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/motor_driver" TYPE EXECUTABLE FILES "/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver/ControlMotor")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/motor_driver/ControlMotor" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/motor_driver/ControlMotor")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/motor_driver/ControlMotor"
-         OLD_RPATH "/opt/ros/humble/lib:/home/ubuntu/Desktop/AK80_64/install/can_interface/lib:"
+         OLD_RPATH "/opt/ros/humble/lib:/home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/motor_driver/ControlMotor")
@@ -83,32 +83,73 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/motor_driver/Test" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/motor_driver/Test")
+    file(RPATH_CHECK
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/motor_driver/Test"
+         RPATH "")
+  endif()
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/motor_driver" TYPE EXECUTABLE FILES "/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver/Test")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/motor_driver/Test" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/motor_driver/Test")
+    file(RPATH_CHANGE
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/motor_driver/Test"
+         OLD_RPATH "/opt/ros/humble/lib:/home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/lib:"
+         NEW_RPATH "")
+    if(CMAKE_INSTALL_DO_STRIP)
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/motor_driver/Test")
+    endif()
+  endif()
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/motor_driver/TestMes" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/motor_driver/TestMes")
+    file(RPATH_CHECK
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/motor_driver/TestMes"
+         RPATH "")
+  endif()
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/motor_driver" TYPE EXECUTABLE FILES "/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver/TestMes")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/motor_driver/TestMes" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/motor_driver/TestMes")
+    file(RPATH_CHANGE
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/motor_driver/TestMes"
+         OLD_RPATH "/opt/ros/humble/lib:/home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/lib:"
+         NEW_RPATH "")
+    if(CMAKE_INSTALL_DO_STRIP)
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/motor_driver/TestMes")
+    endif()
+  endif()
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/motor_driver/" TYPE DIRECTORY FILES
-    "/home/ubuntu/Desktop/AK80_64/src/motor_driver/config"
-    "/home/ubuntu/Desktop/AK80_64/src/motor_driver/launch"
+    "/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/config"
+    "/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/launch"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/motor_driver" TYPE PROGRAM FILES
-    "/home/ubuntu/Desktop/AK80_64/src/motor_driver/GUI/set_params_gui.py"
-    "/home/ubuntu/Desktop/AK80_64/src/motor_driver/scripts/TurnOn.sh"
+    "/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/GUI/set_params_gui.py"
+    "/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/GUI/GUI_TEST.py"
+    "/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/scripts/TurnOn.sh"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/motor_driver/config" TYPE FILE FILES
-    "/home/ubuntu/Desktop/AK80_64/src/motor_driver/config/exercise1_params.yaml"
-    "/home/ubuntu/Desktop/AK80_64/src/motor_driver/config/exercise2_params.yaml"
+    "/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/config/exercise1_params.yaml"
+    "/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/config/exercise2_params.yaml"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/home/ubuntu/Desktop/AK80_64/build/motor_driver/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/motor_driver")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/motor_driver")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/parent_prefix_path" TYPE FILE FILES "/home/ubuntu/Desktop/AK80_64/build/motor_driver/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/motor_driver")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/parent_prefix_path" TYPE FILE FILES "/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/motor_driver")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -116,7 +157,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/motor_driver/environment" TYPE FILE FILES "/home/ubuntu/Desktop/AK80_64/build/motor_driver/ament_cmake_environment_hooks/ament_prefix_path.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/motor_driver/environment" TYPE FILE FILES "/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver/ament_cmake_environment_hooks/ament_prefix_path.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -124,42 +165,42 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/motor_driver/environment" TYPE FILE FILES "/home/ubuntu/Desktop/AK80_64/build/motor_driver/ament_cmake_environment_hooks/path.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/motor_driver/environment" TYPE FILE FILES "/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver/ament_cmake_environment_hooks/path.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/motor_driver" TYPE FILE FILES "/home/ubuntu/Desktop/AK80_64/build/motor_driver/ament_cmake_environment_hooks/local_setup.bash")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/motor_driver" TYPE FILE FILES "/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver/ament_cmake_environment_hooks/local_setup.bash")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/motor_driver" TYPE FILE FILES "/home/ubuntu/Desktop/AK80_64/build/motor_driver/ament_cmake_environment_hooks/local_setup.sh")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/motor_driver" TYPE FILE FILES "/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver/ament_cmake_environment_hooks/local_setup.sh")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/motor_driver" TYPE FILE FILES "/home/ubuntu/Desktop/AK80_64/build/motor_driver/ament_cmake_environment_hooks/local_setup.zsh")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/motor_driver" TYPE FILE FILES "/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver/ament_cmake_environment_hooks/local_setup.zsh")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/motor_driver" TYPE FILE FILES "/home/ubuntu/Desktop/AK80_64/build/motor_driver/ament_cmake_environment_hooks/local_setup.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/motor_driver" TYPE FILE FILES "/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver/ament_cmake_environment_hooks/local_setup.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/motor_driver" TYPE FILE FILES "/home/ubuntu/Desktop/AK80_64/build/motor_driver/ament_cmake_environment_hooks/package.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/motor_driver" TYPE FILE FILES "/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver/ament_cmake_environment_hooks/package.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/packages" TYPE FILE FILES "/home/ubuntu/Desktop/AK80_64/build/motor_driver/ament_cmake_index/share/ament_index/resource_index/packages/motor_driver")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/packages" TYPE FILE FILES "/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver/ament_cmake_index/share/ament_index/resource_index/packages/motor_driver")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/motor_driver/cmake" TYPE FILE FILES
-    "/home/ubuntu/Desktop/AK80_64/build/motor_driver/ament_cmake_core/motor_driverConfig.cmake"
-    "/home/ubuntu/Desktop/AK80_64/build/motor_driver/ament_cmake_core/motor_driverConfig-version.cmake"
+    "/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver/ament_cmake_core/motor_driverConfig.cmake"
+    "/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver/ament_cmake_core/motor_driverConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/motor_driver" TYPE FILE FILES "/home/ubuntu/Desktop/AK80_64/src/motor_driver/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/motor_driver" TYPE FILE FILES "/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/package.xml")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -170,5 +211,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/ubuntu/Desktop/AK80_64/build/motor_driver/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -1,0 +1,11 @@
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:[m[K In member function ‘[01m[Kvirtual void MotorController::handleCommand(const string&)[m[K’:
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:803:17:[m[K [01;31m[Kerror: [m[K‘[01m[Klast_data_[m[K’ was not declared in this scope
+  803 |             if ([01;31m[Klast_data_[m[K.position < min_angle_ || last_data_.position > max_angle_) {
+      |                 [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:[m[K In member function ‘[01m[Kvirtual void MotorController::control(const MotorData&)[m[K’:
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:899:9:[m[K [01;31m[Kerror: [m[K‘[01m[Klast_data_[m[K’ was not declared in this scope
+  899 |         [01;31m[Klast_data_[m[K = data;
+      |         [01;31m[K^~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/Test.dir/build.make:76: CMakeFiles/Test.dir/src/22_5_Test.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/Test.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

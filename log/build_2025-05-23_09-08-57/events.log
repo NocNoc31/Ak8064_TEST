@@ -1,0 +1,128 @@
+[0.000000] (-) TimerEvent: {}
+[0.000375] (can_interface) JobQueued: {'identifier': 'can_interface', 'dependencies': OrderedDict()}
+[0.000400] (motor_driver) JobQueued: {'identifier': 'motor_driver', 'dependencies': OrderedDict([('can_interface', '/home/ubuntu/Desktop/Ak8064_TEST/install/can_interface')])}
+[0.000416] (can_interface) JobStarted: {'identifier': 'can_interface'}
+[0.007350] (can_interface) JobProgress: {'identifier': 'can_interface', 'progress': 'cmake'}
+[0.008391] (can_interface) JobProgress: {'identifier': 'can_interface', 'progress': 'build'}
+[0.008487] (can_interface) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/ubuntu/Desktop/Ak8064_TEST/build/can_interface', '--', '-j8', '-l8'], 'cwd': '/home/ubuntu/Desktop/Ak8064_TEST/build/can_interface', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_US:en'), ('USER', 'ubuntu'), ('LC_TIME', 'vi_VN'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/ubuntu'), ('OLDPWD', '/home/ubuntu'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'vi_VN'), ('SYSTEMD_EXEC_PID', '1832'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'ubuntu'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'ubuntu'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/ubuntu/.local/share/pnpm:/opt/ros/humble/bin:/home/ubuntu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/ubuntu-Aspire-A315-58:@/tmp/.ICE-unix/1804,unix/ubuntu-Aspire-A315-58:/tmp/.ICE-unix/1804'), ('PAPERSIZE', 'a4'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'vi_VN'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/e8b83302_d0ca_46df_87ed_b7327b2bb5d0'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'vi_VN'), ('RMW_IMPLEMENTATION', 'rmw_cyclonedds_cpp'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.2HHQ62'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.115'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'vi_VN'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'vi_VN'), ('LC_IDENTIFICATION', 'vi_VN'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/ubuntu/Desktop/Ak8064_TEST/build/can_interface'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'vi_VN'), ('LC_PAPER', 'vi_VN'), ('COLCON', '1'), ('PNPM_HOME', '/home/ubuntu/.local/share/pnpm'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.050486] (can_interface) StdoutLine: {'line': b'[100%] Built target can_interface\n'}
+[0.059743] (can_interface) CommandEnded: {'returncode': 0}
+[0.060344] (can_interface) JobProgress: {'identifier': 'can_interface', 'progress': 'install'}
+[0.065986] (can_interface) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/ubuntu/Desktop/Ak8064_TEST/build/can_interface'], 'cwd': '/home/ubuntu/Desktop/Ak8064_TEST/build/can_interface', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_US:en'), ('USER', 'ubuntu'), ('LC_TIME', 'vi_VN'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/ubuntu'), ('OLDPWD', '/home/ubuntu'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'vi_VN'), ('SYSTEMD_EXEC_PID', '1832'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'ubuntu'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'ubuntu'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/ubuntu/.local/share/pnpm:/opt/ros/humble/bin:/home/ubuntu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/ubuntu-Aspire-A315-58:@/tmp/.ICE-unix/1804,unix/ubuntu-Aspire-A315-58:/tmp/.ICE-unix/1804'), ('PAPERSIZE', 'a4'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'vi_VN'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/e8b83302_d0ca_46df_87ed_b7327b2bb5d0'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'vi_VN'), ('RMW_IMPLEMENTATION', 'rmw_cyclonedds_cpp'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.2HHQ62'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.115'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'vi_VN'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'vi_VN'), ('LC_IDENTIFICATION', 'vi_VN'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/ubuntu/Desktop/Ak8064_TEST/build/can_interface'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'vi_VN'), ('LC_PAPER', 'vi_VN'), ('COLCON', '1'), ('PNPM_HOME', '/home/ubuntu/.local/share/pnpm'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.071954] (can_interface) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[0.072342] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/lib/libcan_interface.so\n'}
+[0.072415] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/include\n'}
+[0.072464] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/include/can_interface\n'}
+[0.072512] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/include/can_interface/caninterface.hpp\n'}
+[0.072560] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/environment/library_path.sh\n'}
+[0.073173] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/environment/library_path.dsv\n'}
+[0.073597] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/ament_index/resource_index/package_run_dependencies/can_interface\n'}
+[0.073716] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/ament_index/resource_index/parent_prefix_path/can_interface\n'}
+[0.073792] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/environment/ament_prefix_path.sh\n'}
+[0.073880] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/environment/ament_prefix_path.dsv\n'}
+[0.073963] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/environment/path.sh\n'}
+[0.074040] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/environment/path.dsv\n'}
+[0.074110] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/local_setup.bash\n'}
+[0.074214] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/local_setup.sh\n'}
+[0.074333] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/local_setup.zsh\n'}
+[0.074475] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/local_setup.dsv\n'}
+[0.074549] (can_interface) StdoutLine: {'line': b'-- Installing: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/package.dsv\n'}
+[0.074638] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/ament_index/resource_index/packages/can_interface\n'}
+[0.074737] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/cmake/export_can_interfaceExport.cmake\n'}
+[0.074863] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/cmake/export_can_interfaceExport-noconfig.cmake\n'}
+[0.074974] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[0.075071] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[0.075274] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[0.075359] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/cmake/can_interfaceConfig.cmake\n'}
+[0.075431] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/cmake/can_interfaceConfig-version.cmake\n'}
+[0.075506] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/package.xml\n'}
+[0.076407] (can_interface) CommandEnded: {'returncode': 0}
+[0.098505] (can_interface) JobEnded: {'identifier': 'can_interface', 'rc': 0}
+[0.099847] (-) TimerEvent: {}
+[0.100004] (motor_driver) JobStarted: {'identifier': 'motor_driver'}
+[0.107655] (motor_driver) JobProgress: {'identifier': 'motor_driver', 'progress': 'cmake'}
+[0.108819] (motor_driver) JobProgress: {'identifier': 'motor_driver', 'progress': 'build'}
+[0.109623] (motor_driver) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver', '--', '-j8', '-l8'], 'cwd': '/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_US:en'), ('USER', 'ubuntu'), ('LC_TIME', 'vi_VN'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/ubuntu'), ('OLDPWD', '/home/ubuntu'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'vi_VN'), ('SYSTEMD_EXEC_PID', '1832'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'ubuntu'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'ubuntu'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/ubuntu/.local/share/pnpm:/opt/ros/humble/bin:/home/ubuntu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/ubuntu-Aspire-A315-58:@/tmp/.ICE-unix/1804,unix/ubuntu-Aspire-A315-58:/tmp/.ICE-unix/1804'), ('PAPERSIZE', 'a4'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'vi_VN'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/e8b83302_d0ca_46df_87ed_b7327b2bb5d0'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'vi_VN'), ('RMW_IMPLEMENTATION', 'rmw_cyclonedds_cpp'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.2HHQ62'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.115'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/ubuntu/Desktop/Ak8064_TEST/install/can_interface:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'vi_VN'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'vi_VN'), ('LC_IDENTIFICATION', 'vi_VN'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'vi_VN'), ('LC_PAPER', 'vi_VN'), ('COLCON', '1'), ('PNPM_HOME', '/home/ubuntu/.local/share/pnpm'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/ubuntu/Desktop/Ak8064_TEST/install/can_interface:/opt/ros/humble')]), 'shell': False}
+[0.152268] (motor_driver) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target ControlMotor\x1b[0m\n'}
+[0.152527] (motor_driver) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target Test\x1b[0m\n'}
+[0.167967] (motor_driver) StdoutLine: {'line': b'[ 33%] Built target SetOMotor\n'}
+[0.171974] (motor_driver) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/Test.dir/src/22_5_Test.cpp.o\x1b[0m\n'}
+[0.176990] (motor_driver) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/ControlMotor.dir/src/ControlMotor.cpp.o\x1b[0m\n'}
+[0.199993] (-) TimerEvent: {}
+[0.302004] (-) TimerEvent: {}
+[0.402497] (-) TimerEvent: {}
+[0.502861] (-) TimerEvent: {}
+[0.603133] (-) TimerEvent: {}
+[0.703466] (-) TimerEvent: {}
+[0.803813] (-) TimerEvent: {}
+[0.904136] (-) TimerEvent: {}
+[1.004500] (-) TimerEvent: {}
+[1.104906] (-) TimerEvent: {}
+[1.205259] (-) TimerEvent: {}
+[1.305635] (-) TimerEvent: {}
+[1.405987] (-) TimerEvent: {}
+[1.506458] (-) TimerEvent: {}
+[1.606904] (-) TimerEvent: {}
+[1.707414] (-) TimerEvent: {}
+[1.807934] (-) TimerEvent: {}
+[1.908345] (-) TimerEvent: {}
+[2.008833] (-) TimerEvent: {}
+[2.109242] (-) TimerEvent: {}
+[2.209520] (-) TimerEvent: {}
+[2.309779] (-) TimerEvent: {}
+[2.410091] (-) TimerEvent: {}
+[2.510525] (-) TimerEvent: {}
+[2.610883] (-) TimerEvent: {}
+[2.634622] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid MotorControlNode::setParametersCallback(std::shared_ptr<rcl_interfaces::srv::SetParameters_Request_<std::allocator<void> > >, std::shared_ptr<rcl_interfaces::srv::SetParameters_Response_<std::allocator<void> > >, size_t)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[2.634899] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:571:33:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid operands of types \xe2\x80\x98\x1b[01m\x1b[K<unresolved overloaded function type>\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 to binary \xe2\x80\x98\x1b[01m\x1b[Koperator-\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.634988] (motor_driver) StderrLine: {'line': b'  571 |         \x1b[32m\x1b[Kresponse->results.resize\x1b[m\x1b[K\x1b[01;31m\x1b[K-\x1b[m\x1b[K\x1b[34m\x1b[K8\x1b[m\x1b[K<3>resize(672,672)\n'}
+[2.635062] (motor_driver) StderrLine: {'line': b'      |         \x1b[32m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\x1b[01;31m\x1b[K^\x1b[m\x1b[K\x1b[34m\x1b[K~\x1b[m\x1b[K\n'}
+[2.635123] (motor_driver) StderrLine: {'line': b'      |                           \x1b[32m\x1b[K|\x1b[m\x1b[K      \x1b[34m\x1b[K|\x1b[m\x1b[K\n'}
+[2.635175] (motor_driver) StderrLine: {'line': b'      |                           \x1b[32m\x1b[K|\x1b[m\x1b[K      \x1b[34m\x1b[Kint\x1b[m\x1b[K\n'}
+[2.635225] (motor_driver) StderrLine: {'line': b'      |                           \x1b[32m\x1b[K<unresolved overloaded function type>\x1b[m\x1b[K\n'}
+[2.640143] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:571:38:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kresize\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kdysize\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[2.640519] (motor_driver) StderrLine: {'line': b'  571 |         response->results.resize-8<3>\x1b[01;31m\x1b[Kresize\x1b[m\x1b[K(672,672)\n'}
+[2.640608] (motor_driver) StderrLine: {'line': b'      |                                      \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[2.640691] (motor_driver) StderrLine: {'line': b'      |                                      \x1b[32m\x1b[Kdysize\x1b[m\x1b[K\n'}
+[2.710998] (-) TimerEvent: {}
+[2.811311] (-) TimerEvent: {}
+[2.911631] (-) TimerEvent: {}
+[3.011977] (-) TimerEvent: {}
+[3.112273] (-) TimerEvent: {}
+[3.212562] (-) TimerEvent: {}
+[3.312911] (-) TimerEvent: {}
+[3.413237] (-) TimerEvent: {}
+[3.513562] (-) TimerEvent: {}
+[3.613819] (-) TimerEvent: {}
+[3.714167] (-) TimerEvent: {}
+[3.814620] (-) TimerEvent: {}
+[3.915133] (-) TimerEvent: {}
+[4.015447] (-) TimerEvent: {}
+[4.115751] (-) TimerEvent: {}
+[4.215990] (-) TimerEvent: {}
+[4.316269] (-) TimerEvent: {}
+[4.416542] (-) TimerEvent: {}
+[4.516795] (-) TimerEvent: {}
+[4.617072] (-) TimerEvent: {}
+[4.717353] (-) TimerEvent: {}
+[4.817635] (-) TimerEvent: {}
+[4.917872] (-) TimerEvent: {}
+[5.018130] (-) TimerEvent: {}
+[5.118406] (-) TimerEvent: {}
+[5.218659] (-) TimerEvent: {}
+[5.318917] (-) TimerEvent: {}
+[5.382980] (motor_driver) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/Test.dir/build.make:76: CMakeFiles/Test.dir/src/22_5_Test.cpp.o] Error 1\n'}
+[5.383168] (motor_driver) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/Test.dir/all] Error 2\n'}
+[5.383243] (motor_driver) StderrLine: {'line': b'gmake[1]: *** Waiting for unfinished jobs....\n'}
+[5.419096] (-) TimerEvent: {}
+[5.519386] (-) TimerEvent: {}
+[5.619741] (-) TimerEvent: {}
+[5.720057] (-) TimerEvent: {}
+[5.733727] (motor_driver) StdoutLine: {'line': b'[ 83%] \x1b[32m\x1b[1mLinking CXX executable ControlMotor\x1b[0m\n'}
+[5.820202] (-) TimerEvent: {}
+[5.920537] (-) TimerEvent: {}
+[5.961618] (motor_driver) StdoutLine: {'line': b'[ 83%] Built target ControlMotor\n'}
+[5.962818] (motor_driver) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[5.965026] (motor_driver) CommandEnded: {'returncode': 2}
+[5.971270] (motor_driver) JobEnded: {'identifier': 'motor_driver', 'rc': 2}
+[5.981780] (-) EventReactorShutdown: {}

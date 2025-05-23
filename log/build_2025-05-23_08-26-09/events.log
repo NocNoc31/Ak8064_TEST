@@ -1,0 +1,775 @@
+[0.000000] (-) TimerEvent: {}
+[0.000185] (can_interface) JobQueued: {'identifier': 'can_interface', 'dependencies': OrderedDict()}
+[0.000207] (motor_driver) JobQueued: {'identifier': 'motor_driver', 'dependencies': OrderedDict([('can_interface', '/home/ubuntu/Desktop/Ak8064_TEST/install/can_interface')])}
+[0.000364] (can_interface) JobStarted: {'identifier': 'can_interface'}
+[0.006608] (can_interface) JobProgress: {'identifier': 'can_interface', 'progress': 'cmake'}
+[0.007362] (can_interface) JobProgress: {'identifier': 'can_interface', 'progress': 'build'}
+[0.007973] (can_interface) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/ubuntu/Desktop/Ak8064_TEST/build/can_interface', '--', '-j8', '-l8'], 'cwd': '/home/ubuntu/Desktop/Ak8064_TEST/build/can_interface', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_US:en'), ('USER', 'ubuntu'), ('LC_TIME', 'vi_VN'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/ubuntu'), ('OLDPWD', '/home/ubuntu'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'vi_VN'), ('SYSTEMD_EXEC_PID', '1832'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'ubuntu'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'ubuntu'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/ubuntu/.local/share/pnpm:/opt/ros/humble/bin:/home/ubuntu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/ubuntu-Aspire-A315-58:@/tmp/.ICE-unix/1804,unix/ubuntu-Aspire-A315-58:/tmp/.ICE-unix/1804'), ('PAPERSIZE', 'a4'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'vi_VN'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/e8b83302_d0ca_46df_87ed_b7327b2bb5d0'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'vi_VN'), ('RMW_IMPLEMENTATION', 'rmw_cyclonedds_cpp'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.2HHQ62'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.115'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'vi_VN'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'vi_VN'), ('LC_IDENTIFICATION', 'vi_VN'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/ubuntu/Desktop/Ak8064_TEST/build/can_interface'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'vi_VN'), ('LC_PAPER', 'vi_VN'), ('COLCON', '1'), ('PNPM_HOME', '/home/ubuntu/.local/share/pnpm'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.052495] (can_interface) StdoutLine: {'line': b'[100%] Built target can_interface\n'}
+[0.061968] (can_interface) CommandEnded: {'returncode': 0}
+[0.062606] (can_interface) JobProgress: {'identifier': 'can_interface', 'progress': 'install'}
+[0.068810] (can_interface) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/ubuntu/Desktop/Ak8064_TEST/build/can_interface'], 'cwd': '/home/ubuntu/Desktop/Ak8064_TEST/build/can_interface', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_US:en'), ('USER', 'ubuntu'), ('LC_TIME', 'vi_VN'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/ubuntu'), ('OLDPWD', '/home/ubuntu'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'vi_VN'), ('SYSTEMD_EXEC_PID', '1832'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'ubuntu'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'ubuntu'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/ubuntu/.local/share/pnpm:/opt/ros/humble/bin:/home/ubuntu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/ubuntu-Aspire-A315-58:@/tmp/.ICE-unix/1804,unix/ubuntu-Aspire-A315-58:/tmp/.ICE-unix/1804'), ('PAPERSIZE', 'a4'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'vi_VN'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/e8b83302_d0ca_46df_87ed_b7327b2bb5d0'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'vi_VN'), ('RMW_IMPLEMENTATION', 'rmw_cyclonedds_cpp'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.2HHQ62'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.115'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'vi_VN'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'vi_VN'), ('LC_IDENTIFICATION', 'vi_VN'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/ubuntu/Desktop/Ak8064_TEST/build/can_interface'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'vi_VN'), ('LC_PAPER', 'vi_VN'), ('COLCON', '1'), ('PNPM_HOME', '/home/ubuntu/.local/share/pnpm'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.077878] (can_interface) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[0.078442] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/lib/libcan_interface.so\n'}
+[0.078555] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/include\n'}
+[0.078694] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/include/can_interface\n'}
+[0.078794] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/include/can_interface/caninterface.hpp\n'}
+[0.078912] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/environment/library_path.sh\n'}
+[0.079071] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/environment/library_path.dsv\n'}
+[0.079171] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/ament_index/resource_index/package_run_dependencies/can_interface\n'}
+[0.079265] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/ament_index/resource_index/parent_prefix_path/can_interface\n'}
+[0.079360] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/environment/ament_prefix_path.sh\n'}
+[0.079451] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/environment/ament_prefix_path.dsv\n'}
+[0.079542] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/environment/path.sh\n'}
+[0.079704] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/environment/path.dsv\n'}
+[0.079811] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/local_setup.bash\n'}
+[0.079899] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/local_setup.sh\n'}
+[0.079984] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/local_setup.zsh\n'}
+[0.080146] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/local_setup.dsv\n'}
+[0.080233] (can_interface) StdoutLine: {'line': b'-- Installing: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/package.dsv\n'}
+[0.080316] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/ament_index/resource_index/packages/can_interface\n'}
+[0.080408] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/cmake/export_can_interfaceExport.cmake\n'}
+[0.080496] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/cmake/export_can_interfaceExport-noconfig.cmake\n'}
+[0.080581] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[0.080675] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[0.080776] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[0.080863] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/cmake/can_interfaceConfig.cmake\n'}
+[0.080949] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/cmake/can_interfaceConfig-version.cmake\n'}
+[0.081042] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/package.xml\n'}
+[0.082449] (can_interface) CommandEnded: {'returncode': 0}
+[0.100102] (-) TimerEvent: {}
+[0.112229] (can_interface) JobEnded: {'identifier': 'can_interface', 'rc': 0}
+[0.113659] (motor_driver) JobStarted: {'identifier': 'motor_driver'}
+[0.119328] (motor_driver) JobProgress: {'identifier': 'motor_driver', 'progress': 'cmake'}
+[0.119816] (motor_driver) JobProgress: {'identifier': 'motor_driver', 'progress': 'build'}
+[0.119965] (motor_driver) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver', '--', '-j8', '-l8'], 'cwd': '/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_US:en'), ('USER', 'ubuntu'), ('LC_TIME', 'vi_VN'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/ubuntu'), ('OLDPWD', '/home/ubuntu'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'vi_VN'), ('SYSTEMD_EXEC_PID', '1832'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'ubuntu'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'ubuntu'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/ubuntu/.local/share/pnpm:/opt/ros/humble/bin:/home/ubuntu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/ubuntu-Aspire-A315-58:@/tmp/.ICE-unix/1804,unix/ubuntu-Aspire-A315-58:/tmp/.ICE-unix/1804'), ('PAPERSIZE', 'a4'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'vi_VN'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/e8b83302_d0ca_46df_87ed_b7327b2bb5d0'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'vi_VN'), ('RMW_IMPLEMENTATION', 'rmw_cyclonedds_cpp'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.2HHQ62'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.115'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/ubuntu/Desktop/Ak8064_TEST/install/can_interface:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'vi_VN'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'vi_VN'), ('LC_IDENTIFICATION', 'vi_VN'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'vi_VN'), ('LC_PAPER', 'vi_VN'), ('COLCON', '1'), ('PNPM_HOME', '/home/ubuntu/.local/share/pnpm'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/ubuntu/Desktop/Ak8064_TEST/install/can_interface:/opt/ros/humble')]), 'shell': False}
+[0.152403] (motor_driver) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.200215] (-) TimerEvent: {}
+[0.258242] (motor_driver) StdoutLine: {'line': b'-- Found rclcpp: 16.0.12 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.286771] (motor_driver) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.288915] (motor_driver) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.295106] (motor_driver) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.300294] (-) TimerEvent: {}
+[0.303206] (motor_driver) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.313716] (motor_driver) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.347022] (motor_driver) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.348658] (motor_driver) StdoutLine: {'line': b'-- Found rmw_cyclonedds_cpp: 1.3.4 (/opt/ros/humble/share/rmw_cyclonedds_cpp/cmake)\n'}
+[0.366020] (motor_driver) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_cyclonedds_cpp' as default\n"}
+[0.400401] (-) TimerEvent: {}
+[0.414143] (motor_driver) StdoutLine: {'line': b'-- Found can_interface: 0.0.1 (/home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/cmake)\n'}
+[0.473773] (motor_driver) StdoutLine: {'line': b'-- Configuring done\n'}
+[0.491604] (motor_driver) StdoutLine: {'line': b'-- Generating done\n'}
+[0.497963] (motor_driver) StdoutLine: {'line': b'-- Build files have been written to: /home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver\n'}
+[0.500479] (-) TimerEvent: {}
+[0.519999] (motor_driver) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target Test\x1b[0m\n'}
+[0.521235] (motor_driver) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target ControlMotor\x1b[0m\n'}
+[0.521558] (motor_driver) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target SetOMotor\x1b[0m\n'}
+[0.548530] (motor_driver) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/ControlMotor.dir/src/ControlMotor.cpp.o\x1b[0m\n'}
+[0.548823] (motor_driver) StdoutLine: {'line': b'[ 50%] Built target SetOMotor\n'}
+[0.549910] (motor_driver) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/Test.dir/src/22_5_Test.cpp.o\x1b[0m\n'}
+[0.600609] (-) TimerEvent: {}
+[0.700878] (-) TimerEvent: {}
+[0.801132] (-) TimerEvent: {}
+[0.901505] (-) TimerEvent: {}
+[1.001921] (-) TimerEvent: {}
+[1.102179] (-) TimerEvent: {}
+[1.202425] (-) TimerEvent: {}
+[1.302746] (-) TimerEvent: {}
+[1.403099] (-) TimerEvent: {}
+[1.503514] (-) TimerEvent: {}
+[1.603807] (-) TimerEvent: {}
+[1.704071] (-) TimerEvent: {}
+[1.804331] (-) TimerEvent: {}
+[1.904691] (-) TimerEvent: {}
+[2.004940] (-) TimerEvent: {}
+[2.105210] (-) TimerEvent: {}
+[2.205511] (-) TimerEvent: {}
+[2.305825] (-) TimerEvent: {}
+[2.406095] (-) TimerEvent: {}
+[2.506441] (-) TimerEvent: {}
+[2.606728] (-) TimerEvent: {}
+[2.707184] (-) TimerEvent: {}
+[2.807600] (-) TimerEvent: {}
+[2.846092] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual void InitializingState::control(MotorController&, const MotorData&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[2.846286] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:727:56:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kincomplete type \xe2\x80\x98\x1b[01m\x1b[KMotorController\x1b[m\x1b[K\xe2\x80\x99 used in nested name specifier\n'}
+[2.846334] (motor_driver) StderrLine: {'line': b'  727 |         if (std::abs(data.position) < MotorController::\x1b[01;31m\x1b[KPOSITION_TOLERANCE\x1b[m\x1b[K &&\n'}
+[2.846375] (motor_driver) StderrLine: {'line': b'      |                                                        \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.846413] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:728:56:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kincomplete type \xe2\x80\x98\x1b[01m\x1b[KMotorController\x1b[m\x1b[K\xe2\x80\x99 used in nested name specifier\n'}
+[2.846451] (motor_driver) StderrLine: {'line': b'  728 |             std::abs(data.velocity) < MotorController::\x1b[01;31m\x1b[KVELOCITY_TOLERANCE\x1b[m\x1b[K) {\n'}
+[2.846488] (motor_driver) StderrLine: {'line': b'      |                                                        \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.846525] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:729:13:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.846568] (motor_driver) StderrLine: {'line': b'  729 |             \x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.setOriginSet(true);\n'}
+[2.846607] (motor_driver) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.846656] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.846702] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.846744] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.846784] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:730:13:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.846829] (motor_driver) StderrLine: {'line': b'  730 |             \x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.transitionTo(std::make_unique<HomingState>());\n'}
+[2.846869] (motor_driver) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.846908] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.846948] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.846986] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.863241] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:730:54:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KHomingState\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.863390] (motor_driver) StderrLine: {'line': b'  730 |             controller.transitionTo(std::make_unique<\x1b[01;31m\x1b[KHomingState\x1b[m\x1b[K>());\n'}
+[2.863448] (motor_driver) StderrLine: {'line': b'      |                                                      \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.863488] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:730:66:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Kmake_unique<<expression error> >()\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.863533] (motor_driver) StderrLine: {'line': b'  730 |             controller.transitionTo(\x1b[01;31m\x1b[Kstd::make_unique<HomingState>()\x1b[m\x1b[K);\n'}
+[2.863587] (motor_driver) StderrLine: {'line': b'      |                                     \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~\x1b[m\x1b[K\n'}
+[2.863720] (motor_driver) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/11/memory:76\x1b[m\x1b[K,\n'}
+[2.863778] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153\x1b[m\x1b[K,\n'}
+[2.863828] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568\x1b[m\x1b[K:\n'}
+[2.863873] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/unique_ptr.h:961:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Tp, class ... _Args> typename std::_MakeUniq<_Tp>::__single_object std::make_unique(_Args&& ...)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.864030] (motor_driver) StderrLine: {'line': b'  961 |     \x1b[01;36m\x1b[Kmake_unique\x1b[m\x1b[K(_Args&&... __args)\n'}
+[2.864072] (motor_driver) StderrLine: {'line': b'      |     \x1b[01;36m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.864112] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/unique_ptr.h:961:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[2.864152] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:730:66:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[2.864193] (motor_driver) StderrLine: {'line': b'  730 |             controller.transitionTo(\x1b[01;31m\x1b[Kstd::make_unique<HomingState>()\x1b[m\x1b[K);\n'}
+[2.864233] (motor_driver) StderrLine: {'line': b'      |                                     \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~\x1b[m\x1b[K\n'}
+[2.864813] (motor_driver) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/11/memory:76\x1b[m\x1b[K,\n'}
+[2.864885] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153\x1b[m\x1b[K,\n'}
+[2.864950] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568\x1b[m\x1b[K:\n'}
+[2.865012] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/unique_ptr.h:967:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Tp> typename std::_MakeUniq<_Tp>::__array std::make_unique(std::size_t)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.865077] (motor_driver) StderrLine: {'line': b'  967 |     \x1b[01;36m\x1b[Kmake_unique\x1b[m\x1b[K(size_t __num)\n'}
+[2.865143] (motor_driver) StderrLine: {'line': b'      |     \x1b[01;36m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.865206] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/unique_ptr.h:967:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[2.865271] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:730:66:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[2.865336] (motor_driver) StderrLine: {'line': b'  730 |             controller.transitionTo(\x1b[01;31m\x1b[Kstd::make_unique<HomingState>()\x1b[m\x1b[K);\n'}
+[2.865401] (motor_driver) StderrLine: {'line': b'      |                                     \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~\x1b[m\x1b[K\n'}
+[2.865463] (motor_driver) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/11/memory:76\x1b[m\x1b[K,\n'}
+[2.865521] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153\x1b[m\x1b[K,\n'}
+[2.865578] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568\x1b[m\x1b[K:\n'}
+[2.865635] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/unique_ptr.h:973:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Tp, class ... _Args> typename std::_MakeUniq<_Tp>::__invalid_type std::make_unique(_Args&& ...)\x1b[m\x1b[K\xe2\x80\x99 (deleted)\n'}
+[2.866000] (motor_driver) StderrLine: {'line': b'  973 |     \x1b[01;36m\x1b[Kmake_unique\x1b[m\x1b[K(_Args&&...) = delete;\n'}
+[2.866105] (motor_driver) StderrLine: {'line': b'      |     \x1b[01;36m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.866167] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/unique_ptr.h:973:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[2.866224] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:730:66:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[2.866291] (motor_driver) StderrLine: {'line': b'  730 |             controller.transitionTo(\x1b[01;31m\x1b[Kstd::make_unique<HomingState>()\x1b[m\x1b[K);\n'}
+[2.866346] (motor_driver) StderrLine: {'line': b'      |                                     \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~\x1b[m\x1b[K\n'}
+[2.866398] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual void HomingState::control(MotorController&, const MotorData&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[2.866451] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:739:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.866495] (motor_driver) StderrLine: {'line': b'  739 |         \x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.getCAN()->setPositionSpeed(controller.getMotorId(), 0.0,\n'}
+[2.866543] (motor_driver) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.866588] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.866632] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.866690] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.866735] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:739:47:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.866779] (motor_driver) StderrLine: {'line': b'  739 |         controller.getCAN()->setPositionSpeed(\x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.getMotorId(), 0.0,\n'}
+[2.866823] (motor_driver) StderrLine: {'line': b'      |                                               \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.866867] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.866911] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.866955] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.866998] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:740:46:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.867041] (motor_driver) StderrLine: {'line': b'  740 |                                              \x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.getSpeed(), controller.getAccel());\n'}
+[2.867084] (motor_driver) StderrLine: {'line': b'      |                                              \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.867132] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.867176] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.867222] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.867264] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:740:69:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.867308] (motor_driver) StderrLine: {'line': b'  740 |                                              controller.getSpeed(), \x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.getAccel());\n'}
+[2.867350] (motor_driver) StderrLine: {'line': b'      |                                                                     \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.867393] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.867436] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.867480] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.867531] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:741:56:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kincomplete type \xe2\x80\x98\x1b[01m\x1b[KMotorController\x1b[m\x1b[K\xe2\x80\x99 used in nested name specifier\n'}
+[2.867596] (motor_driver) StderrLine: {'line': b'  741 |         if (std::abs(data.position) < MotorController::\x1b[01;31m\x1b[KPOSITION_TOLERANCE\x1b[m\x1b[K &&\n'}
+[2.867651] (motor_driver) StderrLine: {'line': b'      |                                                        \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.867706] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:742:56:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kincomplete type \xe2\x80\x98\x1b[01m\x1b[KMotorController\x1b[m\x1b[K\xe2\x80\x99 used in nested name specifier\n'}
+[2.867758] (motor_driver) StderrLine: {'line': b'  742 |             std::abs(data.velocity) < MotorController::\x1b[01;31m\x1b[KVELOCITY_TOLERANCE\x1b[m\x1b[K) {\n'}
+[2.867807] (motor_driver) StderrLine: {'line': b'      |                                                        \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.867858] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:743:13:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.867908] (motor_driver) StderrLine: {'line': b'  743 |             \x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.setHome(true);\n'}
+[2.867959] (motor_driver) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.868009] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.868060] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.868114] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.868164] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:744:13:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.868220] (motor_driver) StderrLine: {'line': b'  744 |             \x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.setTargetReached(true);\n'}
+[2.868271] (motor_driver) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.868320] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.868371] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.868422] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.868472] (motor_driver) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40\x1b[m\x1b[K,\n'}
+[2.868523] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24\x1b[m\x1b[K,\n'}
+[2.868573] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20\x1b[m\x1b[K,\n'}
+[2.868621] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[2.868681] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[2.868732] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[2.868781] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[2.868829] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[2.868885] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[2.868935] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[2.868983] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568\x1b[m\x1b[K:\n'}
+[2.869032] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:745:25:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.869081] (motor_driver) StderrLine: {'line': b'  745 |             RCLCPP_INFO(\x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.getLogger(), "Motor 0x%02X reached Home Position!",\n'}
+[2.869130] (motor_driver) StderrLine: {'line': b'      |                         \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.869178] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.869228] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.869281] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.869330] (motor_driver) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40\x1b[m\x1b[K,\n'}
+[2.869382] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24\x1b[m\x1b[K,\n'}
+[2.869440] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20\x1b[m\x1b[K,\n'}
+[2.869495] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[2.869549] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[2.869603] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[2.869662] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[2.869722] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[2.869778] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[2.869833] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[2.869888] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568\x1b[m\x1b[K:\n'}
+[2.869943] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:745:25:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.869999] (motor_driver) StderrLine: {'line': b'  745 |             RCLCPP_INFO(\x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.getLogger(), "Motor 0x%02X reached Home Position!",\n'}
+[2.870055] (motor_driver) StderrLine: {'line': b'      |                         \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.870113] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.870172] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.870227] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.870283] (motor_driver) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40\x1b[m\x1b[K,\n'}
+[2.870337] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24\x1b[m\x1b[K,\n'}
+[2.870393] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20\x1b[m\x1b[K,\n'}
+[2.870447] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[2.870503] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[2.870554] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[2.870607] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[2.870668] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[2.871105] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[2.871223] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[2.871325] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568\x1b[m\x1b[K:\n'}
+[2.871428] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:745:13:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[2.871536] (motor_driver) StderrLine: {'line': b'  745 |             \x1b[01;31m\x1b[KRCLCPP_INFO\x1b[m\x1b[K(controller.getLogger(), "Motor 0x%02X reached Home Position!",\n'}
+[2.872096] (motor_driver) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.872230] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:745:13:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[2.872341] (motor_driver) StderrLine: {'line': b'  745 |             \x1b[01;31m\x1b[KRCLCPP_INFO\x1b[m\x1b[K(controller.getLogger(), "Motor 0x%02X reached Home Position!",\n'}
+[2.872446] (motor_driver) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.872545] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:745:13:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[2.872644] (motor_driver) StderrLine: {'line': b'  745 |             \x1b[01;31m\x1b[KRCLCPP_INFO\x1b[m\x1b[K(controller.getLogger(), "Motor 0x%02X reached Home Position!",\n'}
+[2.873223] (motor_driver) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.873315] (motor_driver) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24\x1b[m\x1b[K,\n'}
+[2.873389] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40\x1b[m\x1b[K,\n'}
+[2.873463] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24\x1b[m\x1b[K,\n'}
+[2.873538] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20\x1b[m\x1b[K,\n'}
+[2.873612] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[2.873696] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[2.873776] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[2.873851] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[2.873924] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[2.873999] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[2.874073] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[2.874145] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568\x1b[m\x1b[K:\n'}
+[2.874219] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:745:25:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.874309] (motor_driver) StderrLine: {'line': b'  745 |             RCLCPP_INFO(\x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.getLogger(), "Motor 0x%02X reached Home Position!",\n'}
+[2.874390] (motor_driver) StderrLine: {'line': b'      |                         \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.874468] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.874555] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.874652] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.874764] (motor_driver) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24\x1b[m\x1b[K,\n'}
+[2.874849] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40\x1b[m\x1b[K,\n'}
+[2.874933] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24\x1b[m\x1b[K,\n'}
+[2.875015] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20\x1b[m\x1b[K,\n'}
+[2.875097] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[2.875180] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[2.875257] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[2.875332] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[2.875408] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[2.875484] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[2.875563] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[2.875645] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568\x1b[m\x1b[K:\n'}
+[2.875762] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:745:25:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.875866] (motor_driver) StderrLine: {'line': b'  745 |             RCLCPP_INFO(\x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.getLogger(), "Motor 0x%02X reached Home Position!",\n'}
+[2.875961] (motor_driver) StderrLine: {'line': b'      |                         \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.876061] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.876163] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.876267] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.876367] (motor_driver) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24\x1b[m\x1b[K,\n'}
+[2.876455] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40\x1b[m\x1b[K,\n'}
+[2.876561] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24\x1b[m\x1b[K,\n'}
+[2.876668] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20\x1b[m\x1b[K,\n'}
+[2.876771] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[2.876862] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[2.876947] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[2.877030] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[2.877113] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[2.877197] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[2.877278] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[2.877361] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568\x1b[m\x1b[K:\n'}
+[2.877457] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:746:25:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.877548] (motor_driver) StderrLine: {'line': b'  746 |                         \x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.getMotorId());\n'}
+[2.877628] (motor_driver) StderrLine: {'line': b'      |                         \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.877718] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.877800] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.877879] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.877960] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:747:13:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.878038] (motor_driver) StderrLine: {'line': b'  747 |             \x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.transitionTo(std::make_unique<MovingState>());\n'}
+[2.878116] (motor_driver) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.878202] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.878282] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.878366] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.878445] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:747:54:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KMovingState\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[KHomingState\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[2.878527] (motor_driver) StderrLine: {'line': b'  747 |             controller.transitionTo(std::make_unique<\x1b[01;31m\x1b[KMovingState\x1b[m\x1b[K>());\n'}
+[2.878603] (motor_driver) StderrLine: {'line': b'      |                                                      \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.878675] (motor_driver) StderrLine: {'line': b'      |                                                      \x1b[32m\x1b[KHomingState\x1b[m\x1b[K\n'}
+[2.878746] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:747:66:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Kmake_unique<<expression error> >()\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.878815] (motor_driver) StderrLine: {'line': b'  747 |             controller.transitionTo(\x1b[01;31m\x1b[Kstd::make_unique<MovingState>()\x1b[m\x1b[K);\n'}
+[2.878882] (motor_driver) StderrLine: {'line': b'      |                                     \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~\x1b[m\x1b[K\n'}
+[2.878949] (motor_driver) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/11/memory:76\x1b[m\x1b[K,\n'}
+[2.879015] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153\x1b[m\x1b[K,\n'}
+[2.879082] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568\x1b[m\x1b[K:\n'}
+[2.879160] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/unique_ptr.h:961:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Tp, class ... _Args> typename std::_MakeUniq<_Tp>::__single_object std::make_unique(_Args&& ...)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.879234] (motor_driver) StderrLine: {'line': b'  961 |     \x1b[01;36m\x1b[Kmake_unique\x1b[m\x1b[K(_Args&&... __args)\n'}
+[2.879306] (motor_driver) StderrLine: {'line': b'      |     \x1b[01;36m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.879378] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/unique_ptr.h:961:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[2.879451] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:747:66:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[2.879523] (motor_driver) StderrLine: {'line': b'  747 |             controller.transitionTo(\x1b[01;31m\x1b[Kstd::make_unique<MovingState>()\x1b[m\x1b[K);\n'}
+[2.879594] (motor_driver) StderrLine: {'line': b'      |                                     \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~\x1b[m\x1b[K\n'}
+[2.879671] (motor_driver) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/11/memory:76\x1b[m\x1b[K,\n'}
+[2.879748] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153\x1b[m\x1b[K,\n'}
+[2.879820] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568\x1b[m\x1b[K:\n'}
+[2.879891] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/unique_ptr.h:967:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Tp> typename std::_MakeUniq<_Tp>::__array std::make_unique(std::size_t)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.879970] (motor_driver) StderrLine: {'line': b'  967 |     \x1b[01;36m\x1b[Kmake_unique\x1b[m\x1b[K(size_t __num)\n'}
+[2.880041] (motor_driver) StderrLine: {'line': b'      |     \x1b[01;36m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.880112] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/unique_ptr.h:967:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[2.880184] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:747:66:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[2.880255] (motor_driver) StderrLine: {'line': b'  747 |             controller.transitionTo(\x1b[01;31m\x1b[Kstd::make_unique<MovingState>()\x1b[m\x1b[K);\n'}
+[2.880329] (motor_driver) StderrLine: {'line': b'      |                                     \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~\x1b[m\x1b[K\n'}
+[2.880416] (motor_driver) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/11/memory:76\x1b[m\x1b[K,\n'}
+[2.880503] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153\x1b[m\x1b[K,\n'}
+[2.880592] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568\x1b[m\x1b[K:\n'}
+[2.880686] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/unique_ptr.h:973:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Tp, class ... _Args> typename std::_MakeUniq<_Tp>::__invalid_type std::make_unique(_Args&& ...)\x1b[m\x1b[K\xe2\x80\x99 (deleted)\n'}
+[2.880783] (motor_driver) StderrLine: {'line': b'  973 |     \x1b[01;36m\x1b[Kmake_unique\x1b[m\x1b[K(_Args&&...) = delete;\n'}
+[2.880869] (motor_driver) StderrLine: {'line': b'      |     \x1b[01;36m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.880957] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/unique_ptr.h:973:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[2.881046] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:747:66:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[2.881140] (motor_driver) StderrLine: {'line': b'  747 |             controller.transitionTo(\x1b[01;31m\x1b[Kstd::make_unique<MovingState>()\x1b[m\x1b[K);\n'}
+[2.881228] (motor_driver) StderrLine: {'line': b'      |                                     \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~\x1b[m\x1b[K\n'}
+[2.881317] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual void MovingState::control(MotorController&, const MotorData&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[2.881407] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:756:13:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.881494] (motor_driver) StderrLine: {'line': b'  756 |         if (\x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.getTargetPositions().empty()) {\n'}
+[2.881572] (motor_driver) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.881652] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.881738] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.881820] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.881902] (motor_driver) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40\x1b[m\x1b[K,\n'}
+[2.881979] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24\x1b[m\x1b[K,\n'}
+[2.882055] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20\x1b[m\x1b[K,\n'}
+[2.882132] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[2.882214] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[2.882290] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[2.882366] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[2.882441] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[2.882518] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[2.882600] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[2.882678] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568\x1b[m\x1b[K:\n'}
+[2.882757] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:757:26:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.882834] (motor_driver) StderrLine: {'line': b'  757 |             RCLCPP_ERROR(\x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.getLogger(), "Motor 0x%02X: target_positions is empty!",\n'}
+[2.882909] (motor_driver) StderrLine: {'line': b'      |                          \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.882983] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.883057] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.883132] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.883206] (motor_driver) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40\x1b[m\x1b[K,\n'}
+[2.883279] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24\x1b[m\x1b[K,\n'}
+[2.883355] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20\x1b[m\x1b[K,\n'}
+[2.883431] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[2.883633] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[2.884044] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[2.884142] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[2.884234] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[2.884328] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[2.884418] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[2.884508] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568\x1b[m\x1b[K:\n'}
+[2.884606] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:757:26:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.885067] (motor_driver) StderrLine: {'line': b'  757 |             RCLCPP_ERROR(\x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.getLogger(), "Motor 0x%02X: target_positions is empty!",\n'}
+[2.885168] (motor_driver) StderrLine: {'line': b'      |                          \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.885258] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.885348] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.885435] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.885526] (motor_driver) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40\x1b[m\x1b[K,\n'}
+[2.885620] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24\x1b[m\x1b[K,\n'}
+[2.886329] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20\x1b[m\x1b[K,\n'}
+[2.886442] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[2.886518] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[2.886590] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[2.886663] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[2.886739] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[2.886811] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[2.886887] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[2.886952] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568\x1b[m\x1b[K:\n'}
+[2.887030] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:757:13:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[2.887117] (motor_driver) StderrLine: {'line': b'  757 |             \x1b[01;31m\x1b[KRCLCPP_ERROR\x1b[m\x1b[K(controller.getLogger(), "Motor 0x%02X: target_positions is empty!",\n'}
+[2.887201] (motor_driver) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.887289] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:757:13:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[2.887377] (motor_driver) StderrLine: {'line': b'  757 |             \x1b[01;31m\x1b[KRCLCPP_ERROR\x1b[m\x1b[K(controller.getLogger(), "Motor 0x%02X: target_positions is empty!",\n'}
+[2.887465] (motor_driver) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.887553] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:757:13:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[2.887642] (motor_driver) StderrLine: {'line': b'  757 |             \x1b[01;31m\x1b[KRCLCPP_ERROR\x1b[m\x1b[K(controller.getLogger(), "Motor 0x%02X: target_positions is empty!",\n'}
+[2.887744] (motor_driver) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.887833] (motor_driver) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24\x1b[m\x1b[K,\n'}
+[2.887914] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40\x1b[m\x1b[K,\n'}
+[2.887985] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24\x1b[m\x1b[K,\n'}
+[2.888056] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20\x1b[m\x1b[K,\n'}
+[2.888138] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[2.888226] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[2.888314] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[2.888402] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[2.888492] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[2.888581] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[2.888669] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[2.888759] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568\x1b[m\x1b[K:\n'}
+[2.888843] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:757:26:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.888923] (motor_driver) StderrLine: {'line': b'  757 |             RCLCPP_ERROR(\x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.getLogger(), "Motor 0x%02X: target_positions is empty!",\n'}
+[2.889020] (motor_driver) StderrLine: {'line': b'      |                          \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.889104] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.889195] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.889280] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.889370] (motor_driver) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24\x1b[m\x1b[K,\n'}
+[2.889454] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40\x1b[m\x1b[K,\n'}
+[2.889536] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24\x1b[m\x1b[K,\n'}
+[2.889632] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20\x1b[m\x1b[K,\n'}
+[2.889744] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[2.889844] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[2.889942] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[2.890041] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[2.890130] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[2.890229] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[2.890322] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[2.890433] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568\x1b[m\x1b[K:\n'}
+[2.890544] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:757:26:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.890657] (motor_driver) StderrLine: {'line': b'  757 |             RCLCPP_ERROR(\x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.getLogger(), "Motor 0x%02X: target_positions is empty!",\n'}
+[2.890773] (motor_driver) StderrLine: {'line': b'      |                          \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.890884] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.890998] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.891098] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.891205] (motor_driver) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24\x1b[m\x1b[K,\n'}
+[2.891315] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40\x1b[m\x1b[K,\n'}
+[2.891417] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24\x1b[m\x1b[K,\n'}
+[2.891532] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20\x1b[m\x1b[K,\n'}
+[2.891640] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[2.891751] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[2.891852] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[2.891953] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[2.892051] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[2.892144] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[2.892245] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[2.892340] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568\x1b[m\x1b[K:\n'}
+[2.892435] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:758:26:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.892540] (motor_driver) StderrLine: {'line': b'  758 |                          \x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.getMotorId());\n'}
+[2.892647] (motor_driver) StderrLine: {'line': b'      |                          \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.892777] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.892900] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.893010] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.893127] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:759:13:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.893240] (motor_driver) StderrLine: {'line': b'  759 |             \x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.stop();\n'}
+[2.893355] (motor_driver) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.893474] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.893585] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.893707] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.893817] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:760:13:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.893939] (motor_driver) StderrLine: {'line': b'  760 |             \x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.transitionTo(std::make_unique<StoppedState>());\n'}
+[2.894051] (motor_driver) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.894160] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.894271] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.894379] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.894498] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:760:54:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KStoppedState\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.894608] (motor_driver) StderrLine: {'line': b'  760 |             controller.transitionTo(std::make_unique<\x1b[01;31m\x1b[KStoppedState\x1b[m\x1b[K>());\n'}
+[2.894710] (motor_driver) StderrLine: {'line': b'      |                                                      \x1b[01;31m\x1b[K^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.894804] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:760:67:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Kmake_unique<<expression error> >()\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.894900] (motor_driver) StderrLine: {'line': b'  760 |             controller.transitionTo(\x1b[01;31m\x1b[Kstd::make_unique<StoppedState>()\x1b[m\x1b[K);\n'}
+[2.894991] (motor_driver) StderrLine: {'line': b'      |                                     \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~\x1b[m\x1b[K\n'}
+[2.895082] (motor_driver) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/11/memory:76\x1b[m\x1b[K,\n'}
+[2.895168] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153\x1b[m\x1b[K,\n'}
+[2.895259] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568\x1b[m\x1b[K:\n'}
+[2.895352] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/unique_ptr.h:961:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Tp, class ... _Args> typename std::_MakeUniq<_Tp>::__single_object std::make_unique(_Args&& ...)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.895441] (motor_driver) StderrLine: {'line': b'  961 |     \x1b[01;36m\x1b[Kmake_unique\x1b[m\x1b[K(_Args&&... __args)\n'}
+[2.895535] (motor_driver) StderrLine: {'line': b'      |     \x1b[01;36m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.895629] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/unique_ptr.h:961:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[2.895735] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:760:67:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[2.895831] (motor_driver) StderrLine: {'line': b'  760 |             controller.transitionTo(\x1b[01;31m\x1b[Kstd::make_unique<StoppedState>()\x1b[m\x1b[K);\n'}
+[2.895928] (motor_driver) StderrLine: {'line': b'      |                                     \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~\x1b[m\x1b[K\n'}
+[2.896021] (motor_driver) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/11/memory:76\x1b[m\x1b[K,\n'}
+[2.896117] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153\x1b[m\x1b[K,\n'}
+[2.896229] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568\x1b[m\x1b[K:\n'}
+[2.896322] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/unique_ptr.h:967:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Tp> typename std::_MakeUniq<_Tp>::__array std::make_unique(std::size_t)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.896414] (motor_driver) StderrLine: {'line': b'  967 |     \x1b[01;36m\x1b[Kmake_unique\x1b[m\x1b[K(size_t __num)\n'}
+[2.896501] (motor_driver) StderrLine: {'line': b'      |     \x1b[01;36m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.896591] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/unique_ptr.h:967:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[2.896694] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:760:67:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[2.896794] (motor_driver) StderrLine: {'line': b'  760 |             controller.transitionTo(\x1b[01;31m\x1b[Kstd::make_unique<StoppedState>()\x1b[m\x1b[K);\n'}
+[2.896881] (motor_driver) StderrLine: {'line': b'      |                                     \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~\x1b[m\x1b[K\n'}
+[2.896968] (motor_driver) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/11/memory:76\x1b[m\x1b[K,\n'}
+[2.897054] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153\x1b[m\x1b[K,\n'}
+[2.897140] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568\x1b[m\x1b[K:\n'}
+[2.897227] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/unique_ptr.h:973:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Tp, class ... _Args> typename std::_MakeUniq<_Tp>::__invalid_type std::make_unique(_Args&& ...)\x1b[m\x1b[K\xe2\x80\x99 (deleted)\n'}
+[2.897316] (motor_driver) StderrLine: {'line': b'  973 |     \x1b[01;36m\x1b[Kmake_unique\x1b[m\x1b[K(_Args&&...) = delete;\n'}
+[2.897402] (motor_driver) StderrLine: {'line': b'      |     \x1b[01;36m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.897487] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/unique_ptr.h:973:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[2.897573] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:760:67:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[2.897662] (motor_driver) StderrLine: {'line': b'  760 |             controller.transitionTo(\x1b[01;31m\x1b[Kstd::make_unique<StoppedState>()\x1b[m\x1b[K);\n'}
+[2.897755] (motor_driver) StderrLine: {'line': b'      |                                     \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~\x1b[m\x1b[K\n'}
+[2.897837] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:763:24:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.897930] (motor_driver) StderrLine: {'line': b'  763 |         float target = \x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.getTargetPositions()[controller.getCurrentTargetIndex()];\n'}
+[2.898018] (motor_driver) StderrLine: {'line': b'      |                        \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.898100] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.898188] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.898274] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.898351] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:763:56:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.898423] (motor_driver) StderrLine: {'line': b'  763 |         float target = controller.getTargetPositions()[\x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.getCurrentTargetIndex()];\n'}
+[2.898489] (motor_driver) StderrLine: {'line': b'      |                                                        \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.898553] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.898620] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.898703] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.898770] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:764:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.898835] (motor_driver) StderrLine: {'line': b'  764 |         \x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.getCAN()->setPositionSpeed(controller.getMotorId(), target,\n'}
+[2.898903] (motor_driver) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.898977] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.899052] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.899130] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.899208] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:764:47:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.899296] (motor_driver) StderrLine: {'line': b'  764 |         controller.getCAN()->setPositionSpeed(\x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.getMotorId(), target,\n'}
+[2.899382] (motor_driver) StderrLine: {'line': b'      |                                               \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.899464] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.899558] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.899638] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.899732] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:765:46:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.899823] (motor_driver) StderrLine: {'line': b'  765 |                                              \x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.getSpeed(), controller.getAccel());\n'}
+[2.899904] (motor_driver) StderrLine: {'line': b'      |                                              \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.899981] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.900062] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.900145] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.900229] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:765:69:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.900315] (motor_driver) StderrLine: {'line': b'  765 |                                              controller.getSpeed(), \x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.getAccel());\n'}
+[2.900402] (motor_driver) StderrLine: {'line': b'      |                                                                     \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.900487] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.900583] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.900677] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.900765] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:766:79:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kincomplete type \xe2\x80\x98\x1b[01m\x1b[KMotorController\x1b[m\x1b[K\xe2\x80\x99 used in nested name specifier\n'}
+[2.900852] (motor_driver) StderrLine: {'line': b'  766 |         bool is_reached = std::abs(data.position - target) < MotorController::\x1b[01;31m\x1b[KPOSITION_TOLERANCE\x1b[m\x1b[K;\n'}
+[2.900941] (motor_driver) StderrLine: {'line': b'      |                                                                               \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.901028] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:768:13:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.901115] (motor_driver) StderrLine: {'line': b'  768 |             \x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.incrementReachCounter();\n'}
+[2.901192] (motor_driver) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.901275] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.901360] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.901451] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.901538] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:769:17:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.901627] (motor_driver) StderrLine: {'line': b'  769 |             if (\x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.getReachCounter() >= controller.getReachCountMax()) {\n'}
+[2.901719] (motor_driver) StderrLine: {'line': b'      |                 \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.901802] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.901883] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.901972] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.902053] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:769:49:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.902135] (motor_driver) StderrLine: {'line': b'  769 |             if (controller.getReachCounter() >= \x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.getReachCountMax()) {\n'}
+[2.902218] (motor_driver) StderrLine: {'line': b'      |                                                 \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.902298] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.902379] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.902466] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.902547] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:770:17:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.902633] (motor_driver) StderrLine: {'line': b'  770 |                 \x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.resetReachCounter();\n'}
+[2.902724] (motor_driver) StderrLine: {'line': b'      |                 \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.902808] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.902890] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.902972] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.903054] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:771:17:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.903136] (motor_driver) StderrLine: {'line': b'  771 |                 \x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.setTargetReached(true);\n'}
+[2.903224] (motor_driver) StderrLine: {'line': b'      |                 \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.903305] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.903389] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.903485] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.903590] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:772:17:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.903698] (motor_driver) StderrLine: {'line': b'  772 |                 \x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.incrementTargetIndex();\n'}
+[2.903795] (motor_driver) StderrLine: {'line': b'      |                 \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.903893] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.903991] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.904090] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.904185] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:773:21:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.904282] (motor_driver) StderrLine: {'line': b'  773 |                 if (\x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.getCurrentTargetIndex() >= controller.getTargetPositions().size()) {\n'}
+[2.904380] (motor_driver) StderrLine: {'line': b'      |                     \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.904474] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.904572] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.904666] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.904761] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:773:59:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.904857] (motor_driver) StderrLine: {'line': b'  773 |                 if (controller.getCurrentTargetIndex() >= \x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.getTargetPositions().size()) {\n'}
+[2.904944] (motor_driver) StderrLine: {'line': b'      |                                                           \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.905033] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.905125] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.905226] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.905317] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:774:21:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.905410] (motor_driver) StderrLine: {'line': b'  774 |                     \x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.setCurrentTargetIndex(controller.getTargetPositions().size() - 1);\n'}
+[2.905501] (motor_driver) StderrLine: {'line': b'      |                     \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.905593] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.905702] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.905798] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.905888] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:774:54:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.905978] (motor_driver) StderrLine: {'line': b'  774 |                     controller.setCurrentTargetIndex(\x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.getTargetPositions().size() - 1);\n'}
+[2.906070] (motor_driver) StderrLine: {'line': b'      |                                                      \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.906153] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.906238] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.906320] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.906406] (motor_driver) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40\x1b[m\x1b[K,\n'}
+[2.906493] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24\x1b[m\x1b[K,\n'}
+[2.906584] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20\x1b[m\x1b[K,\n'}
+[2.906719] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[2.906828] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[2.906890] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[2.906938] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[2.906985] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[2.907031] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[2.907081] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[2.907127] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568\x1b[m\x1b[K:\n'}
+[2.907174] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:775:33:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.907223] (motor_driver) StderrLine: {'line': b'  775 |                     RCLCPP_INFO(\x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.getLogger(), "Motor 0x%02X: All targets reached.",\n'}
+[2.907270] (motor_driver) StderrLine: {'line': b'      |                                 \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.907320] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.907373] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.907427] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.907486] (motor_driver) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40\x1b[m\x1b[K,\n'}
+[2.907566] (-) TimerEvent: {}
+[2.907804] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24\x1b[m\x1b[K,\n'}
+[2.907955] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20\x1b[m\x1b[K,\n'}
+[2.908024] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[2.908108] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[2.908203] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[2.908282] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[2.908357] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[2.908443] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[2.908529] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[2.908620] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568\x1b[m\x1b[K:\n'}
+[2.908731] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:775:33:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.908829] (motor_driver) StderrLine: {'line': b'  775 |                     RCLCPP_INFO(\x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.getLogger(), "Motor 0x%02X: All targets reached.",\n'}
+[2.908914] (motor_driver) StderrLine: {'line': b'      |                                 \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.908978] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.909054] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.909116] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.909183] (motor_driver) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40\x1b[m\x1b[K,\n'}
+[2.909251] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24\x1b[m\x1b[K,\n'}
+[2.909332] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20\x1b[m\x1b[K,\n'}
+[2.909428] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[2.909517] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[2.909607] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[2.909707] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[2.909789] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[2.909869] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[2.909932] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[2.909986] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568\x1b[m\x1b[K:\n'}
+[2.910039] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:775:21:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[2.910093] (motor_driver) StderrLine: {'line': b'  775 |                     \x1b[01;31m\x1b[KRCLCPP_INFO\x1b[m\x1b[K(controller.getLogger(), "Motor 0x%02X: All targets reached.",\n'}
+[2.910148] (motor_driver) StderrLine: {'line': b'      |                     \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.910204] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:775:21:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[2.910258] (motor_driver) StderrLine: {'line': b'  775 |                     \x1b[01;31m\x1b[KRCLCPP_INFO\x1b[m\x1b[K(controller.getLogger(), "Motor 0x%02X: All targets reached.",\n'}
+[2.910312] (motor_driver) StderrLine: {'line': b'      |                     \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.910365] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:775:21:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[2.910424] (motor_driver) StderrLine: {'line': b'  775 |                     \x1b[01;31m\x1b[KRCLCPP_INFO\x1b[m\x1b[K(controller.getLogger(), "Motor 0x%02X: All targets reached.",\n'}
+[2.910486] (motor_driver) StderrLine: {'line': b'      |                     \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.910542] (motor_driver) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24\x1b[m\x1b[K,\n'}
+[2.910598] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40\x1b[m\x1b[K,\n'}
+[2.910667] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24\x1b[m\x1b[K,\n'}
+[2.910737] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20\x1b[m\x1b[K,\n'}
+[2.910796] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[2.910853] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[2.910908] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[2.910964] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[2.911020] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[2.911078] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[2.911133] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[2.911188] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568\x1b[m\x1b[K:\n'}
+[2.911244] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:775:33:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.911301] (motor_driver) StderrLine: {'line': b'  775 |                     RCLCPP_INFO(\x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.getLogger(), "Motor 0x%02X: All targets reached.",\n'}
+[2.911367] (motor_driver) StderrLine: {'line': b'      |                                 \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.911421] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.911493] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.911550] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.911605] (motor_driver) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24\x1b[m\x1b[K,\n'}
+[2.911660] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40\x1b[m\x1b[K,\n'}
+[2.911716] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24\x1b[m\x1b[K,\n'}
+[2.911766] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20\x1b[m\x1b[K,\n'}
+[2.911817] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[2.911868] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[2.911917] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[2.911978] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[2.912029] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[2.912080] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[2.912130] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[2.912184] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568\x1b[m\x1b[K:\n'}
+[2.912234] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:775:33:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.912283] (motor_driver) StderrLine: {'line': b'  775 |                     RCLCPP_INFO(\x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.getLogger(), "Motor 0x%02X: All targets reached.",\n'}
+[2.912333] (motor_driver) StderrLine: {'line': b'      |                                 \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.912382] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.912437] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.912486] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.912533] (motor_driver) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24\x1b[m\x1b[K,\n'}
+[2.912581] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40\x1b[m\x1b[K,\n'}
+[2.912628] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24\x1b[m\x1b[K,\n'}
+[2.912689] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20\x1b[m\x1b[K,\n'}
+[2.912739] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[2.912789] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[2.912838] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[2.912886] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[2.912935] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[2.912984] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[2.913032] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[2.913079] (motor_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568\x1b[m\x1b[K:\n'}
+[2.913126] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:776:33:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.913180] (motor_driver) StderrLine: {'line': b'  776 |                                 \x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.getMotorId());\n'}
+[2.913228] (motor_driver) StderrLine: {'line': b'      |                                 \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.913275] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.913323] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.913375] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.913424] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:780:13:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.913474] (motor_driver) StderrLine: {'line': b'  780 |             \x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.resetReachCounter();\n'}
+[2.913521] (motor_driver) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.913569] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.913620] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.913685] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.913751] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:781:13:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.913802] (motor_driver) StderrLine: {'line': b'  781 |             \x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.setTargetReached(false);\n'}
+[2.913851] (motor_driver) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.913899] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.913947] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.913996] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.914044] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual void StoppedState::control(MotorController&, const MotorData&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[2.914099] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:790:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of incomplete type \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.914152] (motor_driver) StderrLine: {'line': b'  790 |         \x1b[01;31m\x1b[Kcontroller\x1b[m\x1b[K.stop();\n'}
+[2.914201] (motor_driver) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.914253] (motor_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kforward declaration of \xe2\x80\x98\x1b[01m\x1b[Kclass MotorController\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.914301] (motor_driver) StderrLine: {'line': b'  719 |     virtual void control(class \x1b[01;36m\x1b[KMotorController\x1b[m\x1b[K& controller, const MotorData& data) = 0;\n'}
+[2.914349] (motor_driver) StderrLine: {'line': b'      |                                \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.007901] (-) TimerEvent: {}
+[3.108381] (-) TimerEvent: {}
+[3.208838] (-) TimerEvent: {}
+[3.309491] (-) TimerEvent: {}
+[3.410142] (-) TimerEvent: {}
+[3.510439] (-) TimerEvent: {}
+[3.610762] (-) TimerEvent: {}
+[3.711006] (-) TimerEvent: {}
+[3.811294] (-) TimerEvent: {}
+[3.911553] (-) TimerEvent: {}
+[4.011809] (-) TimerEvent: {}
+[4.112148] (-) TimerEvent: {}
+[4.212592] (-) TimerEvent: {}
+[4.312877] (-) TimerEvent: {}
+[4.413227] (-) TimerEvent: {}
+[4.513519] (-) TimerEvent: {}
+[4.613761] (-) TimerEvent: {}
+[4.713994] (-) TimerEvent: {}
+[4.814274] (-) TimerEvent: {}
+[4.914542] (-) TimerEvent: {}
+[5.014809] (-) TimerEvent: {}
+[5.115074] (-) TimerEvent: {}
+[5.215342] (-) TimerEvent: {}
+[5.315600] (-) TimerEvent: {}
+[5.415837] (-) TimerEvent: {}
+[5.516092] (-) TimerEvent: {}
+[5.616337] (-) TimerEvent: {}
+[5.696760] (motor_driver) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/Test.dir/build.make:76: CMakeFiles/Test.dir/src/22_5_Test.cpp.o] Error 1\n'}
+[5.696963] (motor_driver) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/Test.dir/all] Error 2\n'}
+[5.697015] (motor_driver) StderrLine: {'line': b'gmake[1]: *** Waiting for unfinished jobs....\n'}
+[5.716456] (-) TimerEvent: {}
+[5.816719] (-) TimerEvent: {}
+[5.916949] (-) TimerEvent: {}
+[6.017233] (-) TimerEvent: {}
+[6.117579] (-) TimerEvent: {}
+[6.173220] (motor_driver) StdoutLine: {'line': b'[ 83%] \x1b[32m\x1b[1mLinking CXX executable ControlMotor\x1b[0m\n'}
+[6.217691] (-) TimerEvent: {}
+[6.318039] (-) TimerEvent: {}
+[6.418312] (-) TimerEvent: {}
+[6.492351] (motor_driver) StdoutLine: {'line': b'[ 83%] Built target ControlMotor\n'}
+[6.493489] (motor_driver) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[6.495114] (motor_driver) CommandEnded: {'returncode': 2}
+[6.501919] (motor_driver) JobEnded: {'identifier': 'motor_driver', 'rc': 2}
+[6.512497] (-) EventReactorShutdown: {}

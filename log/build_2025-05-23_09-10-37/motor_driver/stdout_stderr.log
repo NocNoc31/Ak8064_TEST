@@ -1,0 +1,40 @@
+[35m[1mConsolidate compiler generated dependencies of target Test[0m
+[ 16%] [32mBuilding CXX object CMakeFiles/Test.dir/src/22_5_Test.cpp.o[0m
+[ 83%] Built target SetOMotor
+[ 83%] Built target ControlMotor
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:595:5:[m[K [01;31m[Kerror: [m[K‘[01m[Krclcpp[m[K’ has not been declared
+  595 |     [01;31m[Krclcpp[m[K::init(argc, argv);
+      |     [01;31m[K^~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:597:9:[m[K [01;31m[Kerror: [m[K‘[01m[Krclcpp[m[K’ has not been declared
+  597 |         [01;31m[Krclcpp[m[K::spin(std::make_shared<MotorControlNode>());
+      |         [01;31m[K^~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:597:27:[m[K [01;31m[Kerror: [m[K‘[01m[Kmake_shared[m[K’ is not a member of ‘[01m[Kstd[m[K’
+  597 |         rclcpp::spin(std::[01;31m[Kmake_shared[m[K<MotorControlNode>());
+      |                           [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:1:1:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::make_shared[m[K’ is defined in header ‘[01m[K<memory>[m[K’; did you forget to ‘[01m[K#include <memory>[m[K’?
+  +++ |+[32m[K#include <memory>[m[K
+    1 | // #include "rclcpp/rclcpp.hpp"
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:597:39:[m[K [01;31m[Kerror: [m[K‘[01m[KMotorControlNode[m[K’ was not declared in this scope
+  597 |         rclcpp::spin(std::make_shared<[01;31m[KMotorControlNode[m[K>());
+      |                                       [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:597:57:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K)[m[K’ token
+  597 |         rclcpp::spin(std::make_shared<MotorControlNode>([01;31m[K)[m[K);
+      |                                                         [01;31m[K^[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:598:34:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K&[m[K’ token
+  598 |     } catch (const std::exception[01;31m[K&[m[K e) {
+      |                                  [01;31m[K^[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:598:34:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K&[m[K’ token
+  598 |     } catch [34m[K([m[Kconst std::exception[01;31m[K&[m[K e) {
+      |             [34m[K~[m[K                    [01;31m[K^[m[K
+      |                                  [32m[K)[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:598:34:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K{[m[K’ before ‘[01m[K&[m[K’ token
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:598:36:[m[K [01;31m[Kerror: [m[K‘[01m[Ke[m[K’ was not declared in this scope
+  598 |     } catch (const std::exception& [01;31m[Ke[m[K) {
+      |                                    [01;31m[K^[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:601:5:[m[K [01;31m[Kerror: [m[K‘[01m[Krclcpp[m[K’ has not been declared
+  601 |     [01;31m[Krclcpp[m[K::shutdown();
+      |     [01;31m[K^~~~~~[m[K
+gmake[2]: *** [CMakeFiles/Test.dir/build.make:76: CMakeFiles/Test.dir/src/22_5_Test.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/Test.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

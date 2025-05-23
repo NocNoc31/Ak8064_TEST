@@ -1,0 +1,24 @@
+[0.010s] Invoking command in '/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver': AMENT_PREFIX_PATH=/home/ubuntu/Desktop/Ak8064_TEST/install/can_interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ubuntu/Desktop/Ak8064_TEST/install/can_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver -- -j8 -l8
+[0.052s] [35m[1mConsolidate compiler generated dependencies of target ControlMotor[0m
+[0.053s] [35m[1mConsolidate compiler generated dependencies of target Test[0m
+[0.068s] [ 33%] Built target SetOMotor
+[0.072s] [ 50%] [32mBuilding CXX object CMakeFiles/Test.dir/src/22_5_Test.cpp.o[0m
+[0.077s] [ 66%] [32mBuilding CXX object CMakeFiles/ControlMotor.dir/src/ControlMotor.cpp.o[0m
+[2.535s] [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:[m[K In member function ‘[01m[Kvoid MotorControlNode::setParametersCallback(std::shared_ptr<rcl_interfaces::srv::SetParameters_Request_<std::allocator<void> > >, std::shared_ptr<rcl_interfaces::srv::SetParameters_Response_<std::allocator<void> > >, size_t)[m[K’:
+[2.535s] [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:571:33:[m[K [01;31m[Kerror: [m[Kinvalid operands of types ‘[01m[K<unresolved overloaded function type>[m[K’ and ‘[01m[Kint[m[K’ to binary ‘[01m[Koperator-[m[K’
+[2.535s]   571 |         [32m[Kresponse->results.resize[m[K[01;31m[K-[m[K[34m[K8[m[K<3>resize(672,672)
+[2.535s]       |         [32m[K~~~~~~~~~~~~~~~~~~~~~~~~[m[K[01;31m[K^[m[K[34m[K~[m[K
+[2.535s]       |                           [32m[K|[m[K      [34m[K|[m[K
+[2.535s]       |                           [32m[K|[m[K      [34m[Kint[m[K
+[2.535s]       |                           [32m[K<unresolved overloaded function type>[m[K
+[2.540s] [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:571:38:[m[K [01;31m[Kerror: [m[K‘[01m[Kresize[m[K’ was not declared in this scope; did you mean ‘[01m[Kdysize[m[K’?
+[2.541s]   571 |         response->results.resize-8<3>[01;31m[Kresize[m[K(672,672)
+[2.541s]       |                                      [01;31m[K^~~~~~[m[K
+[2.541s]       |                                      [32m[Kdysize[m[K
+[5.283s] gmake[2]: *** [CMakeFiles/Test.dir/build.make:76: CMakeFiles/Test.dir/src/22_5_Test.cpp.o] Error 1
+[5.283s] gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/Test.dir/all] Error 2
+[5.283s] gmake[1]: *** Waiting for unfinished jobs....
+[5.634s] [ 83%] [32m[1mLinking CXX executable ControlMotor[0m
+[5.862s] [ 83%] Built target ControlMotor
+[5.863s] gmake: *** [Makefile:146: all] Error 2
+[5.865s] Invoked command in '/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver' returned '2': AMENT_PREFIX_PATH=/home/ubuntu/Desktop/Ak8064_TEST/install/can_interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ubuntu/Desktop/Ak8064_TEST/install/can_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver -- -j8 -l8

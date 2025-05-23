@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp" "CMakeFiles/ControlMotor.dir/src/ControlMotor.cpp.o" "gcc" "CMakeFiles/ControlMotor.dir/src/ControlMotor.cpp.o.d"
+  "/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/ControlMotor.cpp" "CMakeFiles/ControlMotor.dir/src/ControlMotor.cpp.o" "gcc" "CMakeFiles/ControlMotor.dir/src/ControlMotor.cpp.o.d"
   )
 
 # Targets to which this target links.

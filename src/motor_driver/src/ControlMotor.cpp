@@ -1,4 +1,3 @@
-
 #include "rclcpp/rclcpp.hpp"
 #include "rcl_interfaces/srv/set_parameters.hpp"
 #include "std_msgs/msg/float32.hpp"
@@ -484,8 +483,3 @@ int main(int argc, char** argv) {
     rclcpp::shutdown();
     return 0;
 }
-
-
-
-
-

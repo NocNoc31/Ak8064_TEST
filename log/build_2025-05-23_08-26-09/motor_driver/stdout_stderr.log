@@ -1,0 +1,664 @@
+-- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found rclcpp: 16.0.12 (/opt/ros/humble/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_cyclonedds_cpp: 1.3.4 (/opt/ros/humble/share/rmw_cyclonedds_cpp/cmake)
+-- Using RMW implementation 'rmw_cyclonedds_cpp' as default
+-- Found can_interface: 0.0.1 (/home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/cmake)
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver
+[35m[1mConsolidate compiler generated dependencies of target Test[0m
+[35m[1mConsolidate compiler generated dependencies of target ControlMotor[0m
+[35m[1mConsolidate compiler generated dependencies of target SetOMotor[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/ControlMotor.dir/src/ControlMotor.cpp.o[0m
+[ 50%] Built target SetOMotor
+[ 66%] [32mBuilding CXX object CMakeFiles/Test.dir/src/22_5_Test.cpp.o[0m
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:[m[K In member function ‘[01m[Kvirtual void InitializingState::control(MotorController&, const MotorData&)[m[K’:
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:727:56:[m[K [01;31m[Kerror: [m[Kincomplete type ‘[01m[KMotorController[m[K’ used in nested name specifier
+  727 |         if (std::abs(data.position) < MotorController::[01;31m[KPOSITION_TOLERANCE[m[K &&
+      |                                                        [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:728:56:[m[K [01;31m[Kerror: [m[Kincomplete type ‘[01m[KMotorController[m[K’ used in nested name specifier
+  728 |             std::abs(data.velocity) < MotorController::[01;31m[KVELOCITY_TOLERANCE[m[K) {
+      |                                                        [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:729:13:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  729 |             [01;31m[Kcontroller[m[K.setOriginSet(true);
+      |             [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:730:13:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  730 |             [01;31m[Kcontroller[m[K.transitionTo(std::make_unique<HomingState>());
+      |             [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:730:54:[m[K [01;31m[Kerror: [m[K‘[01m[KHomingState[m[K’ was not declared in this scope
+  730 |             controller.transitionTo(std::make_unique<[01;31m[KHomingState[m[K>());
+      |                                                      [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:730:66:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kmake_unique<<expression error> >()[m[K’
+  730 |             controller.transitionTo([01;31m[Kstd::make_unique<HomingState>()[m[K);
+      |                                     [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~[m[K
+In file included from [01m[K/usr/include/c++/11/memory:76[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153[m[K,
+                 from [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568[m[K:
+[01m[K/usr/include/c++/11/bits/unique_ptr.h:961:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, class ... _Args> typename std::_MakeUniq<_Tp>::__single_object std::make_unique(_Args&& ...)[m[K’
+  961 |     [01;36m[Kmake_unique[m[K(_Args&&... __args)
+      |     [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/usr/include/c++/11/bits/unique_ptr.h:961:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:730:66:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+  730 |             controller.transitionTo([01;31m[Kstd::make_unique<HomingState>()[m[K);
+      |                                     [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~[m[K
+In file included from [01m[K/usr/include/c++/11/memory:76[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153[m[K,
+                 from [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568[m[K:
+[01m[K/usr/include/c++/11/bits/unique_ptr.h:967:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> typename std::_MakeUniq<_Tp>::__array std::make_unique(std::size_t)[m[K’
+  967 |     [01;36m[Kmake_unique[m[K(size_t __num)
+      |     [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/usr/include/c++/11/bits/unique_ptr.h:967:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:730:66:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+  730 |             controller.transitionTo([01;31m[Kstd::make_unique<HomingState>()[m[K);
+      |                                     [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~[m[K
+In file included from [01m[K/usr/include/c++/11/memory:76[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153[m[K,
+                 from [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568[m[K:
+[01m[K/usr/include/c++/11/bits/unique_ptr.h:973:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, class ... _Args> typename std::_MakeUniq<_Tp>::__invalid_type std::make_unique(_Args&& ...)[m[K’ (deleted)
+  973 |     [01;36m[Kmake_unique[m[K(_Args&&...) = delete;
+      |     [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/usr/include/c++/11/bits/unique_ptr.h:973:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:730:66:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+  730 |             controller.transitionTo([01;31m[Kstd::make_unique<HomingState>()[m[K);
+      |                                     [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:[m[K In member function ‘[01m[Kvirtual void HomingState::control(MotorController&, const MotorData&)[m[K’:
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:739:9:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  739 |         [01;31m[Kcontroller[m[K.getCAN()->setPositionSpeed(controller.getMotorId(), 0.0,
+      |         [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:739:47:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  739 |         controller.getCAN()->setPositionSpeed([01;31m[Kcontroller[m[K.getMotorId(), 0.0,
+      |                                               [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:740:46:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  740 |                                              [01;31m[Kcontroller[m[K.getSpeed(), controller.getAccel());
+      |                                              [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:740:69:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  740 |                                              controller.getSpeed(), [01;31m[Kcontroller[m[K.getAccel());
+      |                                                                     [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:741:56:[m[K [01;31m[Kerror: [m[Kincomplete type ‘[01m[KMotorController[m[K’ used in nested name specifier
+  741 |         if (std::abs(data.position) < MotorController::[01;31m[KPOSITION_TOLERANCE[m[K &&
+      |                                                        [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:742:56:[m[K [01;31m[Kerror: [m[Kincomplete type ‘[01m[KMotorController[m[K’ used in nested name specifier
+  742 |             std::abs(data.velocity) < MotorController::[01;31m[KVELOCITY_TOLERANCE[m[K) {
+      |                                                        [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:743:13:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  743 |             [01;31m[Kcontroller[m[K.setHome(true);
+      |             [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:744:13:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  744 |             [01;31m[Kcontroller[m[K.setTargetReached(true);
+      |             [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568[m[K:
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:745:25:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  745 |             RCLCPP_INFO([01;31m[Kcontroller[m[K.getLogger(), "Motor 0x%02X reached Home Position!",
+      |                         [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568[m[K:
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:745:25:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  745 |             RCLCPP_INFO([01;31m[Kcontroller[m[K.getLogger(), "Motor 0x%02X reached Home Position!",
+      |                         [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568[m[K:
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:745:13:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+  745 |             [01;31m[KRCLCPP_INFO[m[K(controller.getLogger(), "Motor 0x%02X reached Home Position!",
+      |             [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:745:13:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+  745 |             [01;31m[KRCLCPP_INFO[m[K(controller.getLogger(), "Motor 0x%02X reached Home Position!",
+      |             [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:745:13:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+  745 |             [01;31m[KRCLCPP_INFO[m[K(controller.getLogger(), "Motor 0x%02X reached Home Position!",
+      |             [01;31m[K^~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568[m[K:
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:745:25:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  745 |             RCLCPP_INFO([01;31m[Kcontroller[m[K.getLogger(), "Motor 0x%02X reached Home Position!",
+      |                         [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568[m[K:
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:745:25:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  745 |             RCLCPP_INFO([01;31m[Kcontroller[m[K.getLogger(), "Motor 0x%02X reached Home Position!",
+      |                         [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568[m[K:
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:746:25:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  746 |                         [01;31m[Kcontroller[m[K.getMotorId());
+      |                         [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:747:13:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  747 |             [01;31m[Kcontroller[m[K.transitionTo(std::make_unique<MovingState>());
+      |             [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:747:54:[m[K [01;31m[Kerror: [m[K‘[01m[KMovingState[m[K’ was not declared in this scope; did you mean ‘[01m[KHomingState[m[K’?
+  747 |             controller.transitionTo(std::make_unique<[01;31m[KMovingState[m[K>());
+      |                                                      [01;31m[K^~~~~~~~~~~[m[K
+      |                                                      [32m[KHomingState[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:747:66:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kmake_unique<<expression error> >()[m[K’
+  747 |             controller.transitionTo([01;31m[Kstd::make_unique<MovingState>()[m[K);
+      |                                     [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~[m[K
+In file included from [01m[K/usr/include/c++/11/memory:76[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153[m[K,
+                 from [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568[m[K:
+[01m[K/usr/include/c++/11/bits/unique_ptr.h:961:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, class ... _Args> typename std::_MakeUniq<_Tp>::__single_object std::make_unique(_Args&& ...)[m[K’
+  961 |     [01;36m[Kmake_unique[m[K(_Args&&... __args)
+      |     [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/usr/include/c++/11/bits/unique_ptr.h:961:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:747:66:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+  747 |             controller.transitionTo([01;31m[Kstd::make_unique<MovingState>()[m[K);
+      |                                     [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~[m[K
+In file included from [01m[K/usr/include/c++/11/memory:76[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153[m[K,
+                 from [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568[m[K:
+[01m[K/usr/include/c++/11/bits/unique_ptr.h:967:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> typename std::_MakeUniq<_Tp>::__array std::make_unique(std::size_t)[m[K’
+  967 |     [01;36m[Kmake_unique[m[K(size_t __num)
+      |     [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/usr/include/c++/11/bits/unique_ptr.h:967:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:747:66:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+  747 |             controller.transitionTo([01;31m[Kstd::make_unique<MovingState>()[m[K);
+      |                                     [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~[m[K
+In file included from [01m[K/usr/include/c++/11/memory:76[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153[m[K,
+                 from [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568[m[K:
+[01m[K/usr/include/c++/11/bits/unique_ptr.h:973:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, class ... _Args> typename std::_MakeUniq<_Tp>::__invalid_type std::make_unique(_Args&& ...)[m[K’ (deleted)
+  973 |     [01;36m[Kmake_unique[m[K(_Args&&...) = delete;
+      |     [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/usr/include/c++/11/bits/unique_ptr.h:973:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:747:66:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+  747 |             controller.transitionTo([01;31m[Kstd::make_unique<MovingState>()[m[K);
+      |                                     [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:[m[K In member function ‘[01m[Kvirtual void MovingState::control(MotorController&, const MotorData&)[m[K’:
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:756:13:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  756 |         if ([01;31m[Kcontroller[m[K.getTargetPositions().empty()) {
+      |             [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568[m[K:
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:757:26:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  757 |             RCLCPP_ERROR([01;31m[Kcontroller[m[K.getLogger(), "Motor 0x%02X: target_positions is empty!",
+      |                          [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568[m[K:
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:757:26:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  757 |             RCLCPP_ERROR([01;31m[Kcontroller[m[K.getLogger(), "Motor 0x%02X: target_positions is empty!",
+      |                          [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568[m[K:
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:757:13:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+  757 |             [01;31m[KRCLCPP_ERROR[m[K(controller.getLogger(), "Motor 0x%02X: target_positions is empty!",
+      |             [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:757:13:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+  757 |             [01;31m[KRCLCPP_ERROR[m[K(controller.getLogger(), "Motor 0x%02X: target_positions is empty!",
+      |             [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:757:13:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+  757 |             [01;31m[KRCLCPP_ERROR[m[K(controller.getLogger(), "Motor 0x%02X: target_positions is empty!",
+      |             [01;31m[K^~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568[m[K:
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:757:26:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  757 |             RCLCPP_ERROR([01;31m[Kcontroller[m[K.getLogger(), "Motor 0x%02X: target_positions is empty!",
+      |                          [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568[m[K:
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:757:26:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  757 |             RCLCPP_ERROR([01;31m[Kcontroller[m[K.getLogger(), "Motor 0x%02X: target_positions is empty!",
+      |                          [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568[m[K:
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:758:26:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  758 |                          [01;31m[Kcontroller[m[K.getMotorId());
+      |                          [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:759:13:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  759 |             [01;31m[Kcontroller[m[K.stop();
+      |             [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:760:13:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  760 |             [01;31m[Kcontroller[m[K.transitionTo(std::make_unique<StoppedState>());
+      |             [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:760:54:[m[K [01;31m[Kerror: [m[K‘[01m[KStoppedState[m[K’ was not declared in this scope
+  760 |             controller.transitionTo(std::make_unique<[01;31m[KStoppedState[m[K>());
+      |                                                      [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:760:67:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kmake_unique<<expression error> >()[m[K’
+  760 |             controller.transitionTo([01;31m[Kstd::make_unique<StoppedState>()[m[K);
+      |                                     [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~[m[K
+In file included from [01m[K/usr/include/c++/11/memory:76[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153[m[K,
+                 from [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568[m[K:
+[01m[K/usr/include/c++/11/bits/unique_ptr.h:961:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, class ... _Args> typename std::_MakeUniq<_Tp>::__single_object std::make_unique(_Args&& ...)[m[K’
+  961 |     [01;36m[Kmake_unique[m[K(_Args&&... __args)
+      |     [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/usr/include/c++/11/bits/unique_ptr.h:961:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:760:67:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+  760 |             controller.transitionTo([01;31m[Kstd::make_unique<StoppedState>()[m[K);
+      |                                     [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~[m[K
+In file included from [01m[K/usr/include/c++/11/memory:76[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153[m[K,
+                 from [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568[m[K:
+[01m[K/usr/include/c++/11/bits/unique_ptr.h:967:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> typename std::_MakeUniq<_Tp>::__array std::make_unique(std::size_t)[m[K’
+  967 |     [01;36m[Kmake_unique[m[K(size_t __num)
+      |     [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/usr/include/c++/11/bits/unique_ptr.h:967:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:760:67:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+  760 |             controller.transitionTo([01;31m[Kstd::make_unique<StoppedState>()[m[K);
+      |                                     [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~[m[K
+In file included from [01m[K/usr/include/c++/11/memory:76[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153[m[K,
+                 from [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568[m[K:
+[01m[K/usr/include/c++/11/bits/unique_ptr.h:973:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, class ... _Args> typename std::_MakeUniq<_Tp>::__invalid_type std::make_unique(_Args&& ...)[m[K’ (deleted)
+  973 |     [01;36m[Kmake_unique[m[K(_Args&&...) = delete;
+      |     [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/usr/include/c++/11/bits/unique_ptr.h:973:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:760:67:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+  760 |             controller.transitionTo([01;31m[Kstd::make_unique<StoppedState>()[m[K);
+      |                                     [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:763:24:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  763 |         float target = [01;31m[Kcontroller[m[K.getTargetPositions()[controller.getCurrentTargetIndex()];
+      |                        [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:763:56:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  763 |         float target = controller.getTargetPositions()[[01;31m[Kcontroller[m[K.getCurrentTargetIndex()];
+      |                                                        [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:764:9:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  764 |         [01;31m[Kcontroller[m[K.getCAN()->setPositionSpeed(controller.getMotorId(), target,
+      |         [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:764:47:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  764 |         controller.getCAN()->setPositionSpeed([01;31m[Kcontroller[m[K.getMotorId(), target,
+      |                                               [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:765:46:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  765 |                                              [01;31m[Kcontroller[m[K.getSpeed(), controller.getAccel());
+      |                                              [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:765:69:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  765 |                                              controller.getSpeed(), [01;31m[Kcontroller[m[K.getAccel());
+      |                                                                     [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:766:79:[m[K [01;31m[Kerror: [m[Kincomplete type ‘[01m[KMotorController[m[K’ used in nested name specifier
+  766 |         bool is_reached = std::abs(data.position - target) < MotorController::[01;31m[KPOSITION_TOLERANCE[m[K;
+      |                                                                               [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:768:13:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  768 |             [01;31m[Kcontroller[m[K.incrementReachCounter();
+      |             [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:769:17:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  769 |             if ([01;31m[Kcontroller[m[K.getReachCounter() >= controller.getReachCountMax()) {
+      |                 [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:769:49:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  769 |             if (controller.getReachCounter() >= [01;31m[Kcontroller[m[K.getReachCountMax()) {
+      |                                                 [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:770:17:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  770 |                 [01;31m[Kcontroller[m[K.resetReachCounter();
+      |                 [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:771:17:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  771 |                 [01;31m[Kcontroller[m[K.setTargetReached(true);
+      |                 [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:772:17:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  772 |                 [01;31m[Kcontroller[m[K.incrementTargetIndex();
+      |                 [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:773:21:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  773 |                 if ([01;31m[Kcontroller[m[K.getCurrentTargetIndex() >= controller.getTargetPositions().size()) {
+      |                     [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:773:59:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  773 |                 if (controller.getCurrentTargetIndex() >= [01;31m[Kcontroller[m[K.getTargetPositions().size()) {
+      |                                                           [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:774:21:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  774 |                     [01;31m[Kcontroller[m[K.setCurrentTargetIndex(controller.getTargetPositions().size() - 1);
+      |                     [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:774:54:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  774 |                     controller.setCurrentTargetIndex([01;31m[Kcontroller[m[K.getTargetPositions().size() - 1);
+      |                                                      [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568[m[K:
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:775:33:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  775 |                     RCLCPP_INFO([01;31m[Kcontroller[m[K.getLogger(), "Motor 0x%02X: All targets reached.",
+      |                                 [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568[m[K:
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:775:33:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  775 |                     RCLCPP_INFO([01;31m[Kcontroller[m[K.getLogger(), "Motor 0x%02X: All targets reached.",
+      |                                 [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568[m[K:
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:775:21:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+  775 |                     [01;31m[KRCLCPP_INFO[m[K(controller.getLogger(), "Motor 0x%02X: All targets reached.",
+      |                     [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:775:21:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+  775 |                     [01;31m[KRCLCPP_INFO[m[K(controller.getLogger(), "Motor 0x%02X: All targets reached.",
+      |                     [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:775:21:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+  775 |                     [01;31m[KRCLCPP_INFO[m[K(controller.getLogger(), "Motor 0x%02X: All targets reached.",
+      |                     [01;31m[K^~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568[m[K:
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:775:33:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  775 |                     RCLCPP_INFO([01;31m[Kcontroller[m[K.getLogger(), "Motor 0x%02X: All targets reached.",
+      |                                 [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568[m[K:
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:775:33:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  775 |                     RCLCPP_INFO([01;31m[Kcontroller[m[K.getLogger(), "Motor 0x%02X: All targets reached.",
+      |                                 [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:568[m[K:
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:776:33:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  776 |                                 [01;31m[Kcontroller[m[K.getMotorId());
+      |                                 [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:780:13:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  780 |             [01;31m[Kcontroller[m[K.resetReachCounter();
+      |             [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:781:13:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  781 |             [01;31m[Kcontroller[m[K.setTargetReached(false);
+      |             [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:[m[K In member function ‘[01m[Kvirtual void StoppedState::control(MotorController&, const MotorData&)[m[K’:
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:790:9:[m[K [01;31m[Kerror: [m[Kinvalid use of incomplete type ‘[01m[Kclass MotorController[m[K’
+  790 |         [01;31m[Kcontroller[m[K.stop();
+      |         [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:719:32:[m[K [01;36m[Knote: [m[Kforward declaration of ‘[01m[Kclass MotorController[m[K’
+  719 |     virtual void control(class [01;36m[KMotorController[m[K& controller, const MotorData& data) = 0;
+      |                                [01;36m[K^~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/Test.dir/build.make:76: CMakeFiles/Test.dir/src/22_5_Test.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/Test.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+[ 83%] [32m[1mLinking CXX executable ControlMotor[0m
+[ 83%] Built target ControlMotor
+gmake: *** [Makefile:146: all] Error 2

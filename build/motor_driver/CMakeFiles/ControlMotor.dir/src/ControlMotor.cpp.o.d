@@ -1,5 +1,5 @@
 CMakeFiles/ControlMotor.dir/src/ControlMotor.cpp.o: \
- /home/ubuntu/Desktop/AK80_64/src/motor_driver/src/ControlMotor.cpp \
+ /home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/ControlMotor.cpp \
  /usr/include/stdc-predef.h \
  /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp \
  /usr/include/c++/11/csignal \
@@ -629,7 +629,7 @@ CMakeFiles/ControlMotor.dir/src/ControlMotor.cpp.o: \
  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/bool__builder.hpp \
  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/bool__traits.hpp \
  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/bool__type_support.hpp \
- /home/ubuntu/Desktop/AK80_64/install/can_interface/include/can_interface/caninterface.hpp \
+ /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/include/can_interface/caninterface.hpp \
  /usr/include/linux/can.h /usr/include/linux/types.h \
  /usr/include/x86_64-linux-gnu/asm/types.h \
  /usr/include/asm-generic/types.h /usr/include/asm-generic/int-ll64.h \

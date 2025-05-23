@@ -1,0 +1,15 @@
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:[m[K In member function ‘[01m[Kvoid MotorControlNode::setParametersCallback(std::shared_ptr<rcl_interfaces::srv::SetParameters_Request_<std::allocator<void> > >, std::shared_ptr<rcl_interfaces::srv::SetParameters_Response_<std::allocator<void> > >, size_t)[m[K’:
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:571:33:[m[K [01;31m[Kerror: [m[Kinvalid operands of types ‘[01m[K<unresolved overloaded function type>[m[K’ and ‘[01m[Kint[m[K’ to binary ‘[01m[Koperator-[m[K’
+  571 |         [32m[Kresponse->results.resize[m[K[01;31m[K-[m[K[34m[K8[m[K<3>resize(672,672)
+      |         [32m[K~~~~~~~~~~~~~~~~~~~~~~~~[m[K[01;31m[K^[m[K[34m[K~[m[K
+      |                           [32m[K|[m[K      [34m[K|[m[K
+      |                           [32m[K|[m[K      [34m[Kint[m[K
+      |                           [32m[K<unresolved overloaded function type>[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:571:38:[m[K [01;31m[Kerror: [m[K‘[01m[Kresize[m[K’ was not declared in this scope; did you mean ‘[01m[Kdysize[m[K’?
+  571 |         response->results.resize-8<3>[01;31m[Kresize[m[K(672,672)
+      |                                      [01;31m[K^~~~~~[m[K
+      |                                      [32m[Kdysize[m[K
+gmake[2]: *** [CMakeFiles/Test.dir/build.make:76: CMakeFiles/Test.dir/src/22_5_Test.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/Test.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+gmake: *** [Makefile:146: all] Error 2

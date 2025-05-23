@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/Desktop/AK80_64/src/motor_driver
+CMAKE_SOURCE_DIR = /home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/Desktop/AK80_64/build/motor_driver
+CMAKE_BINARY_DIR = /home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -142,9 +142,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Desktop/AK80_64/build/motor_driver/CMakeFiles /home/ubuntu/Desktop/AK80_64/build/motor_driver//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver/CMakeFiles /home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Desktop/AK80_64/build/motor_driver/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -223,6 +223,56 @@ ControlMotor/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ControlMotor.dir/build.make CMakeFiles/ControlMotor.dir/build
 .PHONY : ControlMotor/fast
 
+#=============================================================================
+# Target rules for targets named Test
+
+# Build rule for target.
+Test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Test
+.PHONY : Test
+
+# fast build rule for target.
+Test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/build
+.PHONY : Test/fast
+
+#=============================================================================
+# Target rules for targets named TestMes
+
+# Build rule for target.
+TestMes: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TestMes
+.PHONY : TestMes
+
+# fast build rule for target.
+TestMes/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestMes.dir/build.make CMakeFiles/TestMes.dir/build
+.PHONY : TestMes/fast
+
+src/22_5_Test.o: src/22_5_Test.cpp.o
+.PHONY : src/22_5_Test.o
+
+# target to build an object file
+src/22_5_Test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/src/22_5_Test.cpp.o
+.PHONY : src/22_5_Test.cpp.o
+
+src/22_5_Test.i: src/22_5_Test.cpp.i
+.PHONY : src/22_5_Test.i
+
+# target to preprocess a source file
+src/22_5_Test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/src/22_5_Test.cpp.i
+.PHONY : src/22_5_Test.cpp.i
+
+src/22_5_Test.s: src/22_5_Test.cpp.s
+.PHONY : src/22_5_Test.s
+
+# target to generate assembly for a file
+src/22_5_Test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/src/22_5_Test.cpp.s
+.PHONY : src/22_5_Test.cpp.s
+
 src/ControlMotor.o: src/ControlMotor.cpp.o
 .PHONY : src/ControlMotor.o
 
@@ -271,6 +321,30 @@ src/SetOMotor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SetOMotor.dir/build.make CMakeFiles/SetOMotor.dir/src/SetOMotor.cpp.s
 .PHONY : src/SetOMotor.cpp.s
 
+src/TestMes.o: src/TestMes.cpp.o
+.PHONY : src/TestMes.o
+
+# target to build an object file
+src/TestMes.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestMes.dir/build.make CMakeFiles/TestMes.dir/src/TestMes.cpp.o
+.PHONY : src/TestMes.cpp.o
+
+src/TestMes.i: src/TestMes.cpp.i
+.PHONY : src/TestMes.i
+
+# target to preprocess a source file
+src/TestMes.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestMes.dir/build.make CMakeFiles/TestMes.dir/src/TestMes.cpp.i
+.PHONY : src/TestMes.cpp.i
+
+src/TestMes.s: src/TestMes.cpp.s
+.PHONY : src/TestMes.s
+
+# target to generate assembly for a file
+src/TestMes.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestMes.dir/build.make CMakeFiles/TestMes.dir/src/TestMes.cpp.s
+.PHONY : src/TestMes.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -288,12 +362,20 @@ help:
 	@echo "... uninstall"
 	@echo "... ControlMotor"
 	@echo "... SetOMotor"
+	@echo "... Test"
+	@echo "... TestMes"
+	@echo "... src/22_5_Test.o"
+	@echo "... src/22_5_Test.i"
+	@echo "... src/22_5_Test.s"
 	@echo "... src/ControlMotor.o"
 	@echo "... src/ControlMotor.i"
 	@echo "... src/ControlMotor.s"
 	@echo "... src/SetOMotor.o"
 	@echo "... src/SetOMotor.i"
 	@echo "... src/SetOMotor.s"
+	@echo "... src/TestMes.o"
+	@echo "... src/TestMes.i"
+	@echo "... src/TestMes.s"
 .PHONY : help
 
 

@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -Dcan_interface_EXPORTS
 
-CXX_INCLUDES = -I/home/ubuntu/Desktop/AK80_64/src/can_interface/include
+CXX_INCLUDES = -I/home/ubuntu/Desktop/Ak8064_TEST/src/can_interface/include
 
 CXX_FLAGS = -fPIC
 

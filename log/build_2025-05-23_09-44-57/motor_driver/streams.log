@@ -1,0 +1,17 @@
+[0.013s] Invoking command in '/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver': AMENT_PREFIX_PATH=/home/ubuntu/Desktop/Ak8064_TEST/install/can_interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ubuntu/Desktop/Ak8064_TEST/install/can_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver -- -j8 -l8
+[0.075s] [35m[1mConsolidate compiler generated dependencies of target Test[0m
+[0.094s] [ 33%] Built target SetOMotor
+[0.094s] [ 66%] Built target ControlMotor
+[0.102s] [ 83%] [32mBuilding CXX object CMakeFiles/Test.dir/src/22_5_Test.cpp.o[0m
+[2.267s] [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:[m[K In member function ‘[01m[Kvirtual void MotorController::handleCommand(const string&)[m[K’:
+[2.267s] [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:803:17:[m[K [01;31m[Kerror: [m[K‘[01m[Klast_data_[m[K’ was not declared in this scope
+[2.267s]   803 |             if ([01;31m[Klast_data_[m[K.position < min_angle_ || last_data_.position > max_angle_) {
+[2.267s]       |                 [01;31m[K^~~~~~~~~~[m[K
+[2.280s] [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:[m[K In member function ‘[01m[Kvirtual void MotorController::control(const MotorData&)[m[K’:
+[2.280s] [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:899:9:[m[K [01;31m[Kerror: [m[K‘[01m[Klast_data_[m[K’ was not declared in this scope
+[2.280s]   899 |         [01;31m[Klast_data_[m[K = data;
+[2.280s]       |         [01;31m[K^~~~~~~~~~[m[K
+[5.031s] gmake[2]: *** [CMakeFiles/Test.dir/build.make:76: CMakeFiles/Test.dir/src/22_5_Test.cpp.o] Error 1
+[5.031s] gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/Test.dir/all] Error 2
+[5.031s] gmake: *** [Makefile:146: all] Error 2
+[5.032s] Invoked command in '/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver' returned '2': AMENT_PREFIX_PATH=/home/ubuntu/Desktop/Ak8064_TEST/install/can_interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ubuntu/Desktop/Ak8064_TEST/install/can_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver -- -j8 -l8

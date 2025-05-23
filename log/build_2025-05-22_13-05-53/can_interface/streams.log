@@ -1,0 +1,53 @@
+[0.008s] Invoking command in '/home/ubuntu/Desktop/Ak8064_TEST/build/can_interface': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/ubuntu/Desktop/Ak8064_TEST/src/can_interface -DCMAKE_INSTALL_PREFIX=/home/ubuntu/Desktop/Ak8064_TEST/install/can_interface
+[0.107s] -- The C compiler identification is GNU 11.4.0
+[0.193s] -- The CXX compiler identification is GNU 11.4.0
+[0.201s] -- Detecting C compiler ABI info
+[0.256s] -- Detecting C compiler ABI info - done
+[0.261s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.261s] -- Detecting C compile features
+[0.262s] -- Detecting C compile features - done
+[0.264s] -- Detecting CXX compiler ABI info
+[0.320s] -- Detecting CXX compiler ABI info - done
+[0.325s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.325s] -- Detecting CXX compile features
+[0.326s] -- Detecting CXX compile features - done
+[0.329s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.629s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.762s] -- Configuring done
+[0.765s] -- Generating done
+[0.766s] -- Build files have been written to: /home/ubuntu/Desktop/Ak8064_TEST/build/can_interface
+[0.769s] Invoked command in '/home/ubuntu/Desktop/Ak8064_TEST/build/can_interface' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/ubuntu/Desktop/Ak8064_TEST/src/can_interface -DCMAKE_INSTALL_PREFIX=/home/ubuntu/Desktop/Ak8064_TEST/install/can_interface
+[0.770s] Invoking command in '/home/ubuntu/Desktop/Ak8064_TEST/build/can_interface': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/ubuntu/Desktop/Ak8064_TEST/build/can_interface -- -j8 -l8
+[0.811s] [ 50%] [32mBuilding CXX object CMakeFiles/can_interface.dir/src/caninterface.cpp.o[0m
+[1.064s] [100%] [32m[1mLinking CXX shared library libcan_interface.so[0m
+[1.117s] [100%] Built target can_interface
+[1.124s] Invoked command in '/home/ubuntu/Desktop/Ak8064_TEST/build/can_interface' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/ubuntu/Desktop/Ak8064_TEST/build/can_interface -- -j8 -l8
+[1.130s] Invoking command in '/home/ubuntu/Desktop/Ak8064_TEST/build/can_interface': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/ubuntu/Desktop/Ak8064_TEST/build/can_interface
+[1.136s] -- Install configuration: ""
+[1.136s] -- Installing: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/lib/libcan_interface.so
+[1.136s] -- Installing: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/include
+[1.136s] -- Installing: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/include/can_interface
+[1.136s] -- Installing: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/include/can_interface/caninterface.hpp
+[1.136s] -- Installing: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/environment/library_path.sh
+[1.136s] -- Installing: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/environment/library_path.dsv
+[1.136s] -- Installing: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/ament_index/resource_index/package_run_dependencies/can_interface
+[1.137s] -- Installing: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/ament_index/resource_index/parent_prefix_path/can_interface
+[1.137s] -- Installing: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/environment/ament_prefix_path.sh
+[1.137s] -- Installing: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/environment/ament_prefix_path.dsv
+[1.137s] -- Installing: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/environment/path.sh
+[1.137s] -- Installing: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/environment/path.dsv
+[1.137s] -- Installing: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/local_setup.bash
+[1.137s] -- Installing: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/local_setup.sh
+[1.137s] -- Installing: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/local_setup.zsh
+[1.137s] -- Installing: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/local_setup.dsv
+[1.137s] -- Installing: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/package.dsv
+[1.137s] -- Installing: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/ament_index/resource_index/packages/can_interface
+[1.138s] -- Installing: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/cmake/export_can_interfaceExport.cmake
+[1.138s] -- Installing: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/cmake/export_can_interfaceExport-noconfig.cmake
+[1.138s] -- Installing: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/cmake/ament_cmake_export_targets-extras.cmake
+[1.138s] -- Installing: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/cmake/ament_cmake_export_include_directories-extras.cmake
+[1.138s] -- Installing: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/cmake/ament_cmake_export_libraries-extras.cmake
+[1.138s] -- Installing: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/cmake/can_interfaceConfig.cmake
+[1.138s] -- Installing: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/cmake/can_interfaceConfig-version.cmake
+[1.138s] -- Installing: /home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/share/can_interface/package.xml
+[1.140s] Invoked command in '/home/ubuntu/Desktop/Ak8064_TEST/build/can_interface' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/ubuntu/Desktop/Ak8064_TEST/build/can_interface

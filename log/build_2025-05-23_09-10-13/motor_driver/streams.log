@@ -1,0 +1,14 @@
+[0.006s] Invoking command in '/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver': AMENT_PREFIX_PATH=/home/ubuntu/Desktop/Ak8064_TEST/install/can_interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ubuntu/Desktop/Ak8064_TEST/install/can_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver -- -j8 -l8
+[0.038s] [35m[1mConsolidate compiler generated dependencies of target ControlMotor[0m
+[0.038s] [35m[1mConsolidate compiler generated dependencies of target Test[0m
+[0.051s] [ 33%] Built target SetOMotor
+[0.055s] [ 66%] Built target ControlMotor
+[0.055s] [ 83%] [32mBuilding CXX object CMakeFiles/Test.dir/src/22_5_Test.cpp.o[0m
+[0.072s] [100%] [32m[1mLinking CXX executable Test[0m
+[0.117s] /usr/bin/ld: /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o: in function `_start':
+[0.117s] (.text+0x1b): undefined reference to `main'
+[0.118s] collect2: error: ld returned 1 exit status
+[0.120s] gmake[2]: *** [CMakeFiles/Test.dir/build.make:160: Test] Error 1
+[0.120s] gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/Test.dir/all] Error 2
+[0.120s] gmake: *** [Makefile:146: all] Error 2
+[0.123s] Invoked command in '/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver' returned '2': AMENT_PREFIX_PATH=/home/ubuntu/Desktop/Ak8064_TEST/install/can_interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ubuntu/Desktop/Ak8064_TEST/install/can_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/ubuntu/Desktop/Ak8064_TEST/install/can_interface/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver -- -j8 -l8
