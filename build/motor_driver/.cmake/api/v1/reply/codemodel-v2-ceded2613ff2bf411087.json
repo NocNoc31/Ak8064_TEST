@@ -1,0 +1,115 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-7d275c787a92481a33cd.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "motor_driver",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ControlMotor::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ControlMotor-6f045d43b69e49189d08.json",
+					"name" : "ControlMotor",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "RPMTest::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-RPMTest-5c423a48196b2340af73.json",
+					"name" : "RPMTest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "SetOMotor::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SetOMotor-9a789daee8f3ca3301d3.json",
+					"name" : "SetOMotor",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Test-f47971e8fd5c982b36a0.json",
+					"name" : "Test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "TestMes::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-TestMes-5188556ad45bf28556be.json",
+					"name" : "TestMes",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "motor_driver_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-motor_driver_uninstall-3a8cf10ef18f4d57b35c.json",
+					"name" : "motor_driver_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-da4cb134eb2daf6cc793.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver",
+		"source" : "/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

@@ -1,0 +1,30 @@
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/TestMes.cpp:47:2:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K}[m[K’ at end of input
+   47 | }
+      |  [01;31m[K^[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/TestMes.cpp:6:42:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K{[m[K’
+    6 | class CmdSimulator : public rclcpp::Node [01;36m[K{[m[K
+      |                                          [01;36m[K^[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/TestMes.cpp:[m[K In constructor ‘[01m[KCmdSimulator::CmdSimulator()[m[K’:
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/TestMes.cpp:10:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kmotor1_pub_[m[K’ was not declared in this scope
+   10 |         [01;31m[Kmotor1_pub_[m[K = create_publisher<std_msgs::msg::String>("/Motor1ControlCMD", 10);
+      |         [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/TestMes.cpp:11:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kmotor2_pub_[m[K’ was not declared in this scope
+   11 |         [01;31m[Kmotor2_pub_[m[K = create_publisher<std_msgs::msg::String>("/Motor2ControlCMD", 10);
+      |         [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/TestMes.cpp:14:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ktimer_[m[K’ was not declared in this scope; did you mean ‘[01m[Ktimer_t[m[K’?
+   14 |         [01;31m[Ktimer_[m[K = create_wall_timer(std::chrono::seconds(2),
+      |         [01;31m[K^~~~~~[m[K
+      |         [32m[Ktimer_t[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/TestMes.cpp:15:60:[m[K [01;31m[Kerror: [m[K‘[01m[KsendCommands[m[K’ is not a member of ‘[01m[KCmdSimulator[m[K’
+   15 |                                   std::bind(&CmdSimulator::[01;31m[KsendCommands[m[K, this));
+      |                                                            [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/TestMes.cpp:19:1:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kprivate[m[K’
+   19 | [01;31m[Kprivate[m[K:
+      | [01;31m[K^~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/TestMes.cpp:[m[K At global scope:
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/TestMes.cpp:47:2:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id at end of input
+   47 | }
+      |  [01;31m[K^[m[K
+gmake[2]: *** [CMakeFiles/TestMes.dir/build.make:76: CMakeFiles/TestMes.dir/src/TestMes.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:223: CMakeFiles/TestMes.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

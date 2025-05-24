@@ -1,0 +1,6 @@
+[35m[1mConsolidate compiler generated dependencies of target Test[0m
+[ 60%] Built target SetOMotor
+[ 60%] Built target RPMTest
+[ 60%] Built target ControlMotor
+[ 80%] Built target TestMes
+[ 90%] [32mBuilding CXX object CMakeFiles/Test.dir/src/22_5_Test.cpp.o[0m

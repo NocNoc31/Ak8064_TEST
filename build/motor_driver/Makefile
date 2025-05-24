@@ -249,6 +249,19 @@ TestMes/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestMes.dir/build.make CMakeFiles/TestMes.dir/build
 .PHONY : TestMes/fast
 
+#=============================================================================
+# Target rules for targets named RPMTest
+
+# Build rule for target.
+RPMTest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 RPMTest
+.PHONY : RPMTest
+
+# fast build rule for target.
+RPMTest/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RPMTest.dir/build.make CMakeFiles/RPMTest.dir/build
+.PHONY : RPMTest/fast
+
 src/22_5_Test.o: src/22_5_Test.cpp.o
 .PHONY : src/22_5_Test.o
 
@@ -296,6 +309,30 @@ src/ControlMotor.s: src/ControlMotor.cpp.s
 src/ControlMotor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ControlMotor.dir/build.make CMakeFiles/ControlMotor.dir/src/ControlMotor.cpp.s
 .PHONY : src/ControlMotor.cpp.s
+
+src/RPMTest.o: src/RPMTest.cpp.o
+.PHONY : src/RPMTest.o
+
+# target to build an object file
+src/RPMTest.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RPMTest.dir/build.make CMakeFiles/RPMTest.dir/src/RPMTest.cpp.o
+.PHONY : src/RPMTest.cpp.o
+
+src/RPMTest.i: src/RPMTest.cpp.i
+.PHONY : src/RPMTest.i
+
+# target to preprocess a source file
+src/RPMTest.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RPMTest.dir/build.make CMakeFiles/RPMTest.dir/src/RPMTest.cpp.i
+.PHONY : src/RPMTest.cpp.i
+
+src/RPMTest.s: src/RPMTest.cpp.s
+.PHONY : src/RPMTest.s
+
+# target to generate assembly for a file
+src/RPMTest.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RPMTest.dir/build.make CMakeFiles/RPMTest.dir/src/RPMTest.cpp.s
+.PHONY : src/RPMTest.cpp.s
 
 src/SetOMotor.o: src/SetOMotor.cpp.o
 .PHONY : src/SetOMotor.o
@@ -361,6 +398,7 @@ help:
 	@echo "... motor_driver_uninstall"
 	@echo "... uninstall"
 	@echo "... ControlMotor"
+	@echo "... RPMTest"
 	@echo "... SetOMotor"
 	@echo "... Test"
 	@echo "... TestMes"
@@ -370,6 +408,9 @@ help:
 	@echo "... src/ControlMotor.o"
 	@echo "... src/ControlMotor.i"
 	@echo "... src/ControlMotor.s"
+	@echo "... src/RPMTest.o"
+	@echo "... src/RPMTest.i"
+	@echo "... src/RPMTest.s"
 	@echo "... src/SetOMotor.o"
 	@echo "... src/SetOMotor.i"
 	@echo "... src/SetOMotor.s"

@@ -1,0 +1,10 @@
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:[m[K In member function ‘[01m[Kvoid MotorController::initializeParameters()[m[K’:
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:450:29:[m[K [01;31m[Kerror: [m[K‘[01m[Ktemp_speed[m[K’ was not declared in this scope
+  450 |         speed_ = std::round([01;31m[Ktemp_speed[m[K * 100.0) / 100.0;
+      |                             [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:451:29:[m[K [01;31m[Kerror: [m[K‘[01m[Ktemp_accel[m[K’ was not declared in this scope
+  451 |         accel_ = std::round([01;31m[Ktemp_accel[m[K * 100.0) / 100.0;
+      |                             [01;31m[K^~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/Test.dir/build.make:76: CMakeFiles/Test.dir/src/22_5_Test.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:197: CMakeFiles/Test.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

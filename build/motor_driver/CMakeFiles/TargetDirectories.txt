@@ -4,6 +4,7 @@
 /home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver/CMakeFiles/ControlMotor.dir
 /home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver/CMakeFiles/Test.dir
 /home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver/CMakeFiles/TestMes.dir
+/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver/CMakeFiles/RPMTest.dir
 /home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver/CMakeFiles/test.dir
 /home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver/CMakeFiles/edit_cache.dir
 /home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver/CMakeFiles/rebuild_cache.dir

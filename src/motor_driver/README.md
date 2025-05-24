@@ -84,6 +84,17 @@ motor2_control_node:ros2 service call /motor2_control_node/set_parameters rcl_in
 
 
 
+Gui MESS UP, DOWN
+ros2 topic pub /Motor2ControlCMD std_msgs/msg/String "{data: 'DOWN'}"
+ros2 topic pub /Motor2ControlCMD std_msgs/msg/String "{data: 'UP'}"
+ros2 topic pub /Motor2ControlCMD std_msgs/msg/String "{data: 'PAUSE'}"
+ros2 topic pub /Motor2ControlCMD std_msgs/msg/String "{data: 'PLAY'}"
+
+ros2 topic pub /Motor1ControlCMD std_msgs/msg/String "{data: 'DOWN'}"
+ros2 topic pub /Motor1ControlCMD std_msgs/msg/String "{data: 'UP'}"
+ros2 topic pub /Motor1ControlCMD std_msgs/msg/String "{data: 'PAUSE'}"
+ros2 topic pub /Motor1ControlCMD std_msgs/msg/String "{data: 'PLAY'}"
+
 Lưu ý:
 
 target_positions phải trong [0.0, 90.0] độ.

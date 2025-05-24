@@ -2,6 +2,7 @@
 /home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver/lib/motor_driver/ControlMotor
 /home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver/lib/motor_driver/Test
 /home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver/lib/motor_driver/TestMes
+/home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver/lib/motor_driver/RPMTest
 /home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver/share/motor_driver//config/exercise1_params.yaml
 /home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver/share/motor_driver//config/exercise2_params.yaml
 /home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver/share/motor_driver//launch/motor_control.launch.py

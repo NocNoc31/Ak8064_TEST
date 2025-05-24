@@ -1,0 +1,21 @@
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:[m[K In member function ‘[01m[Kvirtual void MotorController::handleCommand(const string&)[m[K’:
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:872:13:[m[K [01;31m[Kerror: [m[K‘[01m[Ktarget_position_[m[K’ was not declared in this scope; did you mean ‘[01m[Ktarget_positions_[m[K’?
+  872 |             [01;31m[Ktarget_position_[m[K = last_data_.position + step_;
+      |             [01;31m[K^~~~~~~~~~~~~~~~[m[K
+      |             [32m[Ktarget_positions_[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:886:13:[m[K [01;31m[Kerror: [m[K‘[01m[Ktarget_position_[m[K’ was not declared in this scope; did you mean ‘[01m[Ktarget_positions_[m[K’?
+  886 |             [01;31m[Ktarget_position_[m[K = last_data_.position - step_;
+      |             [01;31m[K^~~~~~~~~~~~~~~~[m[K
+      |             [32m[Ktarget_positions_[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:935:17:[m[K [01;31m[Kerror: [m[K‘[01m[Ktarget_position_[m[K’ was not declared in this scope; did you mean ‘[01m[Ktarget_positions_[m[K’?
+  935 |                 [01;31m[Ktarget_position_[m[K = resume_position;
+      |                 [01;31m[K^~~~~~~~~~~~~~~~[m[K
+      |                 [32m[Ktarget_positions_[m[K
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:[m[K In member function ‘[01m[Kvirtual void MotorController::control(const MotorData&)[m[K’:
+[01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:995:55:[m[K [01;31m[Kerror: [m[K‘[01m[Ktarget_position_[m[K’ was not declared in this scope; did you mean ‘[01m[Ktarget_positions_[m[K’?
+  995 |                     can_->setPositionSpeed(motor_id_, [01;31m[Ktarget_position_[m[K, static_cast<int>(speed_), static_cast<int>(accel_));
+      |                                                       [01;31m[K^~~~~~~~~~~~~~~~[m[K
+      |                                                       [32m[Ktarget_positions_[m[K
+gmake[2]: *** [CMakeFiles/Test.dir/build.make:76: CMakeFiles/Test.dir/src/22_5_Test.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:197: CMakeFiles/Test.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

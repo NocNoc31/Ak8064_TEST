@@ -67,6 +67,7 @@ all: CMakeFiles/SetOMotor.dir/all
 all: CMakeFiles/ControlMotor.dir/all
 all: CMakeFiles/Test.dir/all
 all: CMakeFiles/TestMes.dir/all
+all: CMakeFiles/RPMTest.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -80,6 +81,7 @@ clean: CMakeFiles/SetOMotor.dir/clean
 clean: CMakeFiles/ControlMotor.dir/clean
 clean: CMakeFiles/Test.dir/clean
 clean: CMakeFiles/TestMes.dir/clean
+clean: CMakeFiles/RPMTest.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -141,7 +143,7 @@ CMakeFiles/motor_driver_uninstall.dir/clean:
 CMakeFiles/SetOMotor.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SetOMotor.dir/build.make CMakeFiles/SetOMotor.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SetOMotor.dir/build.make CMakeFiles/SetOMotor.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver/CMakeFiles --progress-num=3,4 "Built target SetOMotor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver/CMakeFiles --progress-num=5,6 "Built target SetOMotor"
 .PHONY : CMakeFiles/SetOMotor.dir/all
 
 # Build rule for subdir invocation for target.
@@ -193,7 +195,7 @@ CMakeFiles/ControlMotor.dir/clean:
 CMakeFiles/Test.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver/CMakeFiles --progress-num=5,6 "Built target Test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver/CMakeFiles --progress-num=7,8 "Built target Test"
 .PHONY : CMakeFiles/Test.dir/all
 
 # Build rule for subdir invocation for target.
@@ -219,7 +221,7 @@ CMakeFiles/Test.dir/clean:
 CMakeFiles/TestMes.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestMes.dir/build.make CMakeFiles/TestMes.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestMes.dir/build.make CMakeFiles/TestMes.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver/CMakeFiles --progress-num=7,8 "Built target TestMes"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver/CMakeFiles --progress-num=9,10 "Built target TestMes"
 .PHONY : CMakeFiles/TestMes.dir/all
 
 # Build rule for subdir invocation for target.
@@ -237,6 +239,32 @@ TestMes: CMakeFiles/TestMes.dir/rule
 CMakeFiles/TestMes.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestMes.dir/build.make CMakeFiles/TestMes.dir/clean
 .PHONY : CMakeFiles/TestMes.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/RPMTest.dir
+
+# All Build rule for target.
+CMakeFiles/RPMTest.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RPMTest.dir/build.make CMakeFiles/RPMTest.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RPMTest.dir/build.make CMakeFiles/RPMTest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver/CMakeFiles --progress-num=3,4 "Built target RPMTest"
+.PHONY : CMakeFiles/RPMTest.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/RPMTest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/RPMTest.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver/CMakeFiles 0
+.PHONY : CMakeFiles/RPMTest.dir/rule
+
+# Convenience name for target.
+RPMTest: CMakeFiles/RPMTest.dir/rule
+.PHONY : RPMTest
+
+# clean rule for target.
+CMakeFiles/RPMTest.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RPMTest.dir/build.make CMakeFiles/RPMTest.dir/clean
+.PHONY : CMakeFiles/RPMTest.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

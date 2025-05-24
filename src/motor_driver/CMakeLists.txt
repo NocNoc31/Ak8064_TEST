@@ -16,6 +16,8 @@ add_executable(Test src/22_5_Test.cpp)
 
 add_executable(TestMes src/TestMes.cpp)
 
+add_executable(RPMTest src/RPMTest.cpp)
+
 # Liên kết với thư viện can_interface
 target_link_libraries(SetOMotor can_interface::can_interface)
 
@@ -23,6 +25,7 @@ ament_target_dependencies(SetOMotor rclcpp can_interface std_msgs)
 ament_target_dependencies(ControlMotor rclcpp can_interface std_msgs rcl_interfaces)
 ament_target_dependencies(Test rclcpp can_interface std_msgs rcl_interfaces)
 ament_target_dependencies(TestMes rclcpp can_interface std_msgs rcl_interfaces)
+ament_target_dependencies(RPMTest rclcpp can_interface std_msgs rcl_interfaces)
 
 
 
@@ -30,6 +33,7 @@ install(TARGETS SetOMotor
   ControlMotor
   Test
   TestMes
+  RPMTest
   DESTINATION lib/${PROJECT_NAME}
 )
 

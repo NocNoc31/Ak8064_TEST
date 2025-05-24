@@ -1,0 +1,101 @@
+[0.007s] Invoking command in '/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver': CMAKE_PREFIX_PATH=/home/ubuntu/Desktop/Ak8064_TEST/install/can_interface:/home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver:/opt/ros/humble /usr/bin/cmake --build /home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver -- -j8 -l8
+[0.041s] [35m[1mConsolidate compiler generated dependencies of target Test[0m
+[0.051s] [ 20%] Built target RPMTest
+[0.052s] [ 50%] Built target ControlMotor
+[0.052s] [ 60%] Built target TestMes
+[0.052s] [ 80%] Built target SetOMotor
+[0.056s] [ 90%] [32mBuilding CXX object CMakeFiles/Test.dir/src/22_5_Test.cpp.o[0m
+[1.832s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[1.832s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[1.832s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[1.832s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[1.832s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[1.832s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[1.832s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[1.833s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[1.833s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[1.833s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[1.833s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[1.833s]                  from [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:710[m[K:
+[1.833s] [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:[m[K In member function ‘[01m[Kvirtual void MotorController::setParameters(const std::vector<rcl_interfaces::msg::Parameter_<std::allocator<void> >, std::allocator<rcl_interfaces::msg::Parameter_<std::allocator<void> > > >&)[m[K’:
+[1.833s] [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:1112:34:[m[K [01;35m[Kwarning: [m[Kunknown conversion type character ‘[01m[K [m[K’ in format [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=-Wformat=]8;;[m[K]
+[1.833s]  1112 |             RCLCPP_INFO(logger_, [01;35m[K"Motor 0x%02 щоб MotorController::setParameters: Processing parameter: %s"[m[K, motor_id_, param.name.c_str());
+[1.833s]       |                                  [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[1.833s] [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:1112:46:[m[K [01;36m[Knote: [m[Kformat string is defined here
+[1.833s]  1112 |             RCLCPP_INFO(logger_, "Motor 0x%02[01;36m[K [m[Kщоб MotorController::setParameters: Processing parameter: %s", motor_id_, param.name.c_str());
+[1.833s]       |                                              [01;36m[K^[m[K
+[1.833s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[1.833s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[1.833s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[1.833s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[1.833s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[1.833s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[1.833s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[1.833s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[1.833s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[1.833s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[1.833s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[1.833s]                  from [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:710[m[K:
+[1.833s] [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:1112:34:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%s[m[K’ expects argument of type ‘[01m[Kchar*[m[K’, but argument 5 has type ‘[01m[Kint[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=-Wformat=]8;;[m[K]
+[1.834s]  1112 |             RCLCPP_INFO(logger_, [01;35m[K"Motor 0x%02 щоб MotorController::setParameters: Processing parameter: %s"[m[K, [32m[Kmotor_id_[m[K, param.name.c_str());
+[1.834s]       |                                  [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K  [32m[K~~~~~~~~~[m[K
+[1.834s]       |                                                                                                              [32m[K|[m[K
+[1.834s]       |                                                                                                              [32m[Kint[m[K
+[1.834s] [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:1112:106:[m[K [01;36m[Knote: [m[Kformat string is defined here
+[1.834s]  1112 |             RCLCPP_INFO(logger_, "Motor 0x%02 щоб MotorController::setParameters: Processing parameter: [01;36m[K%s[m[K", motor_id_, param.name.c_str());
+[1.834s]       |                                                                                                         [01;36m[K~^[m[K
+[1.834s]       |                                                                                                          [01;36m[K|[m[K
+[1.834s]       |                                                                                                          [01;36m[Kchar*[m[K
+[1.834s]       |                                                                                                         [32m[K%d[m[K
+[1.834s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[1.834s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[1.834s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[1.834s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[1.834s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[1.834s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[1.834s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[1.834s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[1.834s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[1.834s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[1.834s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[1.834s]                  from [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:710[m[K:
+[1.834s] [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/22_5_Test.cpp:1112:34:[m[K [01;35m[Kwarning: [m[Ktoo many arguments for format [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat-extra-args-Wformat-extra-args]8;;[m[K]
+[1.834s]  1112 |             RCLCPP_INFO(logger_, [01;35m[K"Motor 0x%02 щоб MotorController::setParameters: Processing parameter: %s"[m[K, motor_id_, param.name.c_str());
+[1.834s]       |                                  [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[7.394s] [100%] [32m[1mLinking CXX executable Test[0m
+[7.785s] [100%] Built target Test
+[7.797s] Invoked command in '/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver' returned '0': CMAKE_PREFIX_PATH=/home/ubuntu/Desktop/Ak8064_TEST/install/can_interface:/home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver:/opt/ros/humble /usr/bin/cmake --build /home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver -- -j8 -l8
+[7.799s] Invoking command in '/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver': CMAKE_PREFIX_PATH=/home/ubuntu/Desktop/Ak8064_TEST/install/can_interface:/home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver:/opt/ros/humble /usr/bin/cmake --install /home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver
+[7.805s] -- Install configuration: ""
+[7.805s] -- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver/lib/motor_driver/SetOMotor
+[7.805s] -- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver/lib/motor_driver/ControlMotor
+[7.806s] -- Installing: /home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver/lib/motor_driver/Test
+[7.811s] -- Set runtime path of "/home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver/lib/motor_driver/Test" to ""
+[7.811s] -- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver/lib/motor_driver/TestMes
+[7.812s] -- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver/lib/motor_driver/RPMTest
+[7.812s] -- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver/share/motor_driver//config
+[7.812s] -- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver/share/motor_driver//config/exercise1_params.yaml
+[7.812s] -- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver/share/motor_driver//config/exercise2_params.yaml
+[7.812s] -- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver/share/motor_driver//launch
+[7.812s] -- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver/share/motor_driver//launch/motor_control.launch.py
+[7.812s] -- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver/lib/motor_driver/set_params_gui.py
+[7.812s] -- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver/lib/motor_driver/GUI_TEST.py
+[7.812s] -- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver/lib/motor_driver/TurnOn.sh
+[7.812s] -- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver/share/motor_driver/config/exercise1_params.yaml
+[7.812s] -- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver/share/motor_driver/config/exercise2_params.yaml
+[7.812s] -- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver/share/ament_index/resource_index/package_run_dependencies/motor_driver
+[7.812s] -- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver/share/ament_index/resource_index/parent_prefix_path/motor_driver
+[7.812s] -- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver/share/motor_driver/environment/ament_prefix_path.sh
+[7.812s] -- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver/share/motor_driver/environment/ament_prefix_path.dsv
+[7.812s] -- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver/share/motor_driver/environment/path.sh
+[7.813s] -- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver/share/motor_driver/environment/path.dsv
+[7.813s] -- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver/share/motor_driver/local_setup.bash
+[7.813s] -- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver/share/motor_driver/local_setup.sh
+[7.813s] -- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver/share/motor_driver/local_setup.zsh
+[7.813s] -- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver/share/motor_driver/local_setup.dsv
+[7.813s] -- Installing: /home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver/share/motor_driver/package.dsv
+[7.813s] -- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver/share/ament_index/resource_index/packages/motor_driver
+[7.813s] -- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver/share/motor_driver/cmake/motor_driverConfig.cmake
+[7.813s] -- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver/share/motor_driver/cmake/motor_driverConfig-version.cmake
+[7.813s] -- Up-to-date: /home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver/share/motor_driver/package.xml
+[7.815s] Invoked command in '/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver' returned '0': CMAKE_PREFIX_PATH=/home/ubuntu/Desktop/Ak8064_TEST/install/can_interface:/home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver:/opt/ros/humble /usr/bin/cmake --install /home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver

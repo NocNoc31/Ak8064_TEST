@@ -1,0 +1,38 @@
+[0.006s] Invoking command in '/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver': CMAKE_PREFIX_PATH=/home/ubuntu/Desktop/Ak8064_TEST/install/can_interface:/home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver:/opt/ros/humble /usr/bin/cmake --build /home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver -- -j8 -l8
+[0.035s] [35m[1mConsolidate compiler generated dependencies of target TestMes[0m
+[0.045s] [ 20%] Built target Test
+[0.046s] [ 40%] Built target ControlMotor
+[0.048s] [ 60%] Built target RPMTest
+[0.049s] [ 80%] Built target SetOMotor
+[0.051s] [ 90%] [32mBuilding CXX object CMakeFiles/TestMes.dir/src/TestMes.cpp.o[0m
+[1.731s] [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/TestMes.cpp:44:2:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K}[m[K’ at end of input
+[1.731s]    44 | }
+[1.731s]       |  [01;31m[K^[m[K
+[1.731s] [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/TestMes.cpp:6:42:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K{[m[K’
+[1.731s]     6 | class CmdSimulator : public rclcpp::Node [01;36m[K{[m[K
+[1.731s]       |                                          [01;36m[K^[m[K
+[1.738s] [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/TestMes.cpp:[m[K In constructor ‘[01m[KCmdSimulator::CmdSimulator()[m[K’:
+[1.738s] [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/TestMes.cpp:10:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kmotor1_pub_[m[K’ was not declared in this scope
+[1.738s]    10 |         [01;31m[Kmotor1_pub_[m[K = create_publisher<std_msgs::msg::String>("/Motor1ControlCMD", 10);
+[1.738s]       |         [01;31m[K^~~~~~~~~~~[m[K
+[1.746s] [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/TestMes.cpp:11:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kmotor2_pub_[m[K’ was not declared in this scope
+[1.747s]    11 |         [01;31m[Kmotor2_pub_[m[K = create_publisher<std_msgs::msg::String>("/Motor2ControlCMD", 10);
+[1.747s]       |         [01;31m[K^~~~~~~~~~~[m[K
+[1.750s] [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/TestMes.cpp:14:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ktimer_[m[K’ was not declared in this scope; did you mean ‘[01m[Ktimer_t[m[K’?
+[1.750s]    14 |         [01;31m[Ktimer_[m[K = create_wall_timer(std::chrono::seconds(2),
+[1.750s]       |         [01;31m[K^~~~~~[m[K
+[1.750s]       |         [32m[Ktimer_t[m[K
+[1.750s] [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/TestMes.cpp:15:60:[m[K [01;31m[Kerror: [m[K‘[01m[KsendCommands[m[K’ is not a member of ‘[01m[KCmdSimulator[m[K’
+[1.750s]    15 |                                   std::bind(&CmdSimulator::[01;31m[KsendCommands[m[K, this));
+[1.750s]       |                                                            [01;31m[K^~~~~~~~~~~~[m[K
+[1.750s] [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/TestMes.cpp:19:1:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kprivate[m[K’
+[1.750s]    19 | [01;31m[Kprivate[m[K:
+[1.750s]       | [01;31m[K^~~~~~~[m[K
+[1.755s] [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/TestMes.cpp:[m[K At global scope:
+[1.755s] [01m[K/home/ubuntu/Desktop/Ak8064_TEST/src/motor_driver/src/TestMes.cpp:44:2:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id at end of input
+[1.755s]    44 | }
+[1.755s]       |  [01;31m[K^[m[K
+[2.231s] gmake[2]: *** [CMakeFiles/TestMes.dir/build.make:76: CMakeFiles/TestMes.dir/src/TestMes.cpp.o] Error 1
+[2.231s] gmake[1]: *** [CMakeFiles/Makefile2:223: CMakeFiles/TestMes.dir/all] Error 2
+[2.231s] gmake: *** [Makefile:146: all] Error 2
+[2.232s] Invoked command in '/home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver' returned '2': CMAKE_PREFIX_PATH=/home/ubuntu/Desktop/Ak8064_TEST/install/can_interface:/home/ubuntu/Desktop/Ak8064_TEST/install/motor_driver:/opt/ros/humble /usr/bin/cmake --build /home/ubuntu/Desktop/Ak8064_TEST/build/motor_driver -- -j8 -l8
